@@ -78,6 +78,7 @@ const Navbar = (props) => {
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
+          fontWeight: "400",
         }}
       >
         <ul>
@@ -108,9 +109,10 @@ const Navbar = (props) => {
           <CiSearch color="black" size={24} />
           <Typography
             sx={{
-              fontFamily: "Oranienbaum",
               fontSize: "20px",
               cursor: "pointer",
+              fontFamily: "Playfair Display",
+              fontWeight: "600",
               "::after": {
                 content: '""',
                 width: "0px",

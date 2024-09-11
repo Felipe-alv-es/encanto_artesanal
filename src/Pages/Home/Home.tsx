@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import image from "../../assets/images/Image.jpg";
+//@ts-ignore
+import image from "../../assets/images/Home/Image.jpg";
 import { Typography, Button } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
 
@@ -26,7 +27,7 @@ const Home = () => {
         }}
       />
       <Box sx={{ padding: "64px", width: "25%" }}>
-        <Typography variant="h3" sx={{ fontFamily: "Oranienbaum" }}>
+        <Typography variant="h3">
           Uns bla bla bla, compra ai, na moral
         </Typography>
         <Typography

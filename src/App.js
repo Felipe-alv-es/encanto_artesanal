@@ -1,11 +1,12 @@
-import { Home, Navbar, Products } from "./Pages/index.ts";
+import { Home, Navbar, Categories, Galery } from "./Pages/index.ts";
 
 function App() {
   return (
     <>
       <Navbar />
       <Home />
-      <Products />
+      <Categories />
+      <Galery />
     </>
   );
 }
