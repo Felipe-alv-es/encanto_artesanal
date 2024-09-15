@@ -1,4 +1,12 @@
-import { Home, Navbar, Categories, Galery } from "./Pages/index.ts";
+import {
+  Home,
+  Navbar,
+  Categories,
+  Galery,
+  Lançamentos,
+  SocialMedia,
+  Footer,
+} from "./Pages/index.ts";
 
 function App() {
   return (
@@ -7,6 +15,9 @@ function App() {
       <Home />
       <Categories />
       <Galery />
+      <Lançamentos />
+      <SocialMedia />
+      <Footer />
     </>
   );
 }
