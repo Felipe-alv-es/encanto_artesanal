@@ -1,5 +1,5 @@
 // @ts-nocheck
-import Image1 from "../images/Home/Image.jpg";
+import Image1 from "../images/Home/Home.jpg";
 
 export const galeryList = [
   {

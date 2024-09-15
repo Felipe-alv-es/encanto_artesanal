@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider, Link, Typography } from "@mui/material";
-import Logo from "../../assets/images/Home/Image.jpg";
+import Logo from "../../assets/images/Home/Home.jpg";
 import {
   getContainerStyles,
   getTitleStyle,

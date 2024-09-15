@@ -1,64 +1,27 @@
 import React from "react";
 import Box from "@mui/material/Box";
-//@ts-ignore
-import image from "../../assets/images/Home/Image.jpg";
-import { Typography, Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
+import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
+import { StyledButton } from "../../Components/index.ts";
 
 const Home = () => {
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(${image})`,
-        height: "100vh",
-        width: "100%",
-        backgroundSize: "cover",
-        display: "grid",
-        placeItems: "end start",
-      }}
-    >
-      <Box
-        sx={{
-          background: "rgba(0,0,0,0.2)",
-          height: "100%",
-          width: "100%",
-          position: "absolute",
-          zIndex: 0,
-        }}
-      />
+    <Box sx={getContainerStyle}>
       <Box sx={{ padding: "64px", width: "25%" }}>
-        <Typography variant="h3">
-          Uns bla bla bla, compra ai, na moral
+        <Typography variant="h3" color="#F2F2F2" fontWeight={500}>
+          Produtos Artesanais Qualidade e Cuidado Feitos à Mão
         </Typography>
-        <Typography
-          variant="h6"
-          sx={{
-            marginTop: "64px",
-            marginBottom: "16px",
-            fontFamily: "Oranienbaum",
-          }}
-        >
-          É muito bom, recomendo em, ta tudo caro, quero diero É muito bom,
-          recomendo em, ta tudo caro, quero diero É muito bom, recomendo em, ta
-          tudo caro, quero diero
+        <Typography sx={getDescriptionStyle}>
+          {
+            "Descubra nossa seleção de produtos artesanais, feitos com ingredientes naturais e atenção aos detalhes, para trazer bem-estar e um toque especial ao seu dia a dia."
+          }
         </Typography>
-        <Button
-          sx={{
-            color: "#1F1F1F",
-            borderColor: "#1F1F1F",
-            padding: "20px",
-            textTransform: "none",
-            fontFamily: "Oranienbaum",
-            fontSize: "20px",
-            "> svg": {
-              marginLeft: "16px",
-            },
-          }}
+        <StyledButton
+          text="Conheça nossos produtos"
           variant="outlined"
-        >
-          Clique Aqui pra tomar no cu
-          <IoChevronForward />
-        </Button>
+          icon={<IoChevronForward />}
+        />
       </Box>
     </Box>
   );
