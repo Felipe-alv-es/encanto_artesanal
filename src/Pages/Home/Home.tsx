@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
@@ -6,8 +6,15 @@ import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
 import { StyledButton } from "../../Components/index.ts";
 
 const Home = () => {
+  const [scrollValue, setScrollValue] = useState(0);
+
+  document.addEventListener("scroll", function () {
+    const value = window.scrollY;
+    setScrollValue(value);
+  });
+
   return (
-    <Box sx={getContainerStyle}>
+    <Box sx={getContainerStyle(scrollValue)}>
       <Box sx={{ padding: "64px", width: "25%" }}>
         <Typography variant="h3" color="#F2F2F2" fontWeight={500}>
           Produtos Artesanais Qualidade e Cuidado Feitos à Mão
