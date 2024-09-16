@@ -26,7 +26,6 @@ export const getMenuStyle = () => ({
       cursor: "pointer",
       "> li": {
         padding: "8px",
-        fontFamily: "Oranienbaum",
         fontSize: "20px",
         "::after": {
           content: '""',
@@ -65,7 +64,6 @@ export const StyledSearch = React.forwardRef<HTMLDivElement, StyledSearchProps>(
           sx={{
             fontSize: "20px",
             cursor: "pointer",
-            fontFamily: "Playfair Display",
             "::after": {
               content: '""',
               width: "0px",

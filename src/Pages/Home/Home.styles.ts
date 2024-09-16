@@ -13,7 +13,6 @@ export const getContainerStyle = () => ({
 export const getDescriptionStyle = () => ({
   marginTop: "32px",
   marginBottom: "16px",
-  fontFamily: "Oranienbaum",
   color: "#F2F2F2",
   typography: "body1",
 });

@@ -1,20 +1,18 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { categoriesOptions } from "../../assets/Arrays/CategoriesList.tsx";
+import { StyledButton } from "../../Components/index.ts";
+import {
+  getContainerStyle,
+  getItemContainer,
+  getDescriptionStyle,
+} from "./Categories.styles.ts";
 
 const Categories = () => {
   return (
-    <Box
-      sx={{
-        background: "#F2F2F2",
-        padding: "5% 10% 5% 10%",
-        display: "flex",
-        justifyContent: "center",
-        gap: "32px",
-      }}
-    >
+    <Box sx={getContainerStyle}>
       {categoriesOptions.map((item) => (
-        <Box sx={{ width: "20%" }}>
+        <Box sx={getItemContainer}>
           <Box
             component="img"
             src={item.imageSrc}
@@ -25,13 +23,24 @@ const Categories = () => {
               marginBottom: "16px",
             }}
           />
-          <Typography variant="overline" fontSize={"20px"} fontWeight={"600"}>
-            {item.title}
-          </Typography>
-          <Typography variant="body1">{item.descrição}</Typography>
-          <Button variant="outlined" sx={{ marginTop: "24px" }}>
-            Conheça nosso trabalho
-          </Button>
+          <Box sx={getDescriptionStyle}>
+            <Typography
+              variant="h5"
+              fontWeight={"500"}
+              sx={{ marginBottom: "8px" }}
+            >
+              {item.title}
+            </Typography>
+            <Typography variant="body1" fontWeight={"300"}>
+              {item.descrição}
+            </Typography>
+            <StyledButton
+              text="Veja mais"
+              variant="outlined"
+              isWhiteBg
+              size="md"
+            />
+          </Box>
         </Box>
       ))}
     </Box>
