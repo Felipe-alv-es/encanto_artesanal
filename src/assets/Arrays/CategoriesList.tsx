@@ -13,21 +13,21 @@ export const categoriesOptions = [
       "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas. ",
   },
   {
-    title: "Sabonetes Artesanais Naturais",
+    title: "Sabonetes Naturais",
     imageSrc: Image2,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
       "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave e hidratante para todos os tipos de pele.",
   },
   {
-    title: "Perfumes Artesanais Naturais",
+    title: "Aromas Exclusivos",
     imageSrc: Image3,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
       "Nossos perfumes artesanais são formulados com essências naturais e óleos essenciais, oferecendo fragrâncias exclusivas e duradouras.",
   },
   {
-    title: "Shampoos Artesanais Naturais",
+    title: "Cuidado Capilar Essencial",
     imageSrc: Image4,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
