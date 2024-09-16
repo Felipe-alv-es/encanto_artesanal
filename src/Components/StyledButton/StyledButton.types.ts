@@ -6,4 +6,5 @@ export default interface StyledButtonProps {
   size?: "sm" | "md" | "bg";
   icon?: ReactNode;
   isWhiteBg?: boolean;
+  padding?: string;
 }

@@ -31,7 +31,11 @@ const Categories = () => {
             >
               {item.title}
             </Typography>
-            <Typography variant="body1" fontWeight={"300"}>
+            <Typography
+              variant="body1"
+              fontWeight={"300"}
+              marginBottom={"32px"}
+            >
               {item.descrição}
             </Typography>
             <StyledButton

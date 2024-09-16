@@ -10,6 +10,7 @@ export const getItemContainer = () => ({
   width: "20%",
   display: "flex",
   flexDirection: "column",
+  cursor: "pointer",
 });
 
 export const getDescriptionStyle = () => ({

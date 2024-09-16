@@ -1,3 +1,4 @@
+//@ts-ignore
 import image from "../../assets/images/Home/Home.jpg";
 
 export const getContainerStyle = (scrollValue: number) => ({
@@ -12,7 +13,7 @@ export const getContainerStyle = (scrollValue: number) => ({
 
 export const getDescriptionStyle = () => ({
   marginTop: "32px",
-  marginBottom: "16px",
+  marginBottom: "32px",
   color: "#F2F2F2",
   typography: "body1",
 });

@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import StyledButtonProps from "./StyledButton.types.ts";
 
 export const StyledButton = React.forwardRef<HTMLDivElement, StyledButtonProps>(
-  ({ text, icon, variant, isWhiteBg, size, ...props }, ref) => {
+  ({ text, icon, variant, isWhiteBg, size, padding, ...props }, ref) => {
     const buttonSize = () => {
       switch (size) {
         case "bg":
@@ -22,11 +22,10 @@ export const StyledButton = React.forwardRef<HTMLDivElement, StyledButtonProps>(
         sx={{
           color: isWhiteBg ? "#444444" : "#F2F2F2",
           borderColor: isWhiteBg ? "#444444" : "#F2F2F2",
-          padding: buttonSize,
+          padding: padding ? padding : buttonSize,
           textTransform: "none",
           fontFamily: "Oranienbaum",
           fontSize: buttonSize,
-          marginTop: "32px",
           "> svg": {
             marginLeft: "16px",
           },
