@@ -1,36 +1,36 @@
 // @ts-nocheck
-import Image3 from "../images/Categories/Perfumes.jpg";
 import Image1 from "../images/Categories/Velas.jpg";
-import Image4 from "../images/Categories/Shampoo.jpg";
 import Image2 from "../images/Categories/Sabonetes.jpg";
+import Image3 from "../images/Categories/Sais.jpg";
+import Image4 from "../images/Categories/Bordados.jpg";
 
 export const categoriesOptions = [
   {
-    title: "Velas Artesanais",
+    title: "Velas artesanais",
     imageSrc: Image1,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
       "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas. ",
   },
   {
-    title: "Sabonetes Naturais",
+    title: "Sabonetes naturais",
     imageSrc: Image2,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
-      "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave e hidratante para todos os tipos de pele.",
+      "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave para todos os tipos de pele.",
   },
   {
-    title: "Aromas Exclusivos",
+    title: "Sais de banho",
     imageSrc: Image3,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
-      "Nossos perfumes artesanais são formulados com essências naturais e óleos essenciais, oferecendo fragrâncias exclusivas e duradouras.",
+      "Nossos sais de banho são formulados com sais minerais e essências naturais, proporcionando um banho relaxante e revitalizante.",
   },
   {
-    title: "Cuidado Capilar Essencial",
+    title: "Toalhas bordadas",
     imageSrc: Image4,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de toalhas bordadas",
     descrição:
-      "Nossos shampoos artesanais são feitos com ingredientes naturais, livres de sulfatos, parabenos e silicones, proporcionando uma limpeza suave e eficaz.",
+      "Nossas toalhas bordadas combinam elegância e conforto, confeccionadas em algodão de alta qualidade e com acabamentos delicados. ",
   },
 ];
