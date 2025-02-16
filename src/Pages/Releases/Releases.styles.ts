@@ -19,7 +19,6 @@ export const getGridItemStyle = () => ({
   width: "350px",
   height: "700px",
   borderRadius: "32px",
-  padding: "32px",
   display: "flex",
   flexDirection: "column",
   "> img": {
