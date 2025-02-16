@@ -25,7 +25,7 @@ const SocialMedia = () => {
   return (
     <Box
       sx={{
-        padding: "32px",
+        padding: "64px",
         textAlign: "center",
         background: "#6bb4ad",
         placeItems: "center",

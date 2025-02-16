@@ -21,8 +21,8 @@ export const FooterListComponent = React.forwardRef<HTMLLIElement>(() => {
     >
       <Typography sx={getTitleStyle}>Fale Comigo</Typography>
       <Typography sx={getSubtitleStyle}>
-        Gostou dos nossos produtos? Ficaremos felizes em ouvir você! Entre em
-        contato.
+        Gostou dos nossos produtos? Ficaremos felizes em te atender! Entre em
+        contato pelo nosso Instagram ou Whatsapp.
       </Typography>
       <Divider sx={{ background: "#6bb4ad" }} />
       <Box sx={getFooterMenuStyle}>
