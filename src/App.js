@@ -11,13 +11,13 @@ import {
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
-      {/* <Home /> */}
-      {/* <Categories /> */}
-      {/* <Galery /> */}
+      <Navbar />
+      <Home />
+      <Categories />
+      <Galery />
       <Releases />
-      {/* <SocialMedia /> */}
-      {/* <Footer /> */}
+      <SocialMedia />
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,5 @@
-import { SxProps } from "@mui/material/";
-
-export const getContainerStyles = (): SxProps => ({
-  background: "#1c1c1c",
-  borderStyle: "solid",
-  borderColor: "#146ef5",
-  borderWidth: "5px 0px 0px 0px",
+export const getContainerStyles = () => ({
+  background: "#FFFFFF",
   padding: "3% 25% 3% 25%",
   "@media(max-width: 1700px)": {
     padding: "3% 20% 3% 20%",
@@ -14,9 +9,11 @@ export const getContainerStyles = (): SxProps => ({
   },
 });
 
-export const getFooterMenuStyle = (): SxProps => ({
+export const getFooterMenuStyle = () => ({
   display: "flex",
-  justifyContent: "space-between",
+  padding: "16px",
+  justifyContent: "center",
+  textAlign: "center",
   "@media(max-width: 544px)": {
     flexDirection: "column",
     padding: "32px",
@@ -27,46 +24,48 @@ export const getFooterMenuStyle = (): SxProps => ({
 export const getTitleStyle = () => ({
   textAlign: "center",
   marginBottom: "16px",
-  color: "#e7e7e7",
   typography: "h4",
   fontFamily: "kanit",
+  color: "#6bb4ad",
 });
 
 export const getSubtitleStyle = () => ({
   fontWeight: "normal",
   textAlign: "center",
   marginBottom: "32px",
-  color: "#e7e7e7",
   typography: "body1",
+  color: "#383838",
 });
 
-export const getListStyle = (): SxProps => ({
+export const getListStyle = () => ({
   "> ul": {
     listStyle: "none",
+    paddingTop: "8px",
+    display: "flex",
     "> li": {
-      margin: "16px 0px 16px 0px",
       textDecoration: "none",
-      color: "white",
+      color: "#383838",
       cursor: "pointer",
+      paddingTop: "4px",
       "@media(max-width: 428px)": {
         textAlign: "center",
       },
 
       "> *": {
         textDecoration: "none",
-        color: "white",
+        color: "#383838",
         cursor: "pointer",
+        fontWeight: "500",
+        fontFamily: "kanit",
       },
     },
   },
 });
 
-export const getlistTitleStyle = (): SxProps => ({
-  color: "#089cd4",
+export const getlistTitleStyle = () => ({
+  color: "#6bb4ad",
   typography: "h6",
   fontWeight: "bold",
-  marginBottom: "16px",
-  padding: "32px 0px 0px 0px",
   "@media(max-width: 428px)": {
     textAlign: "center",
   },

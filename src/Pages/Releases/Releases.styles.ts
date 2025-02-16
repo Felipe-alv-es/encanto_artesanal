@@ -1,6 +1,6 @@
 export const getPageTitleStyle = () => ({
   textAlign: "center",
-  padding: "32px",
+  paddingTop: "32px",
   typography: "h3",
   fontWeight: "bold",
 });
@@ -17,6 +17,7 @@ export const getGridStyle = () => ({
 
 export const getGridItemStyle = () => ({
   width: "350px",
+  height: "700px",
   borderRadius: "32px",
   padding: "32px",
   display: "flex",
