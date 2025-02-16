@@ -1,5 +1,4 @@
-import { Box, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const getContainerStyle = () => ({
   display: "flex",
