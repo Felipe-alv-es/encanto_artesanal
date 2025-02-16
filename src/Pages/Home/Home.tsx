@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
 import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
 import { StyledButton } from "../../Components/index.ts";
+import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
 
 const Home = () => {
-  const [scrollValue, setScrollValue] = useState(0);
-
-  document.addEventListener("scroll", function () {
-    const value = window.scrollY;
-    setScrollValue(value);
-  });
+  const scrollValue = useScrollValue();
 
   return (
     <Box sx={getContainerStyle(scrollValue)}>

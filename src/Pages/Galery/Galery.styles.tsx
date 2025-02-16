@@ -4,8 +4,9 @@ import { StyledButton } from "../../Components/index.ts";
 //@ts-ignore
 import image from "../../assets/images/Home/Home.jpg";
 
-export const getContainerStyle = () => ({
+export const getContainerStyle = (scrollValue: number) => ({
   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
+  backgroundPosition: `left 0% bottom ${80 + (scrollValue / 10) * 0.08}%`,
   padding: "5% 15% 5% 15%",
   textAlign: "center",
 });

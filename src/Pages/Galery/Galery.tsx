@@ -4,8 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import { galeryList } from "../../assets/Arrays/GaleryList.tsx";
 import { getContainerStyle, StyledSwiperItem } from "./Galery.styles.tsx";
+import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
 
 const Galery = () => {
+  const scrollValue = useScrollValue();
   const params = {
     effect: "coverflow",
     slidesPerView: 4,
@@ -14,9 +16,8 @@ const Galery = () => {
     grabCursor: true,
     modules: [EffectCoverflow],
     coverflowEffect: {
-      rotate: 20,
+      rotate: 0,
       stretch: 0,
-      depth: 100,
       modifier: 1,
       slideShadows: false,
     },
@@ -24,7 +25,7 @@ const Galery = () => {
   };
 
   return (
-    <Box sx={getContainerStyle}>
+    <Box sx={getContainerStyle(scrollValue)}>
       <Swiper {...params}>
         {galeryList.map((item) => (
           <SwiperSlide>

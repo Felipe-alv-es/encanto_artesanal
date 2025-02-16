@@ -3,7 +3,7 @@ import {
   Navbar,
   Categories,
   Galery,
-  Lançamentos,
+  Releases,
   SocialMedia,
   Footer,
 } from "./Pages/index.ts";
@@ -11,13 +11,13 @@ import {
 function App() {
   return (
     <>
-      <Navbar />
-      <Home />
-      <Categories />
-      <Galery />
-      <Lançamentos />
-      <SocialMedia />
-      <Footer />
+      {/* <Navbar /> */}
+      {/* <Home /> */}
+      {/* <Categories /> */}
+      {/* <Galery /> */}
+      <Releases />
+      {/* <SocialMedia /> */}
+      {/* <Footer /> */}
     </>
   );
 }
