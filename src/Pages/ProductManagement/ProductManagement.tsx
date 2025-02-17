@@ -40,7 +40,6 @@ const ProductManagement = () => {
 
   const handleSave = async () => {
     try {
-      console.log("Dados a serem enviados:", formData);
       const response = await fetch(
         "https://encanto-artesanal-back.onrender.com/api/posts/",
         {
@@ -56,13 +55,6 @@ const ProductManagement = () => {
           }),
         }
       );
-
-      console.log({
-        title: formData.title,
-        description: formData.description,
-        imageSrc: formData.imageSrc,
-        imagealt: formData.title,
-      });
 
       if (!response.ok) {
         throw new Error("Falha ao salvar os dados");
@@ -114,8 +106,6 @@ const ProductManagement = () => {
             }
           : null
       );
-
-      console.log(`Item ${id} deletado com sucesso!`);
     } catch (error) {
       console.error("Erro ao excluir o item:", error);
     }
@@ -194,11 +184,9 @@ const ProductManagement = () => {
                   margin: "4px 8px 4px 8px",
                 }}
               >
-                <Typography variant="h6">
-                  {" ID do item: " + item.id}
-                </Typography>
+                <Typography variant="h6">{"Excluir o item: "}</Typography>
                 <IconButton onClick={() => handleDelete(item.id)}>
-                  <IoMdCloseCircleOutline />
+                  <IoMdCloseCircleOutline color="red" />
                 </IconButton>
               </Box>
               <ReleaseItem
