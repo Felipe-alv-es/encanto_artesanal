@@ -1,9 +1,29 @@
-import { Box, Button, Divider, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import ReleaseItem from "../Releases/Components/ReleaseItem/index.tsx";
 import { releaseList } from "../../assets/Arrays/ReleasesList.tsx";
+import { getGridStyle } from "../Releases/Releases.styles.ts";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
+type ApiResponse = {
+  data: {
+    id: number;
+    title: string;
+    description: string;
+    imagesrc: string;
+    imagealt: string;
+  }[];
+};
 
 const ProductManagement = () => {
+  const [apiData, setApiData] = useState<ApiResponse | null>(null);
   const [formData, setFormData] = useState({
     title: releaseList[0].title,
     description: releaseList[0].description,
@@ -48,16 +68,62 @@ const ProductManagement = () => {
         throw new Error("Falha ao salvar os dados");
       }
 
-      const result = await response.json();
-      console.log("Dados salvos com sucesso:", result);
+      await response.json();
     } catch (error) {
       console.error("Erro ao salvar os dados:", error);
     }
   };
 
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://encanto-artesanal-back.onrender.com/api/posts/"
+        );
+
+        if (!response.ok) {
+          throw new Error("Falha ao buscar os dados");
+        }
+
+        const data = await response.json();
+        setApiData(data);
+      } catch (error) {
+        console.error("Erro ao buscar os dados:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleDelete = async (id: number) => {
+    try {
+      const response = await fetch(
+        `https://encanto-artesanal-back.onrender.com/api/posts/${id}`,
+        { method: "DELETE" }
+      );
+
+      if (!response.ok) {
+        throw new Error("Falha ao excluir o item");
+      }
+
+      setApiData((prevData) =>
+        prevData
+          ? {
+              ...prevData,
+              data: prevData.data.filter((item) => item.id !== id),
+            }
+          : null
+      );
+
+      console.log(`Item ${id} deletado com sucesso!`);
+    } catch (error) {
+      console.error("Erro ao excluir o item:", error);
+    }
+  };
+
   return (
-    <Box sx={{ background: "#6bb4ad", height: "100%", textAlign: "center" }}>
-      <Typography variant="h1" color="#F2F2F2" fontWeight={"bold"}>
+    <Box sx={{ background: "#D4D4D4", height: "100%", textAlign: "center" }}>
+      <Typography variant="h1" fontWeight={"bold"} paddingTop={"32px"}>
         ProductManagement
       </Typography>
 
@@ -65,7 +131,7 @@ const ProductManagement = () => {
         <Divider />
       </Box>
 
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box
           sx={{
             padding: "32px",
@@ -114,6 +180,39 @@ const ProductManagement = () => {
 
       <Box padding={"32px"}>
         <Divider />
+      </Box>
+
+      <Box sx={getGridStyle}>
+        {apiData && apiData.data ? (
+          apiData.data.map((item) => (
+            <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  margin: "4px 8px 4px 8px",
+                }}
+              >
+                <Typography variant="h6">
+                  {" ID do item: " + item.id}
+                </Typography>
+                <IconButton onClick={() => handleDelete(item.id)}>
+                  <IoMdCloseCircleOutline />
+                </IconButton>
+              </Box>
+              <ReleaseItem
+                key={item.id}
+                imageAlt={item.imagealt}
+                title={item.title}
+                imageSrc={item.imagesrc}
+                description={item.description}
+              />
+            </Box>
+          ))
+        ) : (
+          <p>Carregando...</p>
+        )}
       </Box>
     </Box>
   );
