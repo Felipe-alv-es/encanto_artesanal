@@ -1,4 +1,4 @@
-import { Box, Divider, TextField, Typography } from "@mui/material";
+import { Box, Button, Divider, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import ReleaseItem from "../Releases/Components/ReleaseItem/index.tsx";
 import { releaseList } from "../../assets/Arrays/ReleasesList.tsx";
@@ -7,7 +7,8 @@ const ProductManagement = () => {
   const [formData, setFormData] = useState({
     title: releaseList[0].title,
     description: releaseList[0].description,
-    imageSrc: releaseList[0].imageSrc,
+    imageSrc:
+      "https://img.elo7.com.br/product/zoom/487B8DE/lindo-trio-de-velas-artesanais-velasartesanais.jpg",
   });
 
   const handleChange = (field: string, value: string) => {
@@ -15,6 +16,43 @@ const ProductManagement = () => {
       ...prev,
       [field]: value,
     }));
+  };
+
+  const handleSave = async () => {
+    try {
+      console.log("Dados a serem enviados:", formData);
+      const response = await fetch(
+        "https://encanto-artesanal-back.onrender.com/api/posts/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title: formData.title,
+            description: formData.description,
+            imagesrc: formData.imageSrc,
+            imagealt: formData.title,
+          }),
+        }
+      );
+
+      console.log({
+        title: formData.title,
+        description: formData.description,
+        imageSrc: formData.imageSrc,
+        imagealt: formData.title,
+      });
+
+      if (!response.ok) {
+        throw new Error("Falha ao salvar os dados");
+      }
+
+      const result = await response.json();
+      console.log("Dados salvos com sucesso:", result);
+    } catch (error) {
+      console.error("Erro ao salvar os dados:", error);
+    }
   };
 
   return (
@@ -52,6 +90,16 @@ const ProductManagement = () => {
             value={formData.imageSrc}
             onChange={(e) => handleChange("imageSrc", e.target.value)}
           />
+          <Box sx={{ padding: "16px" }}>
+            <Button
+              variant="outlined"
+              color="inherit"
+              fullWidth
+              onClick={handleSave}
+            >
+              Salvar
+            </Button>
+          </Box>
         </Box>
 
         <Box sx={{ width: "100%", placeItems: "center" }}>
