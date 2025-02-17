@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
 import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
 import { StyledButton } from "../../Components/index.ts";
 import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
+import { SplashScreen } from "../../Components/SplashScreen/SplashScreen.tsx";
 
 const Home = () => {
   const scrollValue = useScrollValue();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <SplashScreen />;
+  }
 
   return (
     <Box sx={getContainerStyle(scrollValue)}>
