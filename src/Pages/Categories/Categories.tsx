@@ -21,6 +21,7 @@ const Categories = () => {
               width: "100%",
               borderRadius: "16px",
               marginBottom: "16px",
+              boxShadow: "rgba(0, 0, 0, 0.5) 0px 1px 10px 0px",
             }}
           />
           <Box sx={getDescriptionStyle}>

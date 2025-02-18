@@ -11,7 +11,7 @@ interface InputFieldsComponentProps {
 const InputFieldsComponent = React.forwardRef<
   HTMLLIElement,
   InputFieldsComponentProps
->(({ formData, handleChange, handleSave }) => {
+>(({ formData, handleChange, handleSave }, ref) => {
   return (
     <>
       <TextField

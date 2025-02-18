@@ -13,7 +13,7 @@ interface ExhibitionItemProps {
 }
 
 const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
-  ({ id, title, description, imagealt, imagesrc, handleDelete }) => {
+  ({ id, title, description, imagealt, imagesrc, handleDelete }, ref) => {
     return (
       <>
         <Box>

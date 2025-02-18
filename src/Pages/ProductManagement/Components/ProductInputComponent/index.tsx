@@ -17,7 +17,7 @@ interface StyledLinkListComponentProps {
 const ProductInputComponent = React.forwardRef<
   HTMLLIElement,
   StyledLinkListComponentProps
->(({ formData, handleChange, handleSave }) => {
+>(({ formData, handleChange, handleSave }, ref) => {
   return (
     <Box sx={containerStyle}>
       <Box sx={textFieldAreaStyle}>

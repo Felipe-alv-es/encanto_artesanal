@@ -32,6 +32,12 @@ function App() {
             }
           />
           <Route path="/product-page" exact element={<ProductPage />} />
+          <Route path="/product-page/velas" exact element={<ProductPage />} />
+          <Route
+            path="/product-page/sabonetes"
+            exact
+            element={<ProductPage />}
+          />
           <Route
             path="/product-management"
             exact

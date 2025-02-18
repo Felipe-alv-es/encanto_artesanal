@@ -10,7 +10,7 @@ type ApiResponse = {
   }[];
 };
 
-const useApiData = (formData: {
+const useApiData = (formData?: {
   title: string;
   description: string;
   imageSrc: string;
@@ -27,10 +27,10 @@ const useApiData = (formData: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            title: formData.title,
-            description: formData.description,
-            imagesrc: formData.imageSrc,
-            imagealt: formData.title,
+            title: formData?.title,
+            description: formData?.description,
+            imagesrc: formData?.imageSrc,
+            imagealt: formData?.title,
           }),
         }
       );

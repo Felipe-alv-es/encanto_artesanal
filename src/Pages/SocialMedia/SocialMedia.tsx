@@ -35,7 +35,12 @@ const SocialMedia = () => {
       }}
     >
       <Typography sx={getPageTitleStyle}>Veja nosso Instagram</Typography>
-      <Box sx={{ width: "100%", marginLeft: "16px" }}>
+      <Box
+        sx={{
+          width: "100%",
+          marginLeft: "16px",
+        }}
+      >
         <HtmlComponent />
       </Box>
     </Box>
