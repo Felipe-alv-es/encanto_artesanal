@@ -1,8 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export const StyledLogo = React.forwardRef<HTMLDivElement>(
-  ({ ...props }, ref) => {
+interface StyledLogoProps {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
+  ({ onClick, ...props }, ref) => {
     return (
       <Box
         sx={{
@@ -11,7 +15,12 @@ export const StyledLogo = React.forwardRef<HTMLDivElement>(
           width: "10%",
           marginRight: "64px",
           cursor: "pointer",
+          background: "transparent",
+          borderStyle: "none",
         }}
+        role="button"
+        component={"button"}
+        onClick={onClick}
         {...props}
       >
         <Typography

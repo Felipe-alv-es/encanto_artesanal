@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/index.tsx";

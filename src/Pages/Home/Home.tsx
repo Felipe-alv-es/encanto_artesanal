@@ -5,23 +5,11 @@ import { IoChevronForward } from "react-icons/io5";
 import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
 import { StyledButton } from "../../Components/index.ts";
 import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
-import { SplashScreen } from "../../Components/SplashScreen/SplashScreen.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const scrollValue = useScrollValue();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <SplashScreen />;
-  }
 
   return (
     <Box sx={getContainerStyle(scrollValue)}>
@@ -38,6 +26,7 @@ const Home = () => {
           text="Conheça nossos produtos"
           variant="outlined"
           icon={<IoChevronForward />}
+          onClick={() => navigate("/product-page")}
         />
       </Box>
     </Box>

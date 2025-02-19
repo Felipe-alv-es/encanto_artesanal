@@ -3,7 +3,10 @@ import { Button } from "@mui/material";
 import StyledButtonProps from "./StyledButton.types.ts";
 
 export const StyledButton = React.forwardRef<HTMLDivElement, StyledButtonProps>(
-  ({ text, icon, variant, isWhiteBg, size, padding, ...props }, ref) => {
+  (
+    { text, icon, variant, isWhiteBg, size, padding, onClick, ...props },
+    ref
+  ) => {
     const buttonSize = () => {
       switch (size) {
         case "bg":
@@ -31,6 +34,7 @@ export const StyledButton = React.forwardRef<HTMLDivElement, StyledButtonProps>(
           },
         }}
         variant={variant}
+        onClick={onClick}
         {...props}
       >
         {text}
