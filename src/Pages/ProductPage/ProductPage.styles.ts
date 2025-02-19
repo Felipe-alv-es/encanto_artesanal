@@ -1,18 +1,7 @@
-import background from "../../assets/images/ProductPage/background.jpg";
-
 export const productPageContainerStyle = () => ({
-  backgroundImage: `url('${background}')`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  animation: "backgroundMove 300s linear infinite",
   placeItems: "center",
-  padding: "16px",
-
-  "@keyframes backgroundMove": {
-    "0%": { backgroundPosition: "0% 50%" },
-    "50%": { backgroundPosition: "100% 50%" },
-    "100%": { backgroundPosition: "0% 50%" },
-  },
+  background: "linear-gradient(120deg, #6bb4ad, #6bb4ad, #b8dcd8, #f2f2f2)",
+  paddingBottom: "64px",
 });
 
 export const productPageGridStyle = () => ({

@@ -18,7 +18,7 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
           padding: "16px 16px 32px 16px",
           width: "335px",
           height: "616px",
-          borderRadius: "32px",
+          borderRadius: "16px",
           boxShadow: "rgba(0, 0, 0, 0.5) 0px 0px 3px 0px",
           background: "#f2f2f2",
           placeItems: "center",

@@ -6,7 +6,7 @@ export const LogoComponent = React.forwardRef<HTMLLIElement>(() => {
   return (
     <Box
       sx={{
-        width: "25%",
+        width: "20%",
         height: "fit-content",
         "@media(max-width: 544px)": {
           width: "70%",

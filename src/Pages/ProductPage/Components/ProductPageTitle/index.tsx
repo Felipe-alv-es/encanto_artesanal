@@ -8,7 +8,7 @@ export const ProductPageTitle = React.forwardRef<HTMLLIElement>(() => {
         sx={{
           textAlign: "center",
           paddingTop: "32px",
-          typography: "h3",
+          typography: "h2",
           fontWeight: "900",
           paddingBottom: "8px",
           color: "#f2f2f2",
@@ -23,10 +23,10 @@ export const ProductPageTitle = React.forwardRef<HTMLLIElement>(() => {
       >
         <Typography
           sx={{
-            color: "#f2f2f2",
-            paddingBottom: "64px",
+            paddingBottom: "72px",
             fontWeight: "700",
-            width: "700px",
+            width: "900px",
+            color: "#f2f2f2",
           }}
         >
           Nosso catalogo de itens lhe dá as boas-vindas. Aqui você pode ver o

@@ -1,6 +1,6 @@
 export const getContainerStyles = () => ({
   background: "#FFFFFF",
-  padding: "3% 25% 3% 25%",
+  padding: "3% 10% 3% 10%",
   borderStyle: "solid",
   borderColor: "#528B85",
   borderWidth: "0px 0px 5px 0px",

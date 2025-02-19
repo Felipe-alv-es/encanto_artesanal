@@ -28,7 +28,15 @@ const Navbar = (props) => {
             <li key={item.label}>
               <Box>
                 <Box>
-                  <IconButton onClick={() => handleToggle(item.label)}>
+                  <IconButton
+                    onClick={() => handleToggle(item.label)}
+                    sx={{
+                      borderRadius: "8px",
+                      ":hover": {
+                        background: "transparent",
+                      },
+                    }}
+                  >
                     <IoChevronDown />
                     {item.label}
                   </IconButton>
