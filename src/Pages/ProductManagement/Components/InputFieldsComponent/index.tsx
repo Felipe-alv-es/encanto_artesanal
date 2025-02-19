@@ -1,17 +1,19 @@
-import { Box, Button, TextField } from "@mui/material";
 import React from "react";
+import { Box, Button, MenuItem, Select, TextField } from "@mui/material";
+import { SelectChangeEvent } from "@mui/material/Select";
 import { formDataPlaceholder } from "../../ProductManagement.types";
 
 interface InputFieldsComponentProps {
   formData: formDataPlaceholder;
   handleChange: (field: string, value: string) => void;
   handleSave: () => Promise<void>;
+  handleChangeSelect: (event: SelectChangeEvent) => void;
 }
 
 const InputFieldsComponent = React.forwardRef<
   HTMLLIElement,
   InputFieldsComponentProps
->(({ formData, handleChange, handleSave }, ref) => {
+>(({ formData, handleChange, handleSave, handleChangeSelect }, ref) => {
   return (
     <>
       <TextField
@@ -29,6 +31,21 @@ const InputFieldsComponent = React.forwardRef<
         value={formData.imageSrc}
         onChange={(e) => handleChange("imageSrc", e.target.value)}
       />
+      <Box>
+        <Select onChange={handleChangeSelect} value={formData.producttype}>
+          <MenuItem value={"Velas moldadas"}>Velas moldadas</MenuItem>
+          <MenuItem value={"Velas de massagem"}>Velas de massagem</MenuItem>
+          <MenuItem value={"Velas Container"}>Velas Container</MenuItem>
+          <MenuItem value={"Velas Tematicas"}>Velas Tematicas</MenuItem>
+          <MenuItem value={"Geleias de banho"}>Geleias de banho</MenuItem>
+          <MenuItem value={"Sabonetes de massagem"}>
+            Sabonetes de massagem
+          </MenuItem>
+          <MenuItem value={"Sabonetes Decorativos"}>
+            Sabonetes decorativos
+          </MenuItem>
+        </Select>
+      </Box>
       <Box sx={{ padding: "16px" }}>
         <Button
           variant="outlined"

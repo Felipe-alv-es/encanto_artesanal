@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { SelectChangeEvent } from "@mui/material/Select";
 import React, { useState } from "react";
 import { getGridStyle } from "../Releases/Releases.styles.ts";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
@@ -26,6 +27,13 @@ const ProductManagement = () => {
     }));
   };
 
+  const handleChangeSelect = (event: SelectChangeEvent) => {
+    setFormData((prev) => ({
+      ...prev,
+      producttype: event.target.value,
+    }));
+  };
+
   return (
     <Box sx={productManagementContainerStyle}>
       <Typography>ProductManagement</Typography>
@@ -34,6 +42,7 @@ const ProductManagement = () => {
         formData={formData}
         handleChange={handleChange}
         handleSave={handleSave}
+        handleChangeSelect={handleChangeSelect}
       />
       <CustomDivider />
       <Box sx={getGridStyle}>

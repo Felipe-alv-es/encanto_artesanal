@@ -7,6 +7,7 @@ type ApiResponse = {
     description: string;
     imagesrc: string;
     imagealt: string;
+    producttype: string;
   }[];
 };
 
@@ -14,6 +15,7 @@ const useApiData = (formData?: {
   title: string;
   description: string;
   imageSrc: string;
+  producttype: string;
 }) => {
   const [apiData, setApiData] = useState<ApiResponse | null>(null);
 
@@ -31,6 +33,7 @@ const useApiData = (formData?: {
             description: formData?.description,
             imagesrc: formData?.imageSrc,
             imagealt: formData?.title,
+            producttype: formData?.producttype,
           }),
         }
       );
