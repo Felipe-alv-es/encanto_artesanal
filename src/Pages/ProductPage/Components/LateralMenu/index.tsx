@@ -1,13 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import ListIconComponent from "../ListIconComponent/index.tsx";
-import Candle from "../../../../assets/images/ProductPage/candleImage.png";
-import AllProducts from "../../../../assets/images/ProductPage/TodosOsProdutos.png";
-import MassageCandles from "../../../../assets/images/ProductPage/VelasDeMassagem.png";
-import BathGelly from "../../../../assets/images/ProductPage/GeleiaDeBanho.png";
-import ContainerCandles from "../../../../assets/images/ProductPage/VelasContainer.png";
-import MassageSoap from "../../../../assets/images/ProductPage/SaboneteDeMassagem.png";
-import DecorativeSoap from "../../../../assets/images/ProductPage/SabonetesDecorativos.png";
 import { useScrollValue } from "../../../../utils/getScrollValue/index.tsx";
 import {
   menuContainerStyle,
@@ -15,6 +8,7 @@ import {
   menuItemTitleStyle,
   menuListBoxStyle,
 } from "./LateralMenu.styles.ts";
+import { productPageLateralMenuList } from "../../../../assets/Arrays/ProductPageLateralMenuList.tsx";
 
 interface ListIconComponentProps {
   Logo: string;
@@ -57,43 +51,16 @@ export const LateralMenu = React.forwardRef<HTMLLIElement, LateralMenuProps>(
     return (
       <Box sx={menuContainerStyle(scrollValue)}>
         <Box sx={menuListBoxStyle(scrollValue, maxScroll, isAboveSixtyPercent)}>
-          <MenuItem
-            Logo={AllProducts}
-            Text="Todos os Itens"
-            ExpansionWidth={225}
-            onClick={() => handleFilter?.(null)}
-          />
-          <MenuItem
-            Logo={Candle}
-            Text="Velas Moldadas"
-            ExpansionWidth={235}
-            onClick={() => handleFilter?.("velas_de_massagem")}
-          />
-          <MenuItem
-            Logo={MassageCandles}
-            Text="Velas de Massagem"
-            ExpansionWidth={275}
-          />
-          <MenuItem
-            Logo={ContainerCandles}
-            Text="Velas Container"
-            ExpansionWidth={240}
-          />
-          <MenuItem
-            Logo={BathGelly}
-            Text="Geléia de Banho"
-            ExpansionWidth={240}
-          />
-          <MenuItem
-            Logo={MassageSoap}
-            Text="Sabonetes de Massagem"
-            ExpansionWidth={315}
-          />
-          <MenuItem
-            Logo={DecorativeSoap}
-            Text="Sabonetes Decorativos"
-            ExpansionWidth={300}
-          />
+          {productPageLateralMenuList.map((item) => (
+            <Box key={item.id}>
+              <MenuItem
+                Logo={item.imageSrc}
+                Text={item.Text}
+                ExpansionWidth={item.ExpansionWidth}
+                onClick={() => handleFilter?.(item.productType)}
+              />
+            </Box>
+          ))}
         </Box>
       </Box>
     );
