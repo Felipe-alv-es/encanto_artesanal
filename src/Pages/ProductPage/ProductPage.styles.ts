@@ -14,6 +14,11 @@ export const navbarCustomize = () => ({
   },
 });
 
+export const centralPageContainerStyle = () => ({
+  display: "flex",
+  gap: 4,
+});
+
 export const productPageGridStyle = () => ({
   display: "grid",
   gap: "16px",

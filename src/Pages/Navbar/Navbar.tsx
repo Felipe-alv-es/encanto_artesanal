@@ -9,17 +9,32 @@ import { useNavigate } from "react-router-dom";
 const navBarItems = [
   {
     label: "Velas",
-    options: ["Velas Moldadas", "Velas de Massagem", "Velas Container"],
+    options: [
+      { title: "Velas Moldadas", path: "/product-page/velas-moldadas" },
+      { title: "Velas de Massagem", path: "/product-page/velas-de-massagem" },
+      { title: "Velas Container", path: "/product-page/velas-container" },
+    ],
   },
   {
     label: "Sabonetes",
     options: [
-      "Sabonetes Decorativos",
-      "Geleias de Banho",
-      "Sabonetes de Massagem",
+      {
+        title: "Sabonetes Decorativos",
+        path: "/product-page/sabonetes-decorativos",
+      },
+      { title: "Geleias de Banho", path: "/product-page/geleia-de-banho" },
+      {
+        title: "Sabonetes de Massagem",
+        path: "/product-page/sabonetes-de-massagem",
+      },
     ],
   },
-  { label: "Resina", options: ["Joias de Resina", "Bio-Joias"] },
+  {
+    label: "Resina",
+    options: [
+      { title: "Joias de Resina", path: "/product-page/joia-de-resina" },
+    ],
+  },
 ];
 
 const Navbar = (props) => {
@@ -70,7 +85,12 @@ const Navbar = (props) => {
                   <Box sx={{ paddingLeft: "16px" }}>
                     {item.options.map((option) => (
                       <>
-                        <Button key={option}>{option}</Button>
+                        <Button
+                          key={option.title}
+                          onClick={() => navigate(option.path)}
+                        >
+                          {option.title}
+                        </Button>
                         <Divider />
                       </>
                     ))}

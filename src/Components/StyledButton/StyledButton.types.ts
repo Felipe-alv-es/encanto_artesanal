@@ -7,5 +7,5 @@ export default interface StyledButtonProps {
   icon?: ReactNode;
   isWhiteBg?: boolean;
   padding?: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }

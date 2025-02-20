@@ -18,3 +18,15 @@ export const getDescriptionStyle = () => ({
   display: "grid",
   marginTop: "16px",
 });
+
+export const CategoriesTitleStyle = () => ({
+  marginBottom: "8px",
+  typography: "h5",
+  fontWeight: "500",
+});
+
+export const CategoriesDescriptionStyle = () => ({
+  typography: "body1",
+  fontWeight: "300",
+  marginBottom: "32px",
+});

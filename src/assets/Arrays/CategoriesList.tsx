@@ -1,8 +1,8 @@
 // @ts-nocheck
 import Image1 from "../images/Categories/Velas.jpg";
 import Image2 from "../images/Categories/Sabonetes.jpg";
-import Image3 from "../images/Categories/Sais.jpg";
-import Image4 from "../images/Categories/Bordados.jpg";
+import Image3 from "../images/Categories/Decorativas.jpg";
+import Image4 from "../images/Categories/Resina.jpg";
 
 export const categoriesOptions = [
   {
@@ -10,27 +10,27 @@ export const categoriesOptions = [
     imageSrc: Image1,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
-      "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas. ",
+      "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas.",
   },
   {
     title: "Sabonetes naturais",
     imageSrc: Image2,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de sabonetes artesanais",
     descrição:
       "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave para todos os tipos de pele.",
   },
   {
-    title: "Sais de banho",
+    title: "Velas e Sabonetes decorativos",
     imageSrc: Image3,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de velas e sabonetes decorativos",
     descrição:
-      "Nossos sais de banho são formulados com sais minerais e essências naturais, proporcionando um banho relaxante e revitalizante.",
+      "Nossa coleção de velas e sabonetes decorativos combina estética e funcionalidade, trazendo charme e bem-estar ao seu ambiente.",
   },
   {
-    title: "Toalhas bordadas",
+    title: "Produtos de Resina",
     imageSrc: Image4,
-    imageAlt: "Imagem de toalhas bordadas",
+    imageAlt: "Imagem de joias e acessórios de resina",
     descrição:
-      "Nossas toalhas bordadas combinam elegância e conforto, confeccionadas em algodão de alta qualidade e com acabamentos delicados. ",
+      "Nossos produtos de resina são peças exclusivas, incluindo joias e acessórios sofisticados, criados artesanalmente com atenção aos detalhes.",
   },
 ];

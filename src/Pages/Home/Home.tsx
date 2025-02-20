@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";

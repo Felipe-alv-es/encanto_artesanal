@@ -11,6 +11,16 @@ import {
 } from "./Pages/index.ts";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
+const productRoutes = [
+  "velas-moldadas",
+  "velas-de-massagem",
+  "velas-container",
+  "sabonetes-decorativos",
+  "geleia-de-banho",
+  "sabonetes-de-massagem",
+  "joia-de-resina",
+];
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +28,6 @@ function App() {
         <Routes>
           <Route
             path="/"
-            exact
             element={
               <>
                 <Navbar />
@@ -31,18 +40,15 @@ function App() {
               </>
             }
           />
-          <Route path="/product-page" exact element={<ProductPage />} />
-          <Route path="/product-page/velas" exact element={<ProductPage />} />
-          <Route
-            path="/product-page/sabonetes"
-            exact
-            element={<ProductPage />}
-          />
-          <Route
-            path="/product-management"
-            exact
-            element={<ProductManagement />}
-          />
+          <Route path="/product-management" element={<ProductManagement />} />
+          <Route path="/product-page" element={<ProductPage />} />
+          {productRoutes.map((product) => (
+            <Route
+              key={product}
+              path={`/product-page/${product}`}
+              element={<ProductPage />}
+            />
+          ))}
         </Routes>
       </BrowserRouter>
     </div>

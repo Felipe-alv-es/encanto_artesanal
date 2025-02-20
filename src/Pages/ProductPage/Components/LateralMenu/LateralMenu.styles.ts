@@ -5,18 +5,9 @@ export const menuContainerStyle = (scrollValue: number) => ({
   marginLeft: scrollValue === 0 ? "0px" : "76px",
 });
 
-export const menuListBoxStyle = (
-  scrollValue: number,
-  maxScroll: number,
-  isAboveSixtyPercent: boolean
-) => ({
+export const menuListBoxStyle = (scrollValue: number) => ({
   position: scrollValue === 0 ? "relative" : "fixed",
-  transform:
-    scrollValue === 0
-      ? ""
-      : isAboveSixtyPercent
-      ? `translateY(-${Math.max(0, 450 - (maxScroll - scrollValue))}px)`
-      : "translateY(-200px)",
+  transform: scrollValue === 0 ? "translateY(-68px)" : "translateY(-200px)",
   transition: "1s",
 });
 
