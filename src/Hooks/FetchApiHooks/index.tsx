@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 type ApiResponse = {
   data: {
@@ -11,92 +11,86 @@ type ApiResponse = {
   }[];
 };
 
-const useApiData = (formData?: {
-  title: string;
-  description: string;
-  imageSrc: string;
-  producttype: string;
-}) => {
-  const [apiData, setApiData] = useState<ApiResponse | null>(null);
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
-  const handleSave = async () => {
-    try {
-      const response = await fetch(
-        "https://encanto-artesanal-back.onrender.com/api/posts/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            title: formData?.title,
-            description: formData?.description,
-            imagesrc: formData?.imageSrc,
-            imagealt: formData?.title,
-            producttype: formData?.producttype,
-          }),
-        }
-      );
+if (!backendUrl) {
+  throw new Error("Backend URL is not defined");
+}
+
+const fetchApiData = async (): Promise<ApiResponse> => {
+  const response = await fetch(backendUrl);
+
+  if (!response.ok) {
+    throw new Error("Falha ao buscar os dados");
+  }
+
+  const data = await response.json();
+  return { ...data, data: data.data.reverse() };
+};
+
+const useApiData = () => {
+  const queryClient = useQueryClient();
+
+  const {
+    data: apiData,
+    error,
+    isLoading,
+  } = useQuery<ApiResponse>({
+    queryKey: ["apiData"],
+    queryFn: fetchApiData,
+  });
+
+  const saveMutation = useMutation({
+    mutationFn: async (formData: {
+      title: string;
+      description: string;
+      imageSrc: string;
+      producttype: string;
+    }) => {
+      const response = await fetch(backendUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: formData.title,
+          description: formData.description,
+          imagesrc: formData.imageSrc,
+          imagealt: formData.title,
+          producttype: formData.producttype,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Falha ao salvar os dados");
       }
 
-      await response.json();
-    } catch (error) {
-      console.error("Erro ao salvar os dados:", error);
-    }
-  };
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["apiData"] });
+    },
+  });
 
-  const handleDelete = async (id: number) => {
-    try {
-      const response = await fetch(
-        `https://encanto-artesanal-back.onrender.com/api/posts/${id}`,
-        { method: "DELETE" }
-      );
+  const deleteMutation = useMutation({
+    mutationFn: async (id: number) => {
+      const response = await fetch(`${backendUrl}/${id}`, { method: "DELETE" });
 
       if (!response.ok) {
         throw new Error("Falha ao excluir o item");
       }
-
-      setApiData((prevData) =>
-        prevData
-          ? {
-              ...prevData,
-              data: prevData.data.filter((item) => item.id !== id),
-            }
-          : null
-      );
-    } catch (error) {
-      console.error("Erro ao excluir o item:", error);
-    }
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://encanto-artesanal-back.onrender.com/api/posts/"
-        );
-
-        if (!response.ok) {
-          throw new Error("Falha ao buscar os dados");
-        }
-
-        const data = await response.json();
-        setApiData({ ...data, data: data.data.reverse() });
-      } catch (error) {
-        console.error("Erro ao buscar os dados:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["apiData"] });
+    },
+  });
 
   return {
-    handleSave,
     apiData,
-    handleDelete,
+    isLoading,
+    error,
+    handleSave: saveMutation.mutateAsync,
+    handleDelete: deleteMutation.mutateAsync,
   };
 };
 

@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import {
   Home,
   Navbar,
@@ -11,6 +12,8 @@ import {
 } from "./Pages/index.ts";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
+const queryClient = new QueryClient();
+
 const productRoutes = [
   "velas-moldadas",
   "velas-de-massagem",
@@ -23,35 +26,37 @@ const productRoutes = [
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Navbar />
-                <Home />
-                <Categories />
-                <Galery />
-                <Releases />
-                <SocialMedia />
-                <Footer />
-              </>
-            }
-          />
-          <Route path="/product-management" element={<ProductManagement />} />
-          <Route path="/product-page" element={<ProductPage />} />
-          {productRoutes.map((product) => (
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
             <Route
-              key={product}
-              path={`/product-page/${product}`}
-              element={<ProductPage />}
+              path="/"
+              element={
+                <>
+                  <Navbar />
+                  <Home />
+                  <Categories />
+                  <Galery />
+                  <Releases />
+                  <SocialMedia />
+                  <Footer />
+                </>
+              }
             />
-          ))}
-        </Routes>
-      </BrowserRouter>
-    </div>
+            <Route path="/product-management" element={<ProductManagement />} />
+            <Route path="/product-page" element={<ProductPage />} />
+            {productRoutes.map((product) => (
+              <Route
+                key={product}
+                path={`/product-page/${product}`}
+                element={<ProductPage />}
+              />
+            ))}
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </QueryClientProvider>
   );
 }
 
