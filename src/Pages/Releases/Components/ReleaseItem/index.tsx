@@ -37,7 +37,7 @@ export const ReleaseItem = React.forwardRef<HTMLDivElement, ReleaseItemProps>(
             }}
           />
         </Box>
-        <Box>
+        <Box sx={{ width: "300px" }}>
           <Typography sx={getGridItemTitleStyle}>{title}</Typography>
           <Typography>{description}</Typography>
         </Box>

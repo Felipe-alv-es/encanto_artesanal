@@ -7,12 +7,12 @@ export const getPageTitleStyle = () => ({
 
 export const getGridStyle = () => ({
   display: "grid",
-  gap: "32px",
+  gap: "20px",
   justifyContent: "center",
   alignItems: "center",
   gridTemplateColumns: "repeat(4, auto)",
-  padding: "32px",
   textAlign: "center",
+  paddingTop: "64px",
 });
 
 export const getGridItemStyle = () => ({

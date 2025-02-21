@@ -12,10 +12,11 @@ import ProductPageTitle from "./Components/ProductPageTitle/index.tsx";
 import LateralMenu from "./Components/LateralMenu/index.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import { useLocation } from "react-router-dom";
+import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
 
 const ProductPage = () => {
   const location = useLocation();
-  const { apiData } = useApiData();
+  const { apiData, isLoading } = useApiData();
 
   const pageMap: Record<string, string | null> = {
     "/product-page": null,
@@ -53,7 +54,10 @@ const ProductPage = () => {
           <Box sx={centralPageContainerStyle}>
             <LateralMenu handleFilter={handleFilter} />
             <Box sx={productPageGridStyle}>
-              {filteredProducts &&
+              {isLoading ? (
+                <ProductPageSkeleton />
+              ) : (
+                filteredProducts &&
                 filteredProducts.map((item) => (
                   <Box key={item.id}>
                     <ProductItem
@@ -62,7 +66,8 @@ const ProductPage = () => {
                       imageSrc={item.imagesrc}
                     />
                   </Box>
-                ))}
+                ))
+              )}
             </Box>
           </Box>
         </Box>

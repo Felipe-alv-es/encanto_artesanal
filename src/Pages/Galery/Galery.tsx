@@ -3,8 +3,9 @@ import { Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import { galeryList } from "../../assets/Arrays/GaleryList.tsx";
-import { getContainerStyle, StyledSwiperItem } from "./Galery.styles.tsx";
+import { getContainerStyle } from "./Galery.styles.tsx";
 import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
+import { StyledSwiperItem } from "./Components/StyledSwiperItem/index.tsx";
 
 const Galery = () => {
   const scrollValue = useScrollValue();
