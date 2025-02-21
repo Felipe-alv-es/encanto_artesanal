@@ -84,7 +84,7 @@ const useApiData = (formData?: {
         }
 
         const data = await response.json();
-        setApiData(data);
+        setApiData({ ...data, data: data.data.reverse() });
       } catch (error) {
         console.error("Erro ao buscar os dados:", error);
       }

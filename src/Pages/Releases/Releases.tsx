@@ -1,22 +1,28 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { getGridStyle, getPageTitleStyle } from "./Releases.styles.ts";
-import { releaseList } from "../../assets/Arrays/ReleasesList.tsx";
 import ReleaseItem from "./Components/ReleaseItem/index.tsx";
+import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 
 const Releases = () => {
+  const { apiData } = useApiData();
+
   return (
-    <Box sx={{ background: "#F2F2F2" }}>
+    <Box sx={{ background: "#F2F2F2", padding: "32px 0px 32px 0px" }}>
       <Typography sx={getPageTitleStyle}>Conheça nossas novidades</Typography>
       <Box sx={getGridStyle}>
-        {releaseList.map((item) => (
-          <ReleaseItem
-            imageSrc={item.imageSrc}
-            imageAlt={item.imageAlt}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+        {apiData &&
+          apiData.data
+            .slice(0, 8)
+            .map((item) => (
+              <ReleaseItem
+                key={item.id}
+                imageSrc={item.imagesrc}
+                imageAlt={item.imagealt}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
       </Box>
     </Box>
   );

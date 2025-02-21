@@ -17,14 +17,11 @@ export const getGridStyle = () => ({
 
 export const getGridItemStyle = () => ({
   width: "350px",
-  height: "700px",
-  borderRadius: "32px",
+  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
-  "> img": {
-    width: "100%",
-    borderRadius: "16px",
-  },
+  placeItems: "center",
+  paddingBottom: "32px",
 });
 
 export const getGridItemTitleStyle = () => ({
