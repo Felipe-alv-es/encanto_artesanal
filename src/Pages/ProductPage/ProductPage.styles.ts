@@ -1,7 +1,9 @@
-export const productPageContainerStyle = () => ({
+export const productPageBackgroundStyle = () => ({
   placeItems: "center",
   background: "linear-gradient(120deg, #6bb4ad, #6bb4ad, #b8dcd8, #f2f2f2)",
   paddingBottom: "64px",
+  overflow: "hidden",
+  position: "relative",
   "> div:nth-of-type(2)": {
     paddingTop: "150px",
   },

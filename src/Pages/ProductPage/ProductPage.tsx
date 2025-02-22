@@ -5,7 +5,6 @@ import ProductItem from "./Components/ProductItem/index.tsx";
 import {
   centralPageContainerStyle,
   navbarCustomize,
-  productPageContainerStyle,
   productPageGridStyle,
 } from "./ProductPage.styles.ts";
 import ProductPageTitle from "./Components/ProductPageTitle/index.tsx";
@@ -13,6 +12,7 @@ import LateralMenu from "./Components/LateralMenu/index.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import { useLocation } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
+import ProductPageBackground from "./Components/ProductPageBackground/index.tsx";
 
 const ProductPage = () => {
   const location = useLocation();
@@ -44,11 +44,10 @@ const ProductPage = () => {
 
   return (
     <>
-      <Box sx={productPageContainerStyle}>
-        <Box sx={navbarCustomize}>
-          <Navbar />
-        </Box>
-
+      <Box sx={navbarCustomize}>
+        <Navbar />
+      </Box>
+      <ProductPageBackground selectedtype={selectedType}>
         <Box>
           <ProductPageTitle />
           <Box sx={centralPageContainerStyle}>
@@ -59,7 +58,7 @@ const ProductPage = () => {
               ) : (
                 filteredProducts &&
                 filteredProducts.map((item) => (
-                  <Box key={item.id}>
+                  <Box key={item.id} zIndex={2}>
                     <ProductItem
                       title={item.title}
                       description={item.description}
@@ -71,7 +70,7 @@ const ProductPage = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </ProductPageBackground>
       <Footer />
     </>
   );

@@ -3,7 +3,14 @@ import { Box, Typography } from "@mui/material";
 
 export const ProductPageTitle = React.forwardRef<HTMLLIElement>(() => {
   return (
-    <>
+    <Box
+      sx={{
+        position: "relative",
+        zIndex: 2,
+        margin: "0% 15% 0% 15%",
+        paddingTop: "150px",
+      }}
+    >
       <Typography
         sx={{
           textAlign: "center",
@@ -36,7 +43,7 @@ export const ProductPageTitle = React.forwardRef<HTMLLIElement>(() => {
           deseja.
         </Typography>
       </Box>
-    </>
+    </Box>
   );
 });
 

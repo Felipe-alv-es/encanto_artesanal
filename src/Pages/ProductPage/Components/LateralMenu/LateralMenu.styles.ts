@@ -7,7 +7,7 @@ export const menuContainerStyle = (scrollValue: number) => ({
 
 export const menuListBoxStyle = (scrollValue: number) => ({
   position: scrollValue === 0 ? "relative" : "fixed",
-  transform: scrollValue === 0 ? "translateY(-68px)" : "translateY(-200px)",
+  transform: scrollValue === 0 ? "translateY(-64px)" : "translateY(-200px)",
   transition: "1s",
 });
 
@@ -26,6 +26,8 @@ export const menuItemContainerStyle = (
   borderRadius: "64px",
   marginTop: "8px",
   borderStyle: "none",
+  position: "relative",
+  zIndex: 2,
   "&:hover": {
     width: ExpansionWidth,
     transform: scrollValue === 0 ? "" : `translateX(-${ExpansionWidth - 64}px)`,
