@@ -21,9 +21,9 @@ interface ListIconComponentProps {
 }
 
 const growsAndDecreases = keyframes`
-  0% { transform: scale(0); }
-  50% { transform: scale(1.0); }
-  100% { transform: scale(0); }
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1.0); opacity: 1; }
+  100% { transform: scale(1.0); opacity: 0; }
 `;
 
 const MenuItem = React.forwardRef<HTMLLIElement, ListIconComponentProps>(
@@ -36,7 +36,7 @@ const MenuItem = React.forwardRef<HTMLLIElement, ListIconComponentProps>(
 
       setTimeout(() => {
         setIsClicked(false);
-      }, 2300);
+      }, 3200);
     };
 
     const gradientColor = useGradientByType(toSnakeCase(Text));
@@ -74,7 +74,7 @@ const MenuItem = React.forwardRef<HTMLLIElement, ListIconComponentProps>(
               top: "50%",
               left: "50%",
               transformOrigin: "center",
-              animation: isClicked ? `${growsAndDecreases} 2s ease` : "none",
+              animation: isClicked ? `${growsAndDecreases} 3s ease` : "none",
               marginTop: "-2500px",
               marginLeft: "-2500px",
             },
