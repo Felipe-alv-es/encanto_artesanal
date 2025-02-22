@@ -46,7 +46,7 @@ export const productPageLateralMenuList = [
   {
     id: 6,
     imageSrc: BathGelly,
-    Text: "Geléia de Banho",
+    Text: "Geleias de Banho",
     ExpansionWidth: 240,
     productType: "geleias_de_banho",
   },

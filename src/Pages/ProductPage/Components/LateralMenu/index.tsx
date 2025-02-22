@@ -9,6 +9,8 @@ import {
   menuListBoxStyle,
 } from "./LateralMenu.styles.ts";
 import { productPageLateralMenuList } from "../../../../assets/Arrays/ProductPageLateralMenuList.tsx";
+import { toSnakeCase } from "../../../../utils/toSnakeCase/index.tsx";
+import useGradientByType from "../../../../Hooks/GradientSelector/index.tsx";
 import { keyframes } from "@mui/system";
 
 interface ListIconComponentProps {
@@ -31,12 +33,13 @@ const MenuItem = React.forwardRef<HTMLLIElement, ListIconComponentProps>(
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       setIsClicked(true);
       onClick?.(event);
-      console.log("teste");
 
       setTimeout(() => {
         setIsClicked(false);
-      }, 1000);
+      }, 2300);
     };
+
+    const gradientColor = useGradientByType(toSnakeCase(Text));
 
     return (
       <Box sx={{ position: "relative" }}>
@@ -66,13 +69,12 @@ const MenuItem = React.forwardRef<HTMLLIElement, ListIconComponentProps>(
               position: "absolute",
               height: "5000px",
               width: "5000px",
-              backgroundColor: "lightBlue",
-              transition: "all 1s ease",
+              background: gradientColor,
               transform: "scale(0)",
               top: "50%",
               left: "50%",
               transformOrigin: "center",
-              animation: isClicked ? `${growsAndDecreases} 1s ease` : "none",
+              animation: isClicked ? `${growsAndDecreases} 2s ease` : "none",
               marginTop: "-2500px",
               marginLeft: "-2500px",
             },

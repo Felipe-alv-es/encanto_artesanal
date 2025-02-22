@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import { productPageBackgroundStyle } from "../../ProductPage.styles.ts";
 import { productPageBackgroundList } from "../../../../assets/Arrays/ProductPageBackground.tsx";
+import { productPageBackgroundStyle } from "./ProductPageBackground.styles.ts";
+import useGradientByType from "../../../../Hooks/GradientSelector/index.tsx";
 
 interface ProductItemProps {
   children?: React.ReactNode;
@@ -16,9 +17,22 @@ export const ProductPageBackground = React.forwardRef<
     selectedtype = "all";
   }
 
+  const gradientColor = useGradientByType(selectedtype);
+  const [delayedGradient, setDelayedGradient] = useState<string>(gradientColor);
+  const [delayedType, setDelayedType] = useState<string>(gradientColor);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDelayedGradient(gradientColor);
+      setDelayedType(selectedtype);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [gradientColor, selectedtype]);
+
   return (
-    <Box sx={productPageBackgroundStyle}>
-      {productPageBackgroundList[selectedtype]?.map((item, index) => (
+    <Box sx={productPageBackgroundStyle(delayedGradient)}>
+      {productPageBackgroundList[delayedType]?.map((item, index) => (
         <Box
           key={index}
           sx={{
