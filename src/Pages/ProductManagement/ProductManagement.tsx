@@ -18,7 +18,7 @@ const ProductManagement = () => {
   const [formData, setFormData] = useState<formDataPlaceholder>(
     formatDataInitialValues()
   );
-  const { handleSave, apiData, handleDelete } = useApiData(formData);
+  const { handleSave, apiData, handleDelete } = useApiData();
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({

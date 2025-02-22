@@ -8,11 +8,22 @@ import {
 } from "./ProductInputComponent.styles.ts";
 import InputFieldsComponent from "../InputFieldsComponent/index.tsx";
 import { formDataPlaceholder } from "../../ProductManagement.types.ts";
+import { UseMutateAsyncFunction } from "react-query";
 
 interface StyledLinkListComponentProps {
   formData: formDataPlaceholder;
   handleChange: (field: string, value: string) => void;
-  handleSave: () => Promise<void>;
+  handleSave: UseMutateAsyncFunction<
+    any,
+    unknown,
+    {
+      title: string;
+      description: string;
+      imageSrc: string;
+      producttype: string;
+    },
+    unknown
+  >;
   handleChangeSelect: (event: SelectChangeEvent) => void;
 }
 

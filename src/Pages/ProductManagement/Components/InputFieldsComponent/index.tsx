@@ -2,11 +2,22 @@ import React from "react";
 import { Box, Button, MenuItem, Select, TextField } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { formDataPlaceholder } from "../../ProductManagement.types";
+import { UseMutateAsyncFunction } from "react-query";
 
 interface InputFieldsComponentProps {
   formData: formDataPlaceholder;
   handleChange: (field: string, value: string) => void;
-  handleSave: () => Promise<void>;
+  handleSave: UseMutateAsyncFunction<
+    any,
+    unknown,
+    {
+      title: string;
+      description: string;
+      imageSrc: string;
+      producttype: string;
+    },
+    unknown
+  >;
   handleChangeSelect: (event: SelectChangeEvent) => void;
 }
 
@@ -51,7 +62,7 @@ const InputFieldsComponent = React.forwardRef<
           variant="outlined"
           color="inherit"
           fullWidth
-          onClick={handleSave}
+          onClick={() => handleSave}
         >
           Salvar
         </Button>
