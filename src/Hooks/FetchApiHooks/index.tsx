@@ -72,8 +72,18 @@ const useApiData = () => {
 
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (newItem) => {
       queryClient.invalidateQueries({ queryKey: ["apiData"] });
+
+      queryClient.setQueryData<ApiResponse>(["apiData"], (oldData) => {
+        if (oldData) {
+          return {
+            ...oldData,
+            data: [newItem, ...oldData.data].reverse(),
+          };
+        }
+        return { data: [newItem] };
+      });
     },
   });
 
