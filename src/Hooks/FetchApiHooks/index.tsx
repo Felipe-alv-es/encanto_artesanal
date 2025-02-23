@@ -31,8 +31,6 @@ const fetchApiData = async (): Promise<ApiResponse> => {
     imagesrc: JSON.parse(item.imagesrc),
   }));
 
-  console.log(processedData);
-
   return { ...data, data: processedData.reverse() };
 };
 
