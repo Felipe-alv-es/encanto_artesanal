@@ -9,9 +9,9 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    login(email, senha);
+    await login(email, senha);
     navigate("/product-management");
   };
 

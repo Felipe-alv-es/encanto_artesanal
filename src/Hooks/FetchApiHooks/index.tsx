@@ -47,10 +47,13 @@ const useApiData = () => {
       imageSrc: string;
       producttype: string;
     }) => {
+      const token = localStorage.getItem("authToken");
+
       const response = await fetch(backendUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           title: formData.title,
@@ -62,6 +65,8 @@ const useApiData = () => {
       });
 
       if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Erro ao salvar os dados:", errorData);
         throw new Error("Falha ao salvar os dados");
       }
 
@@ -74,7 +79,14 @@ const useApiData = () => {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await fetch(`${backendUrl}/${id}`, { method: "DELETE" });
+      const token = localStorage.getItem("authToken");
+
+      const response = await fetch(`${backendUrl}/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Falha ao excluir o item");

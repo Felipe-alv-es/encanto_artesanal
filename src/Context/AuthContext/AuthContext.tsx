@@ -16,10 +16,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const login = async (email: string, senha: string) => {
     try {
-      const response = await axios.post("http://localhost:8080/api/login", {
-        email,
-        senha,
-      });
+      const response = await axios.post(
+        "https://encanto-artesanal-back.onrender.com/api/login",
+        {
+          email,
+          senha,
+        }
+      );
       const { token } = response.data;
 
       setToken(token);

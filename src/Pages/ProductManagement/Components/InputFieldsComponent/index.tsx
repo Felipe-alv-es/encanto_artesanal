@@ -62,7 +62,14 @@ const InputFieldsComponent = React.forwardRef<
           variant="outlined"
           color="inherit"
           fullWidth
-          onClick={() => handleSave}
+          onClick={() =>
+            handleSave({
+              title: formData.title,
+              description: formData.description,
+              imageSrc: formData.imageSrc,
+              producttype: formData.producttype,
+            })
+          }
         >
           Salvar
         </Button>
