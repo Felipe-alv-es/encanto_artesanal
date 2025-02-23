@@ -6,32 +6,26 @@ import {
   getContainerStyle,
   getItemContainer,
   getDescriptionStyle,
+  CategoriesTitleStyle,
+  CategoriesDescriptionStyle,
 } from "./Categories.styles.ts";
+import CategoriesImageComponent from "./Components/CategoriesImageComponent/index.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
+  const navigate = useNavigate();
+
   return (
     <Box sx={getContainerStyle}>
       {categoriesOptions.map((item) => (
         <Box sx={getItemContainer}>
-          <Box
-            component="img"
-            src={item.imageSrc}
-            alt={item.imageAlt}
-            sx={{
-              width: "100%",
-              borderRadius: "16px",
-              marginBottom: "16px",
-            }}
-          />
           <Box sx={getDescriptionStyle}>
-            <Typography
-              variant="h5"
-              fontWeight={"500"}
-              sx={{ marginBottom: "8px" }}
-            >
-              {item.title}
-            </Typography>
-            <Typography variant="body1" fontWeight={"300"}>
+            <CategoriesImageComponent
+              imageAlt={item.imageAlt}
+              imageSrc={item.imageSrc}
+            />
+            <Typography sx={CategoriesTitleStyle}>{item.title}</Typography>
+            <Typography sx={CategoriesDescriptionStyle}>
               {item.descrição}
             </Typography>
             <StyledButton
@@ -39,6 +33,7 @@ const Categories = () => {
               variant="outlined"
               isWhiteBg
               size="md"
+              onClick={() => navigate("/product-page")}
             />
           </Box>
         </Box>

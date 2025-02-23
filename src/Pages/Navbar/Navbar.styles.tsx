@@ -1,5 +1,4 @@
-import { Box, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const getContainerStyle = () => ({
   display: "flex",
@@ -17,26 +16,39 @@ export const getMenuStyle = () => ({
   fontWeight: "400",
   "> ul": {
     display: "flex",
-    listStyle: "none",
-    color: "#F2F2F2",
     gap: "32px",
-    "> div": {
-      display: "flex",
-      alignItems: "center",
-      cursor: "pointer",
-      "> li": {
-        padding: "8px",
-        fontSize: "20px",
-        "::after": {
-          content: '""',
-          width: "0px",
-          height: "1px",
-          display: "block",
-          background: "#F2F2F2",
-          transition: "300ms",
+    listStyle: "none",
+    "> li": {
+      "> div": {
+        "> div:first-of-type": {
+          "::after": {
+            content: '""',
+            width: "0px",
+            height: "1px",
+            display: "block",
+            background: "#F2F2F2",
+            transition: "300ms",
+          },
+          ":hover::after": {
+            width: "100%",
+          },
+          "> button": {
+            color: "#F2F2F2",
+            fontFamily: "kanit",
+            fontSize: "18px",
+          },
         },
-        ":hover::after": {
-          width: "100%",
+        "> div:nth-of-type(2)": {
+          background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+          paddingRight: "18px",
+          placeItems: "center",
+          position: "absolute",
+          "> button": {
+            color: "#F2F2F2",
+            fontFamily: "kanit",
+            fontSize: "16px",
+            textTransform: "none",
+          },
         },
       },
     },
@@ -47,40 +59,3 @@ export default interface StyledSearchProps {
   text: string;
   icon?: ReactNode;
 }
-
-export const StyledSearch = React.forwardRef<HTMLDivElement, StyledSearchProps>(
-  ({ text, icon, ...props }, ref) => {
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-        }}
-        {...props}
-      >
-        {icon}
-        <Typography
-          sx={{
-            fontSize: "20px",
-            cursor: "pointer",
-            "::after": {
-              content: '""',
-              width: "0px",
-              height: "1px",
-              display: "block",
-              background: "#F2F2F2",
-              transition: "300ms",
-            },
-            ":hover::after": {
-              width: "100%",
-            },
-          }}
-          color="#F2F2F2"
-        >
-          {text}
-        </Typography>
-      </Box>
-    );
-  }
-);

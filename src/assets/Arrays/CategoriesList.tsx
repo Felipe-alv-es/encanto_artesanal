@@ -1,36 +1,36 @@
 // @ts-nocheck
-import Image3 from "../images/Categories/Perfumes.jpg";
 import Image1 from "../images/Categories/Velas.jpg";
-import Image4 from "../images/Categories/Shampoo.jpg";
 import Image2 from "../images/Categories/Sabonetes.jpg";
+import Image3 from "../images/Categories/Decorativas.jpg";
+import Image4 from "../images/Categories/Resina.jpg";
 
 export const categoriesOptions = [
   {
-    title: "Velas Artesanais",
+    title: "Velas artesanais",
     imageSrc: Image1,
     imageAlt: "Imagem de um conjunto de velas",
     descrição:
-      "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas. ",
+      "Nossas velas artesanais são cuidadosamente produzidas à mão, utilizando ingredientes naturais e fragrâncias exclusivas.",
   },
   {
-    title: "Sabonetes Artesanais Naturais",
+    title: "Sabonetes naturais",
     imageSrc: Image2,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de sabonetes artesanais",
     descrição:
-      "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave e hidratante para todos os tipos de pele.",
+      "Nossos sabonetes artesanais são feitos com ingredientes naturais e óleos essenciais, proporcionando uma limpeza suave para todos os tipos de pele.",
   },
   {
-    title: "Perfumes Artesanais Naturais",
+    title: "Velas e Sabonetes decorativos",
     imageSrc: Image3,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de velas e sabonetes decorativos",
     descrição:
-      "Nossos perfumes artesanais são formulados com essências naturais e óleos essenciais, oferecendo fragrâncias exclusivas e duradouras.",
+      "Nossa coleção de velas e sabonetes decorativos combina estética e funcionalidade, trazendo charme e bem-estar ao seu ambiente.",
   },
   {
-    title: "Shampoos Artesanais Naturais",
+    title: "Produtos de Resina",
     imageSrc: Image4,
-    imageAlt: "Imagem de um conjunto de velas",
+    imageAlt: "Imagem de joias e acessórios de resina",
     descrição:
-      "Nossos shampoos artesanais são feitos com ingredientes naturais, livres de sulfatos, parabenos e silicones, proporcionando uma limpeza suave e eficaz.",
+      "Nossos produtos de resina são peças exclusivas, incluindo joias e acessórios sofisticados, criados artesanalmente com atenção aos detalhes.",
   },
 ];

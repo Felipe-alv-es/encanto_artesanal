@@ -4,10 +4,15 @@ import { Typography } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
 import { getContainerStyle, getDescriptionStyle } from "./Home.styles.ts";
 import { StyledButton } from "../../Components/index.ts";
+import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const scrollValue = useScrollValue();
+
   return (
-    <Box sx={getContainerStyle}>
+    <Box sx={getContainerStyle(scrollValue)}>
       <Box sx={{ padding: "64px", width: "25%" }}>
         <Typography variant="h3" color="#F2F2F2" fontWeight={500}>
           Produtos Artesanais Qualidade e Cuidado Feitos à Mão
@@ -21,6 +26,7 @@ const Home = () => {
           text="Conheça nossos produtos"
           variant="outlined"
           icon={<IoChevronForward />}
+          onClick={() => navigate("/product-page")}
         />
       </Box>
     </Box>
