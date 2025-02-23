@@ -1,30 +1,44 @@
 import React, { createContext, useState, useContext } from "react";
+import axios from "axios";
 
 interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, senha: string) => void;
   logout: () => void;
+  token: string | null;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
 
-  const login = (email: string, senha: string) => {
-    if (email === "admin@email.com" && senha === "123456") {
+  const login = async (email: string, senha: string) => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/login", {
+        email,
+        senha,
+      });
+      const { token } = response.data;
+
+      setToken(token);
       setIsAuthenticated(true);
-    } else {
+
+      localStorage.setItem("authToken", token);
+    } catch (error) {
       alert("Credenciais inválidas!");
     }
   };
 
   const logout = () => {
     setIsAuthenticated(false);
+    setToken(null);
+    localStorage.removeItem("authToken");
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, token }}>
       {children}
     </AuthContext.Provider>
   );
