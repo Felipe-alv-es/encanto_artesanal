@@ -19,7 +19,7 @@ interface StyledLinkListComponentProps {
     {
       title: string;
       description: string;
-      imageSrc: string;
+      images: string[];
       producttype: string;
     },
     unknown

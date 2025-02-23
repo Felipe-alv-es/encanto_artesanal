@@ -53,7 +53,11 @@ const ProductManagement = () => {
               handleDelete={handleDelete}
               id={item.id}
               imagealt={item.imagealt}
-              imagesrc={item.imagesrc}
+              imagesrc={
+                item.imagesrc && item.imagesrc.length > 0
+                  ? item.imagesrc[0]
+                  : ""
+              }
               title={item.title}
             />
           ))

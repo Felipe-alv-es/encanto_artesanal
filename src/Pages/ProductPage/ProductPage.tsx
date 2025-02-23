@@ -62,7 +62,7 @@ const ProductPage = () => {
                     <ProductItem
                       title={item.title}
                       description={item.description}
-                      imageSrc={item.imagesrc}
+                      imageSrc={item.imagesrc[0]}
                     />
                   </Box>
                 ))
