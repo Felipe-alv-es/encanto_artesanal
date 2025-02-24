@@ -22,9 +22,9 @@ const productRoutes = [
   "velas-de-massagem",
   "velas-container",
   "sabonetes-decorativos",
-  "geleia-de-banho",
+  "geleias-de-banho",
   "sabonetes-de-massagem",
-  "joia-de-resina",
+  "joias-de-resina",
 ];
 
 function App() {

@@ -22,7 +22,7 @@ const navBarItems = [
         title: "Sabonetes Decorativos",
         path: "/product-page/sabonetes-decorativos",
       },
-      { title: "Geleias de Banho", path: "/product-page/geleia-de-banho" },
+      { title: "Geleias de Banho", path: "/product-page/geleias-de-banho" },
       {
         title: "Sabonetes de Massagem",
         path: "/product-page/sabonetes-de-massagem",
@@ -32,7 +32,7 @@ const navBarItems = [
   {
     label: "Resina",
     options: [
-      { title: "Joias de Resina", path: "/product-page/joia-de-resina" },
+      { title: "Joias de Resina", path: "/product-page/joias-de-resina" },
     ],
   },
 ];

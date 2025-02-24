@@ -16,7 +16,7 @@ export const productDetailPaperStyle = () => ({
   position: "relative",
   padding: "64px 32px 64px 32px",
   zIndex: 3,
-  borderRadius: "32px",
+  borderRadius: "16px",
   display: "grid",
   gridTemplateColumns: "1fr 2fr",
   gap: 8,

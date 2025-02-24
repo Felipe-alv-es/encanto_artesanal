@@ -96,7 +96,7 @@ const ProductDetailSizesComponent = React.forwardRef<
   return (
     <Box>
       <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-        Tamanhos:
+        Aromas:
       </Typography>
       <Box sx={{ display: "flex", gap: 1 }}>
         {sizes.map((size, index) => (
@@ -146,7 +146,7 @@ const ProductDetailButton = React.forwardRef<HTMLLIElement, ProductItemButton>(
         case "#FFFF00":
           return "Amarelo";
         default:
-          return "Cor desconhecida";
+          return "Cor Customizada";
       }
     })();
 
@@ -181,8 +181,8 @@ export const ProductDetails = React.forwardRef<
   const images = Array.isArray(product.imagesrc)
     ? product.imagesrc
     : [product.imagesrc];
-  const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
-  const sizes = ["P", "M", "G", "GG"];
+  const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FFFFFF"];
+  const sizes = ["Capim-Limão", "Lavanda", "Cravo e Canela", "Outro"];
 
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [selectedColor, setSelectedColor] = useState(colors[0]);

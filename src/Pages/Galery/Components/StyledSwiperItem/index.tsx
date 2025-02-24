@@ -8,6 +8,8 @@ import {
   swiperItemTitleStyle,
 } from "./StyledSwiperItem.styles.ts";
 import { StyledButton } from "../../../../Components/StyledButton/StyledButton.tsx";
+import { toUrlFormat } from "../../../../utils/toUrlFormat/index.tsx";
+import { useNavigate } from "react-router-dom";
 
 export default interface StyledSwiperItemProps {
   title: string;
@@ -20,6 +22,8 @@ export const StyledSwiperItem = React.forwardRef<
   HTMLDivElement,
   StyledSwiperItemProps
 >(({ title, imgSrc, imgAlt, description, ...props }, ref) => {
+  const navigate = useNavigate();
+
   return (
     <Box {...props}>
       <Box className="slide-overlay" sx={getOverlayStyle}>
@@ -34,6 +38,7 @@ export const StyledSwiperItem = React.forwardRef<
               variant="outlined"
               size="md"
               padding={"8px"}
+              onClick={() => navigate(`/product-page/${toUrlFormat(title)}`)}
             />
           </Box>
         </Box>
