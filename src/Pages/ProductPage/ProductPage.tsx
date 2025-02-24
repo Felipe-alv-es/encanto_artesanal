@@ -100,6 +100,11 @@ const ProductPage = () => {
             onChange={(event, value) => setCurrentPageNumber(value)}
             color="primary"
             size="large"
+            sx={{
+              "* > .Mui-selected": {
+                background: "#383838",
+              },
+            }}
           />
         </Box>
       </ProductPageBackground>
