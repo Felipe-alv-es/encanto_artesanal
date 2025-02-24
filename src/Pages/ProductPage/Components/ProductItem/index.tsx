@@ -5,10 +5,11 @@ interface ProductItemProps {
   title: string;
   description: string;
   imageSrc: string;
+  onClick: () => void;
 }
 
 export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
-  ({ title, description, imageSrc }) => {
+  ({ title, description, imageSrc, onClick }, ref) => {
     return (
       <Box
         sx={{
@@ -23,6 +24,7 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
           background: "#f2f2f2",
           placeItems: "center",
         }}
+        ref={ref}
       >
         <Box>
           <Box
@@ -63,6 +65,7 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
             variant="outlined"
             color="inherit"
             fullWidth
+            onClick={onClick}
             sx={{
               textTransform: "none",
               fontSize: 16,

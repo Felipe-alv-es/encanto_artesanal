@@ -22,7 +22,7 @@ const Releases = () => {
             .map((item) => (
               <ReleaseItem
                 key={item.id}
-                imageSrc={item.imagesrc}
+                imageSrc={item.imagesrc[0]}
                 imageAlt={item.imagealt}
                 title={item.title}
                 description={item.description}

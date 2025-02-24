@@ -19,7 +19,8 @@ interface StyledLinkListComponentProps {
     {
       title: string;
       description: string;
-      imageSrc: string;
+      largedescription: string;
+      images: string[];
       producttype: string;
     },
     unknown
@@ -44,7 +45,7 @@ const ProductInputComponent = React.forwardRef<
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ width: "100%", placeItems: "center" }}>
           <ReleaseItem
-            imageSrc={formData.imageSrc}
+            imageSrc={formData.imageSrc[0]}
             imageAlt={""}
             title={formData.title}
             description={formData.description}

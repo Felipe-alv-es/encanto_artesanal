@@ -8,7 +8,8 @@ export const ProductPageTitle = React.forwardRef<HTMLLIElement>(() => {
         position: "relative",
         zIndex: 2,
         margin: "0% 15% 0% 15%",
-        paddingTop: "150px",
+        paddingTop: "90px",
+        marginBottom: "64px",
       }}
     >
       <Typography

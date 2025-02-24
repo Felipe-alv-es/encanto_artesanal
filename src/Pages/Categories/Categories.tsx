@@ -18,7 +18,7 @@ const Categories = () => {
   return (
     <Box sx={getContainerStyle}>
       {categoriesOptions.map((item) => (
-        <Box sx={getItemContainer}>
+        <Box sx={getItemContainer} key={item.title}>
           <Box sx={getDescriptionStyle}>
             <CategoriesImageComponent
               imageAlt={item.imageAlt}

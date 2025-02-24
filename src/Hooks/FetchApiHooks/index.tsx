@@ -5,7 +5,8 @@ type ApiResponse = {
     id: number;
     title: string;
     description: string;
-    imagesrc: string;
+    largedescription: string;
+    imagesrc: string[];
     imagealt: string;
     producttype: string;
   }[];
@@ -25,7 +26,13 @@ const fetchApiData = async (): Promise<ApiResponse> => {
   }
 
   const data = await response.json();
-  return { ...data, data: data.data.reverse() };
+
+  const processedData = data.data.map((item: any) => ({
+    ...item,
+    imagesrc: JSON.parse(item.imagesrc),
+  }));
+
+  return { ...data, data: processedData.reverse() };
 };
 
 const useApiData = () => {
@@ -44,7 +51,8 @@ const useApiData = () => {
     mutationFn: async (formData: {
       title: string;
       description: string;
-      imageSrc: string;
+      largedescription: string;
+      images: string[];
       producttype: string;
     }) => {
       const token = localStorage.getItem("authToken");
@@ -58,7 +66,8 @@ const useApiData = () => {
         body: JSON.stringify({
           title: formData.title,
           description: formData.description,
-          imagesrc: formData.imageSrc,
+          largedescription: formData.largedescription,
+          imagesrc: formData.images,
           imagealt: formData.title,
           producttype: formData.producttype,
         }),

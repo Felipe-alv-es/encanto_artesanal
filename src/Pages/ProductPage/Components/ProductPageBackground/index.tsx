@@ -12,7 +12,7 @@ interface ProductItemProps {
 export const ProductPageBackground = React.forwardRef<
   HTMLLIElement,
   ProductItemProps
->(({ children, selectedtype }) => {
+>(({ children, selectedtype }, ref) => {
   if (selectedtype == null) {
     selectedtype = "all";
   }
@@ -31,7 +31,7 @@ export const ProductPageBackground = React.forwardRef<
   }, [gradientColor, selectedtype]);
 
   return (
-    <Box sx={productPageBackgroundStyle(delayedGradient)}>
+    <Box sx={productPageBackgroundStyle(delayedGradient)} ref={ref}>
       {productPageBackgroundList[delayedType]?.map((item, index) => (
         <Box
           key={index}

@@ -90,11 +90,11 @@ interface LateralMenuProps {
 }
 
 export const LateralMenu = React.forwardRef<HTMLLIElement, LateralMenuProps>(
-  ({ handleFilter }) => {
+  ({ handleFilter }, ref) => {
     const scrollValue = useScrollValue();
 
     return (
-      <Box sx={menuContainerStyle(scrollValue)}>
+      <Box sx={menuContainerStyle(scrollValue)} ref={ref}>
         <Box sx={menuListBoxStyle(scrollValue)}>
           {productPageLateralMenuList.map((item) => (
             <Box key={item.id}>
