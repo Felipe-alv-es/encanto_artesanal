@@ -19,14 +19,14 @@ import DecorativeSoap8 from "../images/ProductPage/ProductPageBackground/Decorat
 
 export const productPageBackgroundList = {
   all: [
-    { imageSrc: MoldedCandle1, rotate: -50, top: "5%", right: "-2%" },
-    { imageSrc: MoldedCandle2, rotate: 60, top: "15%", right: "94%" },
-    { imageSrc: MoldedCandle3, rotate: 50, top: "30%", right: "-2%" },
-    { imageSrc: MoldedCandle4, rotate: -20, top: "45%", right: "80%" },
-    { imageSrc: MoldedCandle5, rotate: -20, top: "65%", right: "-2%" },
-    { imageSrc: MoldedCandle6, rotate: 20, top: "75%", right: "88%" },
-    { imageSrc: MoldedCandle7, rotate: 20, top: "90%", right: "40%" },
-    { imageSrc: MoldedCandle8, rotate: -20, top: "90%", right: "-2%" },
+    { imageSrc: MoldedCandle1, rotate: -50, top: "200px", right: "-20px" },
+    { imageSrc: MoldedCandle2, rotate: 60, top: "300px", right: "94%" },
+    { imageSrc: MoldedCandle3, rotate: 50, top: "600px", right: "-2%" },
+    { imageSrc: MoldedCandle4, rotate: -20, top: "900px", right: "80%" },
+    { imageSrc: MoldedCandle5, rotate: -20, top: "1200px", right: "-2%" },
+    { imageSrc: MoldedCandle6, rotate: 20, top: "1400px", right: "88%" },
+    { imageSrc: MoldedCandle7, rotate: 20, top: "1600px", right: "40%" },
+    { imageSrc: MoldedCandle8, rotate: -20, top: "1600px", right: "-2%" },
   ],
   velas_moldadas: [
     { imageSrc: MoldedCandle1, rotate: -50, top: "5%", right: "-2%" },

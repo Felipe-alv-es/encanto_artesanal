@@ -59,6 +59,7 @@ const ProductManagement = () => {
                   : ""
               }
               title={item.title}
+              key={item.id}
             />
           ))
         ) : (

@@ -2,6 +2,7 @@ export interface ProductDetailsProps {
   product: {
     title: string;
     description: string;
+    largedescription: string;
     imagesrc: string[];
   };
   onClose: () => void;
@@ -13,7 +14,7 @@ export interface ProductItemProps {
 
 export interface ProductItemTitle {
   title: string;
-  description: string;
+  largeDescription: string;
 }
 
 export interface ProductDetailColorsComponentProps {

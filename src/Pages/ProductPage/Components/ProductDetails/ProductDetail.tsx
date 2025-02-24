@@ -48,13 +48,13 @@ const ProductDetailImagesComponent = React.forwardRef<
 const ProductDetailTitleComponent = React.forwardRef<
   HTMLLIElement,
   ProductItemTitle
->(({ title, description }, ref) => {
+>(({ title, largeDescription }, ref) => {
   return (
     <Box>
       <Typography variant="h4" fontWeight="bold" paddingBottom={"16px"}>
         {title}
       </Typography>
-      <Typography variant="body2">{description}</Typography>
+      <Typography variant="body1">{largeDescription}</Typography>
     </Box>
   );
 });
@@ -137,14 +137,16 @@ const ProductDetailButton = React.forwardRef<HTMLLIElement, ProductItemButton>(
   ({ title, selectedColor, selectedSize }, ref) => {
     const colorName = (() => {
       switch (selectedColor) {
-        case "#FF0000":
+        case "#FF9999":
           return "Vermelho";
-        case "#00FF00":
+        case "#99FF99":
           return "Verde";
-        case "#0000FF":
+        case "#9999FF":
           return "Azul";
-        case "#FFFF00":
+        case "#FFFF99":
           return "Amarelo";
+        case "#F0F0F0":
+          return "Branco";
         default:
           return "Cor Customizada";
       }
@@ -181,7 +183,7 @@ export const ProductDetails = React.forwardRef<
   const images = Array.isArray(product.imagesrc)
     ? product.imagesrc
     : [product.imagesrc];
-  const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FFFFFF"];
+  const colors = ["#FF9999", "#99FF99", "#9999FF", "#FFFF99", "#F0F0F0"];
   const sizes = ["Capim-Limão", "Lavanda", "Cravo e Canela", "Outro"];
 
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -201,7 +203,7 @@ export const ProductDetails = React.forwardRef<
         <Box sx={productDetailsSiteMenuContainer}>
           <ProductDetailTitleComponent
             title={product.title}
-            description={product.description}
+            largeDescription={product.largedescription}
           />
           <ProductDetailColorsComponent
             colors={colors}

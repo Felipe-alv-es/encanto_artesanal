@@ -5,6 +5,7 @@ type ApiResponse = {
     id: number;
     title: string;
     description: string;
+    largedescription: string;
     imagesrc: string[];
     imagealt: string;
     producttype: string;
@@ -50,6 +51,7 @@ const useApiData = () => {
     mutationFn: async (formData: {
       title: string;
       description: string;
+      largedescription: string;
       images: string[];
       producttype: string;
     }) => {
@@ -64,6 +66,7 @@ const useApiData = () => {
         body: JSON.stringify({
           title: formData.title,
           description: formData.description,
+          largedescription: formData.largedescription,
           imagesrc: formData.images,
           imagealt: formData.title,
           producttype: formData.producttype,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Pagination } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/index.tsx";
 import {
@@ -33,15 +33,25 @@ const ProductPage = () => {
 
   const currentPage = () => pageMap[location.pathname] ?? null;
   const [selectedType, setSelectedType] = useState<string | null>(currentPage);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   const handleFilter = (type: string | null) => {
     setSelectedType(type);
+    setCurrentPageNumber(1);
   };
 
   const filteredProducts =
     selectedType && selectedType !== "Todos"
-      ? apiData?.data?.filter((item) => item.producttype === selectedType)
-      : apiData?.data || [];
+      ? apiData?.data?.filter((item) => item.producttype === selectedType) ?? []
+      : apiData?.data ?? [];
+
+  const productsPerPage = 8;
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  const currentProducts = filteredProducts.slice(
+    (currentPageNumber - 1) * productsPerPage,
+    currentPageNumber * productsPerPage
+  );
 
   return (
     <>
@@ -63,8 +73,7 @@ const ProductPage = () => {
               {isLoading ? (
                 <ProductPageSkeleton />
               ) : (
-                filteredProducts &&
-                filteredProducts.map((item) => (
+                currentProducts.map((item) => (
                   <Box key={item.id} zIndex={2}>
                     <ProductItem
                       title={item.title}
@@ -77,6 +86,21 @@ const ProductPage = () => {
               )}
             </Box>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "32px",
+          }}
+        >
+          <Pagination
+            count={totalPages}
+            page={currentPageNumber}
+            onChange={(event, value) => setCurrentPageNumber(value)}
+            color="primary"
+            size="large"
+          />
         </Box>
       </ProductPageBackground>
       <Footer />
