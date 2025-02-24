@@ -8,7 +8,7 @@ interface ProductItemProps {
 }
 
 export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
-  ({ title, description, imageSrc }) => {
+  ({ title, description, imageSrc }, ref) => {
     return (
       <Box
         sx={{
@@ -23,6 +23,7 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
           background: "#f2f2f2",
           placeItems: "center",
         }}
+        ref={ref}
       >
         <Box>
           <Box

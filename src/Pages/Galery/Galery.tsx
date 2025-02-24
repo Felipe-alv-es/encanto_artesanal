@@ -29,7 +29,7 @@ const Galery = () => {
     <Box sx={getContainerStyle(scrollValue)}>
       <Swiper {...params}>
         {galeryList.map((item) => (
-          <SwiperSlide>
+          <SwiperSlide key={item.title}>
             <StyledSwiperItem
               title={item.title}
               description={item.description}
