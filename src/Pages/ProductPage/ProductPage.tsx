@@ -13,10 +13,12 @@ import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import { useLocation } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
 import ProductPageBackground from "./Components/ProductPageBackground/index.tsx";
+import ProductDetails from "./Components/ProductDetails/ProductDetail.tsx";
 
 const ProductPage = () => {
   const location = useLocation();
   const { apiData, isLoading } = useApiData();
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   const pageMap: Record<string, string | null> = {
     "/product-page": null,
@@ -30,7 +32,6 @@ const ProductPage = () => {
   };
 
   const currentPage = () => pageMap[location.pathname] ?? null;
-
   const [selectedType, setSelectedType] = useState<string | null>(currentPage);
 
   const handleFilter = (type: string | null) => {
@@ -48,6 +49,12 @@ const ProductPage = () => {
         <Navbar />
       </Box>
       <ProductPageBackground selectedtype={selectedType}>
+        {selectedProduct && (
+          <ProductDetails
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          />
+        )}
         <Box>
           <ProductPageTitle />
           <Box sx={centralPageContainerStyle}>
@@ -63,6 +70,7 @@ const ProductPage = () => {
                       title={item.title}
                       description={item.description}
                       imageSrc={item.imagesrc[0]}
+                      onClick={() => setSelectedProduct(item)}
                     />
                   </Box>
                 ))
