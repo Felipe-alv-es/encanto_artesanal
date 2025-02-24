@@ -7,12 +7,7 @@ import FooterListComponent from "./Components/FooterListComponent/index.tsx";
 const Footer = () => {
   return (
     <Box sx={getContainerStyles} id="Contato">
-      <Box
-        sx={{
-          display: "flex",
-          gap: "64px",
-        }}
-      >
+      <Box>
         <LogoComponent />
         <FooterListComponent />
       </Box>

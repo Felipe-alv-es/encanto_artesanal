@@ -4,6 +4,10 @@ export const getContainerStyles = () => ({
   borderStyle: "solid",
   borderColor: "#528B85",
   borderWidth: "0px 0px 5px 0px",
+  "> div": {
+    display: "flex",
+    gap: "64px",
+  },
   "@media(max-width: 1700px)": {
     padding: "3% 20% 3% 20%",
   },

@@ -6,6 +6,7 @@ import {
   ProductDetailImagesComponentProps,
   ProductDetailSizesComponentProps,
   ProductDetailsProps,
+  ProductItemButton,
   ProductItemCloseButton,
   ProductItemTitle,
 } from "./ProductDetail.types.ts";
@@ -132,27 +133,46 @@ const ProductDetailCloseButton = React.forwardRef<
   );
 });
 
-const ProductDetailButton = React.forwardRef<HTMLLIElement>((ref) => {
-  return (
-    <Box
-      sx={{
-        marginTop: 2,
-        display: "flex",
-        flexDirection: "column",
-        gap: 4,
-      }}
-    >
-      <Button
-        variant="outlined"
-        color="inherit"
-        fullWidth
-        sx={{ height: "64px", fontWeight: "500" }}
+const ProductDetailButton = React.forwardRef<HTMLLIElement, ProductItemButton>(
+  ({ title, selectedColor, selectedSize }, ref) => {
+    const colorName = (() => {
+      switch (selectedColor) {
+        case "#FF0000":
+          return "Vermelho";
+        case "#00FF00":
+          return "Verde";
+        case "#0000FF":
+          return "Azul";
+        case "#FFFF00":
+          return "Amarelo";
+        default:
+          return "Cor desconhecida";
+      }
+    })();
+
+    return (
+      <Box
+        sx={{
+          marginTop: 2,
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+        }}
       >
-        Peça seu produto já
-      </Button>
-    </Box>
-  );
-});
+        <Button
+          variant="outlined"
+          color="inherit"
+          fullWidth
+          sx={{ height: "64px", fontWeight: "500" }}
+          target="_blank"
+          href={`https://api.whatsapp.com/send/?phone=5511981669996&text=Ol%C3%A1%20Jessica%2C%20tudo%20bem%3F%20Vi%20seu%20produto%20${title}%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20no%20tamanho%20${selectedSize}%20com%20a%20cor%20${colorName}!+Obrigado+desde+Já!&type=phone_number&app_absent=0`}
+        >
+          Peça seu produto já
+        </Button>
+      </Box>
+    );
+  }
+);
 
 export const ProductDetails = React.forwardRef<
   HTMLLIElement,
@@ -193,7 +213,11 @@ export const ProductDetails = React.forwardRef<
             setSelectedSize={setSelectedSize}
             selectedSize={selectedSize}
           />
-          <ProductDetailButton />
+          <ProductDetailButton
+            title={product.title}
+            selectedColor={selectedColor}
+            selectedSize={selectedSize}
+          />
         </Box>
       </Paper>
     </Box>

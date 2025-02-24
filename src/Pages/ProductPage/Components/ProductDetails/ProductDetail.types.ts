@@ -36,3 +36,8 @@ export interface ProductDetailSizesComponentProps {
 export interface ProductItemCloseButton {
   onClose: () => void;
 }
+export interface ProductItemButton {
+  title: string;
+  selectedColor: string;
+  selectedSize: string;
+}
