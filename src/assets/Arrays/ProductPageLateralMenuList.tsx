@@ -53,13 +53,6 @@ export const productPageLateralMenuList = [
   {
     id: 7,
     imageSrc: MassageSoap,
-    Text: "Sabonetes de Massagem",
-    ExpansionWidth: 315,
-    productType: "sabonetes_de_massagem",
-  },
-  {
-    id: 8,
-    imageSrc: MassageSoap,
     Text: "Joias de Resina",
     ExpansionWidth: 240,
     productType: "joias_de_resina",

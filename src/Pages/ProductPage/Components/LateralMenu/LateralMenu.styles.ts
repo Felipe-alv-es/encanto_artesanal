@@ -7,7 +7,7 @@ export const menuContainerStyle = (scrollValue: number) => ({
 
 export const menuListBoxStyle = (scrollValue: number) => ({
   position: scrollValue === 0 ? "relative" : "fixed",
-  transform: scrollValue === 0 ? "translateY(-64px)" : "translateY(-200px)",
+  transform: scrollValue === 0 ? "translateY(-0px)" : "translateY(-200px)",
   transition: "1s",
 });
 

@@ -8,7 +8,7 @@ import {
   productPageGridStyle,
 } from "./ProductPage.styles.ts";
 import ProductPageTitle from "./Components/ProductPageTitle/index.tsx";
-import LateralMenu from "./Components/LateralMenu/index.tsx";
+import LateralMenu from "./Components/LateralMenu/LateralMenu.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import { useLocation } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";

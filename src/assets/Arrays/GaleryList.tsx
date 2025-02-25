@@ -40,13 +40,6 @@ export const galeryList = [
       "Fragrâncias sofisticadas que deixam uma impressão duradoura, com notas delicadas e envolventes para qualquer ocasião.",
   },
   {
-    imageSrc: "https://i.imgur.com/zhCpxDF.jpeg",
-    imageAlt: "Imagem de um conjunto de velas",
-    title: "Sabonetes de Massagem",
-    description:
-      "Shampoos naturais que limpam e nutrem os cabelos com ingredientes puros, proporcionando brilho e suavidade sem químicos agressivos.",
-  },
-  {
     imageSrc: Image6,
     imageAlt: "Joias de Resina",
     title: "Joias de Resina",

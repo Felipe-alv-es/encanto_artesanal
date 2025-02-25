@@ -23,10 +23,6 @@ const navBarItems = [
         path: "/product-page/sabonetes-decorativos",
       },
       { title: "Geleias de Banho", path: "/product-page/geleias-de-banho" },
-      {
-        title: "Sabonetes de Massagem",
-        path: "/product-page/sabonetes-de-massagem",
-      },
     ],
   },
   {
