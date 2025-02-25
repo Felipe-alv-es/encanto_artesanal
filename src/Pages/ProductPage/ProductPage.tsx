@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Pagination } from "@mui/material";
+import { Box } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/index.tsx";
 import {
@@ -14,6 +14,7 @@ import { useLocation } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
 import ProductPageBackground from "./Components/ProductPageBackground/index.tsx";
 import ProductDetails from "./Components/ProductDetails/ProductDetail.tsx";
+import ProductPagePagination from "./Components/ProductPagePagination/ProductPagePagination.tsx";
 
 const ProductPage = () => {
   const location = useLocation();
@@ -87,26 +88,11 @@ const ProductPage = () => {
             </Box>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "32px",
-          }}
-        >
-          <Pagination
-            count={totalPages}
-            page={currentPageNumber}
-            onChange={(event, value) => setCurrentPageNumber(value)}
-            color="primary"
-            size="large"
-            sx={{
-              "* > .Mui-selected": {
-                background: "#383838",
-              },
-            }}
-          />
-        </Box>
+        <ProductPagePagination
+          currentPageNumber={currentPageNumber}
+          setCurrentPageNumber={setCurrentPageNumber}
+          totalPages={totalPages}
+        />
       </ProductPageBackground>
       <Footer />
     </>

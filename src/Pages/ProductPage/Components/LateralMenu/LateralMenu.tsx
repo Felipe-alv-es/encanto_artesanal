@@ -92,10 +92,14 @@ interface LateralMenuProps {
 export const LateralMenu = React.forwardRef<HTMLLIElement, LateralMenuProps>(
   ({ handleFilter }, ref) => {
     const scrollValue = useScrollValue();
+    const isNearBottom =
+      window.innerHeight + window.scrollY >= document.body.scrollHeight - 350;
+    const remaining =
+      document.body.scrollHeight - (window.innerHeight + window.scrollY);
 
     return (
       <Box sx={menuContainerStyle(scrollValue)} ref={ref}>
-        <Box sx={menuListBoxStyle(scrollValue)}>
+        <Box sx={menuListBoxStyle(scrollValue, isNearBottom, remaining)}>
           {productPageLateralMenuList.map((item) => (
             <Box key={item.id}>
               <MenuItem
