@@ -21,7 +21,8 @@ export const CategoriesImageComponent = React.forwardRef<
         objectFit: "cover",
         borderTopLeftRadius: "16px",
         borderTopRightRadius: "16px",
-        transition: "0.5s",
+        transition: "transform 0.5s ease-out",
+        display: "block",
       }}
     />
   );

@@ -3,9 +3,10 @@ export const getContainerStyle = (showHeader: boolean) => ({
   position: "fixed",
   display: "flex",
   justifyContent: "center",
-  background: "#f2f2f2",
+  background: "#f2f7f2",
   transform: showHeader ? "translateY(0)" : "translateY(-100%)",
   transition: "transform 0.3s ease-in-out",
+  zIndex: 1,
 });
 
 export const getContentContainerStyle = () => ({
