@@ -35,7 +35,7 @@ export const getContentStyle = () => ({
 });
 
 export const getTitleStyle = () => ({
-  color: "#F2F2F2",
+  color: "#f2f7f2",
   "@media(max-width: 2560px)": {
     typography: "h3",
   },
@@ -47,6 +47,6 @@ export const getTitleStyle = () => ({
 export const getDescriptionStyle = () => ({
   marginTop: "32px",
   marginBottom: "32px",
-  color: "#F2F2F2",
+  color: "#f2f7f2",
   typography: "body1",
 });

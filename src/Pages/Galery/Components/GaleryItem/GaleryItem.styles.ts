@@ -1,35 +1,11 @@
-export const getContainerStyle = () => ({
-  background: "#f2f7f2",
-  padding: "5% 10% 5% 10%",
-  display: "flex",
-  justifyContent: "center",
-  gap: "32px",
-  "> div": {
-    width: "100%",
-    maxWidth: "1344px",
-  },
-});
-
-export const getTitleStyle = () => ({
-  typography: "h4",
-  fontWeight: "300",
-  fontFamily: "kanit",
-  marginBottom: "32px",
-});
-
-export const getContentContainerStyle = () => ({
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
-});
-
-export const getItemContainer = () => ({
+export const getItemContainer = (isPrincipal?: boolean) => ({
   cursor: "pointer",
   borderRadius: "16px",
   display: "flex",
   flexDirection: "column",
   overflow: "hidden",
   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+  aspectRatio: "1 / 1",
   ":hover": {
     "& img": {
       transform: "scale(1.05)",
@@ -42,16 +18,14 @@ export const getItemContainer = () => ({
   },
 
   "@media(max-width: 2560px)": {
-    width: "300px",
-    height: "350px",
+    width: "100%",
   },
   "@media(max-width: 1400px)": {
     width: "250px",
-    height: "300px",
   },
 });
 
-export const CategoriesTitleStyle = () => ({
+export const GaleryTitleStyle = () => ({
   height: "100%",
   display: "flex",
   alignItems: "center",

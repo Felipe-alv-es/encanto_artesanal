@@ -6,6 +6,7 @@ import {
   getItemContainer,
   CategoriesTitleStyle,
   getContentContainerStyle,
+  getTitleStyle,
 } from "./Categories.styles.ts";
 import CategoriesImageComponent from "./Components/CategoriesImageComponent/index.tsx";
 import { useNavigate } from "react-router-dom";
@@ -16,25 +17,30 @@ const Categories = () => {
 
   return (
     <Box sx={getContainerStyle}>
-      <Box sx={getContentContainerStyle}>
-        {categoriesOptions.map((item) => (
-          <Paper
-            sx={getItemContainer}
-            key={item.title}
-            role="button"
-            elevation={0}
-            onClick={() => navigate("/product-page")}
-          >
-            <CategoriesImageComponent
-              imageAlt={item.imageAlt}
-              imageSrc={item.imageSrc}
-            />
-            <Box sx={CategoriesTitleStyle}>
-              <Typography>{item.title}</Typography>
-              <GoArrowRight size={20} />
-            </Box>
-          </Paper>
-        ))}
+      <Box>
+        <Typography sx={getTitleStyle}>
+          {"Os melhores produtos artesanais para você"}
+        </Typography>
+        <Box sx={getContentContainerStyle}>
+          {categoriesOptions.map((item) => (
+            <Paper
+              sx={getItemContainer}
+              key={item.title}
+              role="button"
+              elevation={0}
+              onClick={() => navigate("/product-page")}
+            >
+              <CategoriesImageComponent
+                imageAlt={item.imageAlt}
+                imageSrc={item.imageSrc}
+              />
+              <Box sx={CategoriesTitleStyle}>
+                <Typography>{item.title}</Typography>
+                <GoArrowRight size={20} />
+              </Box>
+            </Paper>
+          ))}
+        </Box>
       </Box>
     </Box>
   );

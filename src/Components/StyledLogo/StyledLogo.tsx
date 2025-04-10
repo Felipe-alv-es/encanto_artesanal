@@ -12,11 +12,11 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: "10%",
+          width: "11%",
           marginRight: "64px",
           cursor: "pointer",
-          background: "transparent",
           borderStyle: "none",
+          background: "transparent",
         }}
         role="button"
         component={"button"}
@@ -28,12 +28,12 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
             "@media(max-width: 2560px)": {
               typography: "h4",
               fontWeight: "bold",
-              fontFamily: "Oranienbaum",
+              fontFamily: "Kanit",
             },
             "@media(max-width: 1400px)": {
               typography: "h5",
               fontWeight: "bold",
-              fontFamily: "Oranienbaum",
+              fontFamily: "Kanit",
             },
           }}
           color="#383838"
@@ -43,15 +43,16 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         <Typography
           variant="h4"
           sx={{
+            marginLeft: "30px",
             "@media(max-width: 2560px)": {
               typography: "h4",
               fontWeight: "bold",
-              fontFamily: "Oranienbaum",
+              fontFamily: "Kanit",
             },
             "@media(max-width: 1400px)": {
               typography: "h5",
               fontWeight: "bold",
-              fontFamily: "Oranienbaum",
+              fontFamily: "Kanit",
             },
           }}
           color="#383838"
