@@ -29,7 +29,7 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
             fontWeight: "bold",
             fontFamily: "Oranienbaum",
           }}
-          color="#F2F2F2"
+          color="#383838"
         >
           Encanto
         </Typography>
@@ -40,7 +40,7 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
             fontFamily: "Oranienbaum",
             textAlign: "right",
           }}
-          color="#F2F2F2"
+          color="#383838"
         >
           Artesanal
         </Typography>

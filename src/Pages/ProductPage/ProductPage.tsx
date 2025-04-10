@@ -12,7 +12,7 @@ import LateralMenu from "./Components/LateralMenu/LateralMenu.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import { useLocation } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
-import ProductPageBackground from "./Components/ProductPageBackground/index.tsx";
+import ProductPageBackground from "./Components/ProductPageBackground/ProductPageBackground.tsx";
 import ProductDetails from "./Components/ProductDetails/ProductDetail.tsx";
 import ProductPagePagination from "./Components/ProductPagePagination/ProductPagePagination.tsx";
 
