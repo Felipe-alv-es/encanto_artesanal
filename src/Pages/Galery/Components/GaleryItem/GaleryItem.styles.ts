@@ -6,6 +6,7 @@ export const getItemContainer = (isPrincipal?: boolean) => ({
   overflow: "hidden",
   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
   aspectRatio: "1 / 1",
+  width: "100%",
   ":hover": {
     "& img": {
       transform: "scale(1.05)",
@@ -15,13 +16,6 @@ export const getItemContainer = (isPrincipal?: boolean) => ({
         width: "100%",
       },
     },
-  },
-
-  "@media(max-width: 2560px)": {
-    width: "100%",
-  },
-  "@media(max-width: 1400px)": {
-    width: "250px",
   },
 });
 
