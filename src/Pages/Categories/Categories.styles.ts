@@ -6,27 +6,52 @@ export const getContainerStyle = () => ({
   gap: "32px",
 });
 
-export const getItemContainer = () => ({
-  width: "20%",
+export const getContentContainerStyle = () => ({
+  maxWidth: "1344px",
   display: "flex",
-  flexDirection: "column",
-  cursor: "pointer",
+  width: "100%",
+  justifyContent: "space-between",
 });
 
-export const getDescriptionStyle = () => ({
-  height: "100%",
-  display: "grid",
-  marginTop: "16px",
+export const getItemContainer = () => ({
+  cursor: "pointer",
+  borderRadius: "16px",
+  display: "flex",
+  flexDirection: "column",
+  overflow: "hidden",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+  ":hover": {
+    "& img": {
+      transform: "scale(1.05)",
+    },
+  },
+
+  "@media(max-width: 2560px)": {
+    width: "300px",
+    height: "350px",
+  },
+  "@media(max-width: 1400px)": {
+    width: "250px",
+    height: "300px",
+  },
 });
 
 export const CategoriesTitleStyle = () => ({
-  marginBottom: "8px",
-  typography: "h5",
-  fontWeight: "500",
-});
-
-export const CategoriesDescriptionStyle = () => ({
-  typography: "body1",
-  fontWeight: "300",
-  marginBottom: "32px",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 1,
+  "> p": {
+    "@media(max-width: 2560px)": {
+      typography: "h5",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 1400px)": {
+      typography: "h6",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+  },
 });

@@ -15,7 +15,13 @@ export const getContentContainerStyle = () => ({
   maxWidth: "1344px",
   height: "100%",
   display: "grid",
-  placeItems: "end start",
+  placeItems: "center start",
+  "@media(max-width: 2560px)": {
+    marginTop: "115px",
+  },
+  "@media(max-width: 1400px)": {
+    marginTop: "80px",
+  },
 });
 
 export const getContentStyle = () => ({

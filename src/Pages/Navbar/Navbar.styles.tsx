@@ -12,7 +12,12 @@ export const getContentContainerStyle = () => ({
   maxWidth: "1344px",
   display: "flex",
   alignItems: "center",
-  paddingY: "16px",
+  "@media(max-width: 2560px)": {
+    paddingY: "16px",
+  },
+  "@media(max-width: 1400px)": {
+    paddingY: "8px",
+  },
 });
 
 export const getListStyle = () => ({
@@ -35,10 +40,15 @@ export const getListItemStyle = () => ({
   "> button": {
     color: "#383838",
     fontFamily: "kanit",
-    fontSize: "18px",
     fontWeight: "300",
     ":hover": {
       background: "transparent",
+    },
+    "@media(max-width: 2560px)": {
+      fontSize: "18px",
+    },
+    "@media(max-width: 1400px)": {
+      fontSize: "14px",
     },
   },
 });

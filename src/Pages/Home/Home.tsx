@@ -32,6 +32,7 @@ const Home = () => {
           <StyledButton
             text="Conheça nossos produtos"
             variant="outlined"
+            size="md"
             icon={<IoChevronForward />}
             onClick={() => navigate("/product-page")}
           />

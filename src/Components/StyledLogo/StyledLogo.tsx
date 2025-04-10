@@ -24,10 +24,17 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         {...props}
       >
         <Typography
-          variant="h4"
           sx={{
-            fontWeight: "bold",
-            fontFamily: "Oranienbaum",
+            "@media(max-width: 2560px)": {
+              typography: "h4",
+              fontWeight: "bold",
+              fontFamily: "Oranienbaum",
+            },
+            "@media(max-width: 1400px)": {
+              typography: "h5",
+              fontWeight: "bold",
+              fontFamily: "Oranienbaum",
+            },
           }}
           color="#383838"
         >
@@ -36,9 +43,16 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         <Typography
           variant="h4"
           sx={{
-            fontWeight: "bold",
-            fontFamily: "Oranienbaum",
-            textAlign: "right",
+            "@media(max-width: 2560px)": {
+              typography: "h4",
+              fontWeight: "bold",
+              fontFamily: "Oranienbaum",
+            },
+            "@media(max-width: 1400px)": {
+              typography: "h5",
+              fontWeight: "bold",
+              fontFamily: "Oranienbaum",
+            },
           }}
           color="#383838"
         >
