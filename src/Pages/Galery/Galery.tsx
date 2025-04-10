@@ -16,7 +16,7 @@ const Galery = () => {
     apiData?.data && apiData.data.length > 2
       ? [apiData.data[1], apiData.data[2]].map((item) => ({
           title: item.title,
-          price: item.largedescription,
+          price: item.description,
           imageAlt: item.imagealt,
           imageSrc: item.imagesrc[0],
         }))
@@ -29,9 +29,11 @@ const Galery = () => {
           <Box sx={getMainItemStyle()} key={apiData.data[0].id}>
             <GaleryItem
               title={apiData.data[0].title}
+              price={apiData.data[0].description}
               imageAlt={apiData.data[0].imagealt}
               imageSrc={apiData.data[0].imagesrc[0]}
               isLoading={isLoading}
+              isPrincipal
             />
           </Box>
         )}
@@ -40,6 +42,7 @@ const Galery = () => {
             <GaleryItem
               key={item.title}
               title={item.title}
+              price={item.price}
               imageAlt={item.imageAlt}
               imageSrc={item.imageSrc}
               isLoading={isLoading}

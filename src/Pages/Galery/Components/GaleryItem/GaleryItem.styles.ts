@@ -19,7 +19,7 @@ export const getItemContainer = () => ({
   },
 });
 
-export const GaleryTitleStyle = () => ({
+export const GaleryTitleStyle = (isPrincipal?: boolean) => ({
   height: "100%",
   display: "flex",
   alignItems: "center",
@@ -35,12 +35,31 @@ export const GaleryTitleStyle = () => ({
       transition: "300ms",
     },
     "@media(max-width: 2560px)": {
-      typography: "h5",
+      fontSize: isPrincipal ? "28px" : "24px",
       fontWeight: "300",
       fontFamily: "kanit",
     },
     "@media(max-width: 1400px)": {
-      typography: "h6",
+      fontSize: isPrincipal ? "20px" : "16px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+  },
+});
+
+export const GaleryPriceStyle = (isPrincipal?: boolean) => ({
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "> p": {
+    "@media(max-width: 2560px)": {
+      fontSize: isPrincipal ? "24px" : "20px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 1400px)": {
+      fontSize: isPrincipal ? "16px" : "12px",
       fontWeight: "300",
       fontFamily: "kanit",
     },
