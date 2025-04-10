@@ -13,6 +13,7 @@ export const getContentContainerStyle = () => ({
   maxWidth: "1344px",
   display: "flex",
   alignItems: "center",
+  gap: 1,
   "@media(max-width: 2560px)": {
     paddingY: "16px",
   },

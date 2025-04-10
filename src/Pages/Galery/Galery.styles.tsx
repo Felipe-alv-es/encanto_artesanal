@@ -10,7 +10,7 @@ export const getContainerStyle = () => ({
 
 export const getGaleryContentStyle = () => ({
   display: "flex",
-  gap: "24px",
+  gap: "16px",
   width: "70%",
   alignItems: "center",
 });
@@ -22,7 +22,7 @@ export const getMainItemStyle = () => ({
 });
 
 export const getSideItemsStyle = () => ({
-  flex: 1.9,
+  flex: 1.95,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",

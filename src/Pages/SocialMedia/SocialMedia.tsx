@@ -34,7 +34,9 @@ const SocialMedia = () => {
         borderWidth: "0px 0px 5px 0px",
       }}
     >
-      <Typography sx={getPageTitleStyle}>Veja nosso Instagram</Typography>
+      <Typography sx={getPageTitleStyle}>
+        Acompanhe nossas redes sociais
+      </Typography>
       <Box
         sx={{
           width: "100%",

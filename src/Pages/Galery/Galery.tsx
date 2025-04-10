@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { galeryList } from "../../assets/Arrays/GaleryList.tsx";
 import {
   getContainerStyle,
   getGaleryContentStyle,
@@ -8,23 +7,34 @@ import {
   getSideItemsStyle,
 } from "./Galery.styles.tsx";
 import GaleryItem from "./Components/GaleryItem/GaleryItem.tsx";
+import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 
 const Galery = () => {
-  const mainItem = galeryList[0];
-  const sideItems = galeryList.slice(1, 3);
+  const { apiData, isLoading } = useApiData();
+
+  const sideItems =
+    apiData?.data && apiData.data.length > 2
+      ? [apiData.data[1], apiData.data[2]].map((item) => ({
+          title: item.title,
+          price: item.largedescription,
+          imageAlt: item.imagealt,
+          imageSrc: item.imagesrc[0],
+        }))
+      : [];
 
   return (
     <Box sx={getContainerStyle()}>
       <Box sx={getGaleryContentStyle()}>
-        <Box sx={getMainItemStyle()}>
-          <GaleryItem
-            title={mainItem.title}
-            imageAlt={mainItem.imageAlt}
-            imageSrc={mainItem.imageSrc}
-            isPrincipal
-          />
-        </Box>
-
+        {apiData && apiData.data.length > 0 && (
+          <Box sx={getMainItemStyle()} key={apiData.data[0].id}>
+            <GaleryItem
+              title={apiData.data[0].title}
+              imageAlt={apiData.data[0].imagealt}
+              imageSrc={apiData.data[0].imagesrc[0]}
+              isLoading={isLoading}
+            />
+          </Box>
+        )}
         <Box sx={getSideItemsStyle()}>
           {sideItems.map((item) => (
             <GaleryItem
@@ -32,6 +42,7 @@ const Galery = () => {
               title={item.title}
               imageAlt={item.imageAlt}
               imageSrc={item.imageSrc}
+              isLoading={isLoading}
             />
           ))}
         </Box>

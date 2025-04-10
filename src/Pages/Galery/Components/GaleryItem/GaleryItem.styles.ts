@@ -1,4 +1,4 @@
-export const getItemContainer = (isPrincipal?: boolean) => ({
+export const getItemContainer = () => ({
   cursor: "pointer",
   borderRadius: "16px",
   display: "flex",
