@@ -18,7 +18,8 @@ const Galery = () => {
           title: item.title,
           price: item.description,
           imageAlt: item.imagealt,
-          imageSrc: item.imagesrc[0],
+          imageSrc: item.imagesrc,
+          producttype: item.producttype,
         }))
       : [];
 
@@ -34,6 +35,7 @@ const Galery = () => {
               imageSrc={apiData.data[0].imagesrc[0]}
               isLoading={isLoading}
               isPrincipal
+              producttype={apiData.data[0].producttype}
             />
           </Box>
         )}
@@ -44,8 +46,9 @@ const Galery = () => {
               title={item.title}
               price={item.price}
               imageAlt={item.imageAlt}
-              imageSrc={item.imageSrc}
+              imageSrc={item.imageSrc[0]}
               isLoading={isLoading}
+              producttype={item.producttype}
             />
           ))}
         </Box>

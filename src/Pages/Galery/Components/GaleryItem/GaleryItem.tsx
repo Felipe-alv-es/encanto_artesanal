@@ -8,6 +8,7 @@ import {
 } from "./GaleryItem.styles.ts";
 import { useNavigate } from "react-router-dom";
 import GaleryItemSkeleton from "../GaleryItemSkeleton/GaleryItemSkeleton.tsx";
+import { toUrlFormat } from "../../../../utils/toUrlFormat/index.tsx";
 
 interface GaleryItemProps {
   title: string;
@@ -16,10 +17,14 @@ interface GaleryItemProps {
   imageSrc: string;
   isLoading?: boolean;
   isPrincipal?: boolean;
+  producttype: string;
 }
 
 export const GaleryItem = React.forwardRef<HTMLDivElement, GaleryItemProps>(
-  ({ title, price, imageAlt, imageSrc, isLoading, isPrincipal }, ref) => {
+  (
+    { title, price, imageAlt, imageSrc, isLoading, isPrincipal, producttype },
+    ref
+  ) => {
     const navigate = useNavigate();
 
     return (
@@ -28,7 +33,7 @@ export const GaleryItem = React.forwardRef<HTMLDivElement, GaleryItemProps>(
         key={title}
         role="button"
         elevation={0}
-        onClick={() => navigate("/product-page")}
+        onClick={() => navigate(`/product-page/${toUrlFormat(producttype)}`)}
       >
         {isLoading ? (
           <GaleryItemSkeleton />

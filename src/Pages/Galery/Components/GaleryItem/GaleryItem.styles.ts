@@ -39,6 +39,11 @@ export const GaleryTitleStyle = (isPrincipal?: boolean) => ({
       fontWeight: "300",
       fontFamily: "kanit",
     },
+    "@media(max-width: 2000px)": {
+      fontSize: isPrincipal ? "24px" : "20px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
     "@media(max-width: 1400px)": {
       fontSize: isPrincipal ? "20px" : "16px",
       fontWeight: "300",
@@ -55,6 +60,11 @@ export const GaleryPriceStyle = (isPrincipal?: boolean) => ({
   "> p": {
     "@media(max-width: 2560px)": {
       fontSize: isPrincipal ? "24px" : "20px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 2000px)": {
+      fontSize: isPrincipal ? "20px" : "16px",
       fontWeight: "300",
       fontFamily: "kanit",
     },

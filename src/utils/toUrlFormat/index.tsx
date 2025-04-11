@@ -4,7 +4,7 @@ export function toUrlFormat(str) {
   }
 
   return str
+    .replace(/[_\s]+/g, "-")
     .replace(/[A-Z]/g, (letter) => `${letter.toLowerCase()}`)
-    .replace(/\s+/g, "-")
     .toLowerCase();
 }
