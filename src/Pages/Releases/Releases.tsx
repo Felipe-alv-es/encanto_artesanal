@@ -1,7 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { getGridStyle, getPageTitleStyle } from "./Releases.styles.ts";
-import ReleaseItem from "./Components/ReleaseItem/index.tsx";
+import {
+  getContainerStyle,
+  getGridStyle,
+  getPageTitleStyle,
+} from "./Releases.styles.ts";
+import ReleaseItem from "./Components/ReleaseItem/ReleaseItem.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import ReleasesSkeleton from "./Components/Skeleton/index.tsx";
 
@@ -13,21 +17,24 @@ const Releases = () => {
   }
 
   return (
-    <Box sx={{ background: "#F2F2F2", padding: "32px 0px 32px 0px" }}>
-      <Typography sx={getPageTitleStyle}>Conheça nossas novidades</Typography>
-      <Box sx={getGridStyle}>
-        {apiData &&
-          apiData.data
-            .slice(0, 8)
-            .map((item) => (
-              <ReleaseItem
-                key={item.id}
-                imageSrc={item.imagesrc[0]}
-                imageAlt={item.imagealt}
-                title={item.title}
-                description={item.description}
-              />
-            ))}
+    <Box sx={getContainerStyle}>
+      <Box>
+        <Typography sx={getPageTitleStyle}>Conheça nossas novidades</Typography>
+        <Box sx={getGridStyle}>
+          {apiData &&
+            apiData.data
+              .slice(0, 6)
+              .map((item) => (
+                <ReleaseItem
+                  key={item.id}
+                  imageSrc={item.imagesrc[0]}
+                  imageAlt={item.imagealt}
+                  title={item.title}
+                  price={item.description}
+                  producttype={item.producttype}
+                />
+              ))}
+        </Box>
       </Box>
     </Box>
   );

@@ -1,31 +1,25 @@
+export const getContainerStyle = () => ({
+  background: "#F2F7F2",
+  display: "flex",
+  justifyContent: "center",
+  "> div": {
+    width: "100%",
+    maxWidth: "1344px",
+    paddingY: "64px",
+  },
+});
+
 export const getPageTitleStyle = () => ({
   textAlign: "center",
-  paddingTop: "32px",
   typography: "h3",
-  fontWeight: "bold",
+  fontWeight: "300",
+  fontFamily: "kanit",
 });
 
 export const getGridStyle = () => ({
   display: "grid",
-  gap: "20px",
-  justifyContent: "center",
-  alignItems: "center",
-  gridTemplateColumns: "repeat(4, auto)",
-  textAlign: "center",
-  paddingTop: "64px",
-});
-
-export const getGridItemStyle = () => ({
-  width: "350px",
-  overflow: "hidden",
-  display: "flex",
-  flexDirection: "column",
   placeItems: "center",
-  paddingBottom: "32px",
-});
-
-export const getGridItemTitleStyle = () => ({
-  typography: "h6",
-  fontWeight: "bold",
-  padding: "16px 0px 4px 0px",
+  gridTemplateColumns: "repeat(3, auto)",
+  paddingTop: "64px",
+  gap: "24px",
 });

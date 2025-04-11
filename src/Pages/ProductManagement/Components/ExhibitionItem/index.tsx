@@ -1,6 +1,6 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
-import ReleaseItem from "../../../Releases/Components/ReleaseItem/index.tsx";
+import ReleaseItem from "../../../Releases/Components/ReleaseItem/ReleaseItem.tsx";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 interface ExhibitionItemProps {
