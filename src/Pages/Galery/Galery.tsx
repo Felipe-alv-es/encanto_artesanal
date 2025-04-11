@@ -7,16 +7,13 @@ import {
   getSideItemsStyle,
 } from "./Galery.styles.tsx";
 import GaleryItem from "./Components/GaleryItem/GaleryItem.tsx";
-import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
+import { GaleryList } from "../../assets/Arrays/GaleryList.tsx";
 
 const Galery = () => {
-  const { apiData, isLoading } = useApiData();
-
   const sideItems =
-    apiData?.data && apiData.data.length > 2
-      ? [apiData.data[1], apiData.data[2]].map((item) => ({
+    GaleryList.length > 2
+      ? [GaleryList[1], GaleryList[2]].map((item) => ({
           title: item.title,
-          price: item.description,
           imageAlt: item.imagealt,
           imageSrc: item.imagesrc,
           producttype: item.producttype,
@@ -26,16 +23,14 @@ const Galery = () => {
   return (
     <Box sx={getContainerStyle()}>
       <Box sx={getGaleryContentStyle()}>
-        {apiData && apiData.data.length > 0 && (
-          <Box sx={getMainItemStyle()} key={apiData.data[0].id}>
+        {GaleryList.length > 0 && (
+          <Box sx={getMainItemStyle()} key={GaleryList[0].id}>
             <GaleryItem
-              title={apiData.data[0].title}
-              price={apiData.data[0].description}
-              imageAlt={apiData.data[0].imagealt}
-              imageSrc={apiData.data[0].imagesrc[0]}
-              isLoading={isLoading}
+              title={GaleryList[0].title}
+              imageAlt={GaleryList[0].imagealt}
+              imageSrc={GaleryList[0].imagesrc}
               isPrincipal
-              producttype={apiData.data[0].producttype}
+              producttype={GaleryList[0].producttype}
             />
           </Box>
         )}
@@ -44,10 +39,8 @@ const Galery = () => {
             <GaleryItem
               key={item.title}
               title={item.title}
-              price={item.price}
               imageAlt={item.imageAlt}
-              imageSrc={item.imageSrc[0]}
-              isLoading={isLoading}
+              imageSrc={item.imageSrc}
               producttype={item.producttype}
             />
           ))}
