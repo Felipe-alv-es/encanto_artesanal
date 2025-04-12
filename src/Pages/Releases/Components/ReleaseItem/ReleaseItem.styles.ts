@@ -47,7 +47,7 @@ export const getReleaseItemTitleStyle = () => ({
       fontFamily: "kanit",
     },
     "@media(max-width: 1400px)": {
-      typography: "h6",
+      fontSize: "20px",
       fontWeight: "300",
       fontFamily: "kanit",
     },
@@ -59,19 +59,20 @@ export const ReleaseItemPriceStyle = () => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  paddingBottom: "16px",
   "> p": {
     "@media(max-width: 2560px)": {
-      fontSize: "20px",
+      fontSize: "16px",
       fontWeight: "300",
       fontFamily: "kanit",
     },
     "@media(max-width: 2000px)": {
-      fontSize: "20px",
+      fontSize: "16px",
       fontWeight: "300",
       fontFamily: "kanit",
     },
     "@media(max-width: 1400px)": {
-      fontSize: "16px",
+      fontSize: "14px",
       fontWeight: "300",
       fontFamily: "kanit",
     },

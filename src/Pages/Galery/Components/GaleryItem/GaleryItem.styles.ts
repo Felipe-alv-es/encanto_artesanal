@@ -45,7 +45,7 @@ export const GaleryTitleStyle = (isPrincipal?: boolean) => ({
       fontFamily: "kanit",
     },
     "@media(max-width: 1400px)": {
-      fontSize: isPrincipal ? "20px" : "16px",
+      fontSize: isPrincipal ? "20px" : "14px",
       fontWeight: "300",
       fontFamily: "kanit",
     },

@@ -2,10 +2,15 @@ export const getContainerStyle = () => ({
   background: "#F2F7F2",
   display: "flex",
   justifyContent: "center",
+  paddingY: "3%",
   "> div": {
     width: "100%",
-    maxWidth: "1344px",
-    paddingY: "64px",
+    "@media(max-width: 2560px)": {
+      maxWidth: "1344px",
+    },
+    "@media(max-width: 1400px)": {
+      maxWidth: "900px",
+    },
   },
 });
 
@@ -19,7 +24,7 @@ export const getPageTitleStyle = () => ({
 export const getGridStyle = () => ({
   display: "grid",
   placeItems: "center",
-  gridTemplateColumns: "repeat(3, auto)",
   paddingTop: "64px",
   gap: "24px",
+  gridTemplateColumns: "repeat(3, auto)",
 });
