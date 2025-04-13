@@ -6,7 +6,7 @@ export const getContainerStyle = (showHeader: boolean) => ({
   background: "#f2f7f2",
   transform: showHeader ? "translateY(0)" : "translateY(-100%)",
   transition: "transform 0.3s ease-in-out",
-  zIndex: 1,
+  zIndex: 1250,
 });
 
 export const getContentContainerStyle = () => ({
@@ -19,6 +19,11 @@ export const getContentContainerStyle = () => ({
   },
   "@media(max-width: 1400px)": {
     paddingY: "8px",
+  },
+  "@media(max-width: 768px)": {
+    width: "100%",
+    justifyContent: "space-between",
+    paddingX: "32px",
   },
 });
 

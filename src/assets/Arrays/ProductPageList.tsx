@@ -4,9 +4,9 @@ export const pageMap: Record<string, string | null> = {
   "/product-page/velas-de-massagem": "velas_de_massagem",
   "/product-page/velas-container": "velas_container",
   "/product-page/sabonetes-decorativos": "sabonetes_decorativos",
-  "/product-page/geleia-de-banho": "geleia_de_banho",
+  "/product-page/geleias-de-banho": "geleias_de_banho",
   "/product-page/sabonetes-de-massagem": "sabonetes_de_massagem",
-  "/product-page/joia-de-resina": "joia_de_resina",
+  "/product-page/joias-de-resina": "joias_de_resina",
 };
 
 export const pageDescriptions: Record<

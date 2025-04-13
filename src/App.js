@@ -38,12 +38,12 @@ function App() {
                 element={
                   <>
                     <Navbar />
-                    <Home />
+                    {/* <Home />
                     <Categories />
                     <Galery />
                     <Releases />
                     <SocialMedia />
-                    <Footer />
+                    <Footer /> */}
                   </>
                 }
               />

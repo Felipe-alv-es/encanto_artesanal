@@ -19,6 +19,7 @@ import {
 const ProductPage = () => {
   const location = useLocation();
   const { apiData, isLoading } = useApiData();
+  console.log(apiData);
   const currentPage = () => pageMap[location.pathname] ?? null;
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const handlePageChange = (value: React.SetStateAction<number>) => {

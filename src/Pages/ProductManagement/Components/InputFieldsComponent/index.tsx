@@ -81,14 +81,11 @@ const InputFieldsComponent = React.forwardRef<
           <MenuItem value={"velas_moldadas"}>Velas moldadas</MenuItem>
           <MenuItem value={"velas_de_massagem"}>Velas de massagem</MenuItem>
           <MenuItem value={"velas_container"}>Velas Container</MenuItem>
-          <MenuItem value={"velas_tematicas"}>Velas Tematicas</MenuItem>
-          <MenuItem value={"geleias_de_banho"}>Geleias de banho</MenuItem>
-          <MenuItem value={"sabonetes_de_massagem"}>
-            Sabonetes de massagem
-          </MenuItem>
           <MenuItem value={"sabonetes_decorativos"}>
             Sabonetes decorativos
           </MenuItem>
+          <MenuItem value={"geleias_de_banho"}>Geleias de banho</MenuItem>
+          <MenuItem value={"joias_de_resina"}>Joias de resina</MenuItem>
         </Select>
       </Box>
       <Box sx={{ padding: "16px" }}>
