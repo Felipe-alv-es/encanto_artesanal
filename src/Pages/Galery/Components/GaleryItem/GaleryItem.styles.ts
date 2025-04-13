@@ -51,27 +51,3 @@ export const GaleryTitleStyle = (isPrincipal?: boolean) => ({
     },
   },
 });
-
-export const GaleryPriceStyle = (isPrincipal?: boolean) => ({
-  height: "100%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  "> p": {
-    "@media(max-width: 2560px)": {
-      fontSize: isPrincipal ? "24px" : "20px",
-      fontWeight: "300",
-      fontFamily: "kanit",
-    },
-    "@media(max-width: 2000px)": {
-      fontSize: isPrincipal ? "20px" : "16px",
-      fontWeight: "300",
-      fontFamily: "kanit",
-    },
-    "@media(max-width: 1400px)": {
-      fontSize: isPrincipal ? "16px" : "12px",
-      fontWeight: "300",
-      fontFamily: "kanit",
-    },
-  },
-});

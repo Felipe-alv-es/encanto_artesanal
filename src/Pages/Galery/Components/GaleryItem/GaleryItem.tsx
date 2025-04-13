@@ -1,11 +1,7 @@
-import { Box, Paper, Skeleton, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 import GaleryImageComponent from "../GaleryImageComponent/GaleryImageComponent.tsx";
-import {
-  GaleryPriceStyle,
-  GaleryTitleStyle,
-  getItemContainer,
-} from "./GaleryItem.styles.ts";
+import { GaleryTitleStyle, getItemContainer } from "./GaleryItem.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { toUrlFormat } from "../../../../utils/toUrlFormat/index.tsx";
 import { GoArrowRight } from "react-icons/go";
