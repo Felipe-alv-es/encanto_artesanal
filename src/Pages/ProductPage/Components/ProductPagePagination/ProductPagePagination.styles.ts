@@ -4,6 +4,7 @@ export const getPaginationContainerStyle = () => ({
   background: "#EAF1EA",
   paddingY: "32px",
   "& .Mui-selected": {
+    background: "#6bb4ad",
     backgroundColor: "#6bb4ad",
   },
 });
