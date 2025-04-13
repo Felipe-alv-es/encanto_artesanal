@@ -21,6 +21,10 @@ const ProductPage = () => {
   const { apiData, isLoading } = useApiData();
   const currentPage = () => pageMap[location.pathname] ?? null;
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
+  const handlePageChange = (value: React.SetStateAction<number>) => {
+    setCurrentPageNumber(value);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
@@ -74,7 +78,7 @@ const ProductPage = () => {
       </Box>
       <ProductPagePagination
         currentPageNumber={currentPageNumber}
-        setCurrentPageNumber={setCurrentPageNumber}
+        setCurrentPageNumber={handlePageChange}
         totalPages={totalPages}
       />
       <Footer />
