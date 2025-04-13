@@ -38,8 +38,8 @@ function App() {
                 element={
                   <>
                     <Navbar />
-                    {/* <Home />
-                    <Categories />
+                    <Home />
+                    {/* <Categories />
                     <Galery />
                     <Releases />
                     <SocialMedia />
