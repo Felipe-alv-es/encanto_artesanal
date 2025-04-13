@@ -12,11 +12,11 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: "10%",
+          width: "11%",
           marginRight: "64px",
           cursor: "pointer",
-          background: "transparent",
           borderStyle: "none",
+          background: "transparent",
         }}
         role="button"
         component={"button"}
@@ -24,23 +24,38 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         {...props}
       >
         <Typography
-          variant="h4"
           sx={{
-            fontWeight: "bold",
-            fontFamily: "Oranienbaum",
+            "@media(max-width: 2560px)": {
+              typography: "h4",
+              fontWeight: "bold",
+              fontFamily: "Kanit",
+            },
+            "@media(max-width: 1400px)": {
+              typography: "h5",
+              fontWeight: "bold",
+              fontFamily: "Kanit",
+            },
           }}
-          color="#F2F2F2"
+          color="#383838"
         >
           Encanto
         </Typography>
         <Typography
           variant="h4"
           sx={{
-            fontWeight: "bold",
-            fontFamily: "Oranienbaum",
-            textAlign: "right",
+            marginLeft: "30px",
+            "@media(max-width: 2560px)": {
+              typography: "h4",
+              fontWeight: "bold",
+              fontFamily: "Kanit",
+            },
+            "@media(max-width: 1400px)": {
+              typography: "h5",
+              fontWeight: "bold",
+              fontFamily: "Kanit",
+            },
           }}
-          color="#F2F2F2"
+          color="#383838"
         >
           Artesanal
         </Typography>

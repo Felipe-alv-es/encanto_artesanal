@@ -1,29 +1,4 @@
-export const getContainerStyle = () => ({
-  background: "#f2f7f2",
-  padding: "5% 10% 5% 10%",
-  display: "flex",
-  justifyContent: "center",
-  gap: "32px",
-  "> div": {
-    width: "100%",
-    maxWidth: "1344px",
-  },
-});
-
-export const getTitleStyle = () => ({
-  typography: "h4",
-  fontWeight: "300",
-  fontFamily: "kanit",
-  marginBottom: "32px",
-});
-
-export const getContentContainerStyle = () => ({
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
-});
-
-export const getItemContainer = () => ({
+export const getReleaseItemStyle = () => ({
   cursor: "pointer",
   borderRadius: "16px",
   display: "flex",
@@ -42,8 +17,8 @@ export const getItemContainer = () => ({
   },
 
   "@media(max-width: 2560px)": {
-    width: "300px",
-    height: "350px",
+    width: "400px",
+    height: "450px",
   },
   "@media(max-width: 1400px)": {
     width: "250px",
@@ -51,12 +26,12 @@ export const getItemContainer = () => ({
   },
 });
 
-export const CategoriesTitleStyle = () => ({
+export const getReleaseItemTitleStyle = () => ({
   height: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: 1,
+  padding: "8px",
   "> p": {
     "::after": {
       content: '""',
@@ -72,7 +47,32 @@ export const CategoriesTitleStyle = () => ({
       fontFamily: "kanit",
     },
     "@media(max-width: 1400px)": {
-      typography: "h6",
+      fontSize: "20px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+  },
+});
+
+export const ReleaseItemPriceStyle = () => ({
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  paddingBottom: "16px",
+  "> p": {
+    "@media(max-width: 2560px)": {
+      fontSize: "16px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 2000px)": {
+      fontSize: "16px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 1400px)": {
+      fontSize: "14px",
       fontWeight: "300",
       fontFamily: "kanit",
     },

@@ -23,7 +23,6 @@ const productRoutes = [
   "velas-container",
   "sabonetes-decorativos",
   "geleias-de-banho",
-  "sabonetes-de-massagem",
   "joias-de-resina",
 ];
 

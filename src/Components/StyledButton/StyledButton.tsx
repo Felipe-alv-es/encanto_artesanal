@@ -23,7 +23,7 @@ export const StyledButton = React.forwardRef<HTMLDivElement, StyledButtonProps>(
     return (
       <Button
         sx={{
-          color: isWhiteBg ? "#444444" : "#F2F2F2",
+          color: isWhiteBg ? "#444444" : "#f2f7f2",
           borderColor: isWhiteBg ? "#444444" : "#F2F2F2",
           padding: padding ? padding : buttonSize,
           textTransform: "none",

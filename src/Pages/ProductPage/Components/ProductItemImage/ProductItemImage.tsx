@@ -1,14 +1,14 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-interface CategoriesImageComponentProps {
+interface ProductItemImageProps {
   imageSrc: string;
   imageAlt: string;
 }
 
-export const CategoriesImageComponent = React.forwardRef<
+export const ProductItemImage = React.forwardRef<
   HTMLDivElement,
-  CategoriesImageComponentProps
+  ProductItemImageProps
 >(({ imageSrc, imageAlt }, ref) => {
   return (
     <Box
@@ -28,4 +28,4 @@ export const CategoriesImageComponent = React.forwardRef<
   );
 });
 
-export default CategoriesImageComponent;
+export default ProductItemImage;

@@ -15,8 +15,8 @@ export const LinkListComponent = React.forwardRef<
       <IconButton href={hrefUrl} target="_blank">
         <Box
           sx={{
-            width: "94px",
-            height: "94px",
+            width: "48px",
+            height: "48px",
             "@media(max-width: 544px)": {
               width: "70%",
             },

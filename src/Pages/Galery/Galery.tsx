@@ -1,44 +1,51 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-import { galeryList } from "../../assets/Arrays/GaleryList.tsx";
-import { getContainerStyle } from "./Galery.styles.tsx";
-import { useScrollValue } from "../../utils/getScrollValue/index.tsx";
-import { StyledSwiperItem } from "./Components/StyledSwiperItem/index.tsx";
+import {
+  getContainerStyle,
+  getGaleryContentStyle,
+  getMainItemStyle,
+  getSideItemsStyle,
+} from "./Galery.styles.tsx";
+import GaleryItem from "./Components/GaleryItem/GaleryItem.tsx";
+import { GaleryList } from "../../assets/Arrays/GaleryList.tsx";
 
 const Galery = () => {
-  const scrollValue = useScrollValue();
-  const params = {
-    effect: "coverflow",
-    slidesPerView: 4,
-    loop: true,
-    centeredSlides: true,
-    grabCursor: true,
-    modules: [EffectCoverflow],
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      modifier: 1,
-      slideShadows: false,
-    },
-    className: "mySwiper",
-  };
+  const sideItems =
+    GaleryList.length > 2
+      ? [GaleryList[1], GaleryList[2]].map((item) => ({
+          title: item.title,
+          imageAlt: item.imagealt,
+          imageSrc: item.imagesrc,
+          producttype: item.producttype,
+        }))
+      : [];
 
   return (
-    <Box sx={getContainerStyle(scrollValue)}>
-      <Swiper {...params}>
-        {galeryList.map((item) => (
-          <SwiperSlide key={item.title}>
-            <StyledSwiperItem
-              title={item.title}
-              description={item.description}
-              imgSrc={item.imageSrc}
-              imgAlt={item.imageAlt}
+    <Box sx={getContainerStyle()}>
+      <Box sx={getGaleryContentStyle()}>
+        {GaleryList.length > 0 && (
+          <Box sx={getMainItemStyle()} key={GaleryList[0].id}>
+            <GaleryItem
+              title={GaleryList[0].title}
+              imageAlt={GaleryList[0].imagealt}
+              imageSrc={GaleryList[0].imagesrc}
+              isPrincipal
+              producttype={GaleryList[0].producttype}
             />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          </Box>
+        )}
+        <Box sx={getSideItemsStyle()}>
+          {sideItems.map((item) => (
+            <GaleryItem
+              key={item.title}
+              title={item.title}
+              imageAlt={item.imageAlt}
+              imageSrc={item.imageSrc}
+              producttype={item.producttype}
+            />
+          ))}
+        </Box>
+      </Box>
     </Box>
   );
 };

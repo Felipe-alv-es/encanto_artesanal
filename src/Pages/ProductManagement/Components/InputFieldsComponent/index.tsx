@@ -49,7 +49,7 @@ const InputFieldsComponent = React.forwardRef<
         onChange={(e) => handleChange("title", e.target.value)}
       />
       <TextField
-        label="Descrição"
+        label="Preço e Quantidade"
         value={formData.description}
         onChange={(e) => handleChange("description", e.target.value)}
       />

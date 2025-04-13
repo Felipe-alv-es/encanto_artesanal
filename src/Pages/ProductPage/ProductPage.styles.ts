@@ -1,19 +1,23 @@
-export const navbarCustomize = () => ({
-  width: "100%",
-  "> div > div > h4": {
-    fontSize: 50,
-  },
-});
-
-export const centralPageContainerStyle = () => ({
+export const getContainerStyle = () => ({
   display: "flex",
-  gap: 4,
+  background: "#EAF1EA",
+  justifyContent: "center",
+  "> div": {
+    width: "100%",
+    "@media(max-width: 2560px)": {
+      maxWidth: "1344px",
+    },
+    "@media(max-width: 1400px)": {
+      maxWidth: "900px",
+    },
+  },
 });
 
 export const productPageGridStyle = () => ({
   display: "grid",
-  gap: "16px",
+  gap: "32px",
   justifyContent: "center",
   alignItems: "center",
+  paddingY: "64px",
   gridTemplateColumns: "repeat(4, auto)",
 });

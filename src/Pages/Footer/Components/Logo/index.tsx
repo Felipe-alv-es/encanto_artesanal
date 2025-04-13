@@ -1,12 +1,13 @@
+//@ts-ignore
+import Logo from "../../../../assets/images/Logo/LojaLogo.png";
 import React from "react";
 import { Box } from "@mui/material";
-import Logo from "../../../../assets/images/Logo/LojaLogo.png";
 
 export const LogoComponent = React.forwardRef<HTMLLIElement>(() => {
   return (
     <Box
       sx={{
-        width: "20%",
+        width: "150px",
         height: "fit-content",
         "@media(max-width: 544px)": {
           width: "70%",

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
-import ReleaseItem from "../../../Releases/Components/ReleaseItem/index.tsx";
+import ReleaseItem from "../../../Releases/Components/ReleaseItem/ReleaseItem.tsx";
 import {
   containerStyle,
   textFieldAreaStyle,
