@@ -7,7 +7,7 @@ import {
   getListStyle,
 } from "./Navbar.styles.tsx";
 import { StyledLogo } from "../../Components/index.ts";
-import { Button, IconButton } from "@mui/material";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const navBarItems = [
