@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Pagination } from "@mui/material";
+import { getPaginationContainerStyle } from "./ProductPagePagination.styles.ts";
 
 interface ProductPagePaginationProps {
   totalPages: number;
@@ -12,13 +13,7 @@ export const ProductPagePagination = React.forwardRef<
   ProductPagePaginationProps
 >(({ totalPages, currentPageNumber, setCurrentPageNumber }, ref) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "32px",
-      }}
-    >
+    <Box sx={getPaginationContainerStyle}>
       <Pagination
         count={totalPages}
         page={currentPageNumber}

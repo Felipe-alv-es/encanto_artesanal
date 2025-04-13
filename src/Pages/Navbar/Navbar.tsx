@@ -7,7 +7,7 @@ import {
   getListStyle,
 } from "./Navbar.styles.tsx";
 import { StyledLogo } from "../../Components/index.ts";
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const navBarItems = [
@@ -67,9 +67,7 @@ const Navbar = (props) => {
         <Box sx={getListStyle} role="list">
           {navBarItems.map((item) => (
             <Box sx={getListItemStyle} role="listitem" key={item.label}>
-              <IconButton onClick={() => navigate(item.path)}>
-                {item.label}
-              </IconButton>
+              <Button onClick={() => navigate(item.path)}>{item.label}</Button>
             </Box>
           ))}
         </Box>

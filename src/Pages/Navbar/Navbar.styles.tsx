@@ -43,6 +43,8 @@ export const getListItemStyle = () => ({
     color: "#383838",
     fontFamily: "kanit",
     fontWeight: "300",
+    textTransform: "none",
+    borderRadius: "8px",
     ":hover": {
       background: "transparent",
     },
