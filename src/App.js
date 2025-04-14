@@ -39,11 +39,11 @@ function App() {
                   <>
                     <Navbar />
                     <Home />
-                    {/* <Categories />
-                    <Galery />
-                    <Releases />
-                    <SocialMedia />
-                    <Footer /> */}
+                    <Categories />
+                    {/* <Galery /> */}
+                    {/* <Releases /> */}
+                    {/* <SocialMedia /> */}
+                    {/* <Footer /> */}
                   </>
                 }
               />
