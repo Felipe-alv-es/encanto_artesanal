@@ -42,8 +42,8 @@ function App() {
                     <Categories />
                     <Galery />
                     <Releases />
-                    {/* <SocialMedia /> */}
-                    {/* <Footer /> */}
+                    <SocialMedia />
+                    <Footer />
                   </>
                 }
               />
