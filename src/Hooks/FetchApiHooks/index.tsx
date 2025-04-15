@@ -57,7 +57,6 @@ const useApiData = () => {
       producttype: string;
     }) => {
       const token = localStorage.getItem("authToken");
-
       const method = formData.id ? "PUT" : "POST";
       const url = formData.id ? `${backendUrl}/${formData.id}` : backendUrl;
 
