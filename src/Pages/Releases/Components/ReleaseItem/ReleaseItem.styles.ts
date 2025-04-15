@@ -26,12 +26,17 @@ export const getReleaseItemStyle = () => ({
   },
 });
 
-export const getReleaseItemTitleStyle = () => ({
+export const getTitlePriceContainer = () => ({
   height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+});
+
+export const getReleaseItemTitleStyle = () => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "8px",
   "> p": {
     "::after": {
       content: '""',
@@ -51,15 +56,18 @@ export const getReleaseItemTitleStyle = () => ({
       fontWeight: "300",
       fontFamily: "kanit",
     },
+    "@media(max-width: 768px)": {
+      fontSize: "16px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
   },
 });
 
 export const ReleaseItemPriceStyle = () => ({
-  height: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  paddingBottom: "16px",
   "> p": {
     "@media(max-width: 2560px)": {
       fontSize: "16px",
@@ -73,6 +81,11 @@ export const ReleaseItemPriceStyle = () => ({
     },
     "@media(max-width: 1400px)": {
       fontSize: "14px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+    },
+    "@media(max-width: 768px)": {
+      fontSize: "12px",
       fontWeight: "300",
       fontFamily: "kanit",
     },

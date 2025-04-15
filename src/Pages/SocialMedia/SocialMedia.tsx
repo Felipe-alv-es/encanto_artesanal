@@ -3,10 +3,19 @@ import React, { useEffect, useState } from "react";
 
 export const getPageTitleStyle = () => ({
   textAlign: "center",
-  paddingBottom: "32px",
-  typography: "h3",
-  fontWeight: "bold",
   color: "#fafafa",
+  "@media(max-width: 2560px)": {
+    fontSize: "48px",
+    fontWeight: "bold",
+    fontFamily: "kanit",
+    paddingBottom: "32px",
+  },
+  "@media(max-width: 768px)": {
+    fontSize: "24px",
+    fontWeight: "bold",
+    fontFamily: "kanit",
+    paddingBottom: "8px",
+  },
 });
 
 const HtmlComponent = () => {
@@ -25,13 +34,15 @@ const SocialMedia = () => {
   return (
     <Box
       sx={{
-        padding: "64px",
         textAlign: "center",
         background: "#6bb4ad",
         placeItems: "center",
-        borderStyle: "solid",
-        borderColor: "#528B85",
-        borderWidth: "0px 0px 5px 0px",
+        "@media(max-width: 2560px)": {
+          padding: "64px",
+        },
+        "@media(max-width: 768px)": {
+          padding: "32px 8px 16px 8px",
+        },
       }}
     >
       <Typography sx={getPageTitleStyle}>
@@ -40,7 +51,6 @@ const SocialMedia = () => {
       <Box
         sx={{
           width: "100%",
-          marginLeft: "16px",
         }}
       >
         <HtmlComponent />

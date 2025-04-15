@@ -6,6 +6,7 @@ import { toUrlFormat } from "../../../../utils/toUrlFormat/index.tsx";
 import {
   getReleaseItemStyle,
   getReleaseItemTitleStyle,
+  getTitlePriceContainer,
   ReleaseItemPriceStyle,
 } from "./ReleaseItem.styles.ts";
 
@@ -30,14 +31,16 @@ export const ReleaseItem = React.forwardRef<HTMLDivElement, ReleaseItemProps>(
         onClick={() => navigate(`/product-page/${toUrlFormat(producttype)}`)}
       >
         <ReleaseItemImageComponent imageAlt={imageAlt} imageSrc={imageSrc} />
-        <Box sx={getReleaseItemTitleStyle}>
-          <Typography>{title}</Typography>
-        </Box>
-        {price && (
-          <Box sx={ReleaseItemPriceStyle}>
-            <Typography>{price}</Typography>
+        <Box sx={getTitlePriceContainer}>
+          <Box sx={getReleaseItemTitleStyle}>
+            <Typography>{title}</Typography>
           </Box>
-        )}
+          {price && (
+            <Box sx={ReleaseItemPriceStyle}>
+              <Typography>{price}</Typography>
+            </Box>
+          )}
+        </Box>
       </Paper>
     );
   }

@@ -4,9 +4,9 @@ export const pageMap: Record<string, string | null> = {
   "/product-page/velas-de-massagem": "velas_de_massagem",
   "/product-page/velas-container": "velas_container",
   "/product-page/sabonetes-decorativos": "sabonetes_decorativos",
-  "/product-page/geleia-de-banho": "geleia_de_banho",
+  "/product-page/geleias-de-banho": "geleias_de_banho",
   "/product-page/sabonetes-de-massagem": "sabonetes_de_massagem",
-  "/product-page/joia-de-resina": "joia_de_resina",
+  "/product-page/joias-de-resina": "joias_de_resina",
 };
 
 export const pageDescriptions: Record<
@@ -36,7 +36,7 @@ export const pageDescriptions: Record<
     description:
       "Mais do que higiene, nossos sabonetes decorativos encantam com formas e aromas únicos — feitos para perfumar e enfeitar seu espaço com carinho e delicadeza.",
   },
-  geleia_de_banho: {
+  geleias_de_banho: {
     title: "Geleia de Banho",
     description:
       "Com textura macia e aromas deliciosos, as geleias de banho transformam o banho em um ritual sensorial envolvente, que cuida da pele e acalma a mente.",
@@ -46,7 +46,7 @@ export const pageDescriptions: Record<
     description:
       "Nossos sabonetes de massagem combinam propriedades relaxantes com fragrâncias suaves, proporcionando uma experiência revigorante e cheia de cuidado.",
   },
-  joia_de_resina: {
+  joias_de_resina: {
     title: "Joia de Resina",
     description:
       "Joias de resina feitas à mão, com composições únicas e encantadoras — perfeitas para eternizar momentos, contar histórias e carregar beleza em cada detalhe.",

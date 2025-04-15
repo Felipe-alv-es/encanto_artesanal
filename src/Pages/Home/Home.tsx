@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import { IoChevronForward } from "react-icons/io5";
 import {
   getContentContainerStyle,
@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const scrollValue = useScrollValue();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <Box sx={getPageContainerStyle(scrollValue)}>
@@ -32,7 +33,7 @@ const Home = () => {
           <StyledButton
             text="Conheça nossos produtos"
             variant="outlined"
-            size="md"
+            size={isMobile ? "sm" : "md"}
             icon={<IoChevronForward />}
             onClick={() => navigate("/product-page")}
           />

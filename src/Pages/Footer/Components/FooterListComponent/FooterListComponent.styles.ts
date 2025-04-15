@@ -2,17 +2,25 @@ export const getContainerStyle = () => ({
   width: "100%",
   display: "flex",
   justifyContent: "center",
+  "@media(max-width: 768px)": {
+    paddingY: "16px",
+  },
 });
 
 export const getContainerContentStyle = () => ({
   height: "60%",
-  display: "flex",
   gap: "32px",
+  display: "flex",
   "@media(max-width: 2560px)": {
     width: "50%",
   },
   "@media(max-width: 1400px)": {
     width: "70%",
+  },
+  "@media(max-width: 768px)": {
+    width: "100%",
+    flexDirection: "column",
+    alignItems: "center",
   },
 });
 
@@ -21,26 +29,34 @@ export const getTitleStyle = () => ({
   marginBottom: "16px",
   fontFamily: "kanit",
   color: "#6bb4ad",
-  fontSize: "28px",
+  "@media(max-width: 2560px)": {
+    fontSize: "28px",
+  },
+  "@media(max-width: 768px)": {
+    fontSize: "24px",
+  },
 });
 
 export const getSubtitleStyle = () => ({
-  fontWeight: "normal",
   textAlign: "center",
-  marginBottom: "32px",
-  fontSize: "16px",
   color: "#383838",
+  "@media(max-width: 2560px)": {
+    fontSize: "16px",
+  },
+  "@media(max-width: 768px)": {
+    fontSize: "16px",
+  },
 });
 
 export const getFooterMenuStyle = () => ({
   display: "flex",
-  padding: "16px",
   justifyContent: "center",
   textAlign: "center",
-  "@media(max-width: 544px)": {
-    flexDirection: "column",
-    padding: "32px",
-    placeItems: "center",
+  "@media(max-width: 2560px)": {
+    padding: "16px",
+  },
+  "@media(max-width: 768px)": {
+    padding: "0px",
   },
 });
 

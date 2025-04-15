@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import LinkListComponent from "../LinkListComponent.tsx/index.tsx";
 import {
   getContainerContentStyle,
@@ -17,6 +17,8 @@ import WhatsLogo from "../../../../assets/images/Logo/WhatsappLogo.png";
 import LogoComponent from "../Logo/index.tsx";
 
 export const FooterListComponent = React.forwardRef<HTMLLIElement>(() => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <Box sx={getContainerStyle}>
       <Box sx={getContainerContentStyle}>
@@ -29,9 +31,11 @@ export const FooterListComponent = React.forwardRef<HTMLLIElement>(() => {
             }
           </Typography>
         </Box>
-        <Box>
-          <Divider sx={{ background: "#6bb4ad" }} orientation="vertical" />
-        </Box>
+        {!isMobile && (
+          <Box>
+            <Divider sx={{ background: "#6bb4ad" }} orientation="vertical" />
+          </Box>
+        )}
         <Box sx={getFooterMenuStyle}>
           <Box>
             <Typography sx={getlistTitleStyle}>{"Meus Links"}</Typography>

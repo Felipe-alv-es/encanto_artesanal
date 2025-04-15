@@ -43,10 +43,10 @@ const ProductPage = () => {
   const current = currentPage();
   const productPageTitle = current
     ? pageDescriptions[current]?.title ?? ""
-    : "";
+    : "Todos os Produtos";
   const productPageDescription = current
     ? pageDescriptions[current]?.description ?? ""
-    : "";
+    : "Explore nossa coleção completa, onde cada peça é criada com atenção aos detalhes para transformar seus ambientes com charme, personalidade e um toque único de cuidado artesanal.";
 
   return (
     <>

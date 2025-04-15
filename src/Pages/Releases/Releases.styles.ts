@@ -1,24 +1,35 @@
 export const getContainerStyle = () => ({
-  background: "#F2F7F2",
+  background: "#EAF1EA",
   display: "flex",
   justifyContent: "center",
-  paddingY: "3%",
   "> div": {
     width: "100%",
     "@media(max-width: 2560px)": {
       maxWidth: "1344px",
+      paddingY: "3%",
     },
     "@media(max-width: 1400px)": {
       maxWidth: "900px",
+      paddingY: "3%",
+    },
+    "@media(max-width: 768px)": {
+      paddingY: "8%",
     },
   },
 });
 
 export const getPageTitleStyle = () => ({
   textAlign: "center",
-  typography: "h3",
-  fontWeight: "300",
-  fontFamily: "kanit",
+  "@media(max-width: 2560px)": {
+    fontSize: "48px",
+    fontWeight: "300",
+    fontFamily: "kanit",
+  },
+  "@media(max-width: 768px)": {
+    fontSize: "24px",
+    fontWeight: "300",
+    fontFamily: "kanit",
+  },
 });
 
 export const getGridStyle = () => ({

@@ -17,9 +17,6 @@ export const LinkListComponent = React.forwardRef<
           sx={{
             width: "48px",
             height: "48px",
-            "@media(max-width: 544px)": {
-              width: "70%",
-            },
           }}
           component="img"
           src={imgSrc}

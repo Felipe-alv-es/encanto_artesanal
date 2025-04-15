@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import GaleryImageComponent from "../GaleryImageComponent/GaleryImageComponent.tsx";
 import { GaleryTitleStyle, getItemContainer } from "./GaleryItem.styles.ts";
@@ -17,6 +17,7 @@ interface GaleryItemProps {
 export const GaleryItem = React.forwardRef<HTMLDivElement, GaleryItemProps>(
   ({ title, imageAlt, imageSrc, isPrincipal, producttype }, ref) => {
     const navigate = useNavigate();
+    const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
       <Paper
@@ -29,7 +30,7 @@ export const GaleryItem = React.forwardRef<HTMLDivElement, GaleryItemProps>(
         <GaleryImageComponent imageAlt={imageAlt} imageSrc={imageSrc} />
         <Box sx={GaleryTitleStyle(isPrincipal)}>
           <Typography>{title}</Typography>
-          <GoArrowRight size={20} />
+          {!isMobile && <GoArrowRight size={20} />}
         </Box>
       </Paper>
     );

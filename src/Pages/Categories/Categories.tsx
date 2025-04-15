@@ -1,45 +1,43 @@
 import React from "react";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { categoriesOptions } from "../../assets/Arrays/CategoriesList.tsx";
 import {
   getContainerStyle,
-  getItemContainer,
-  CategoriesTitleStyle,
   getContentContainerStyle,
   getTitleStyle,
 } from "./Categories.styles.ts";
-import CategoriesImageComponent from "./Components/CategoriesImageComponent/index.tsx";
-import { useNavigate } from "react-router-dom";
-import { GoArrowRight } from "react-icons/go";
+import CategoryItem from "./Components/CategoryItem/CategoryItem.tsx";
+import StyledMobileStepper from "./Components/MobileStepper/MobileStepper.tsx";
 
 const Categories = () => {
   const navigate = useNavigate();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <Box sx={getContainerStyle}>
       <Box>
-        <Typography sx={getTitleStyle}>
-          {"Os melhores produtos artesanais para você"}
-        </Typography>
-        <Box sx={getContentContainerStyle}>
-          {categoriesOptions.map((item) => (
-            <Paper
-              sx={getItemContainer}
-              key={item.title}
-              role="button"
-              elevation={0}
-              onClick={() => navigate("/product-page")}
-            >
-              <CategoriesImageComponent
-                imageAlt={item.imageAlt}
-                imageSrc={item.imageSrc}
-              />
-              <Box sx={CategoriesTitleStyle}>
-                <Typography>{item.title}</Typography>
-                <GoArrowRight size={20} />
+        <Box>
+          <Typography sx={getTitleStyle}>
+            {"Os melhores produtos artesanais para você"}
+          </Typography>
+          <Box sx={getContentContainerStyle}>
+            {isMobile ? (
+              <StyledMobileStepper />
+            ) : (
+              <Box display="flex" flexWrap="wrap" gap={2}>
+                {categoriesOptions.map((item) => (
+                  <CategoryItem
+                    key={item.title}
+                    title={item.title}
+                    imageSrc={item.imageSrc}
+                    imageAlt={item.imageAlt}
+                    onClick={() => navigate("/product-page")}
+                  />
+                ))}
               </Box>
-            </Paper>
-          ))}
+            )}
+          </Box>
         </Box>
       </Box>
     </Box>
