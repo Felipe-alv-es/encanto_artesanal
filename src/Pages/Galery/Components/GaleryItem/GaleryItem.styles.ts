@@ -49,5 +49,12 @@ export const GaleryTitleStyle = (isPrincipal?: boolean) => ({
       fontWeight: "300",
       fontFamily: "kanit",
     },
+    "@media(max-width: 768px)": {
+      fontSize: "16px",
+      fontWeight: "300",
+      fontFamily: "kanit",
+      padding: "8px",
+      textAlign: "center",
+    },
   },
 });

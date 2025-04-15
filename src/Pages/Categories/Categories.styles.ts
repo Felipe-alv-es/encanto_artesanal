@@ -1,5 +1,5 @@
 export const getContainerStyle = () => ({
-  background: "#f2f7f2",
+  background: "#EAF1EA",
   padding: "5% 10% 5% 10%",
   display: "flex",
   justifyContent: "center",

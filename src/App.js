@@ -40,8 +40,8 @@ function App() {
                     <Navbar />
                     <Home />
                     <Categories />
-                    {/* <Galery /> */}
-                    {/* <Releases /> */}
+                    <Galery />
+                    <Releases />
                     {/* <SocialMedia /> */}
                     {/* <Footer /> */}
                   </>
