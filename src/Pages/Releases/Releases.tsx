@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Skeleton, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   getContainerStyle,
   getGridStyle,
