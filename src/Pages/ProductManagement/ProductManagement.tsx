@@ -19,8 +19,9 @@ const ProductManagement = () => {
     formatDataInitialValues()
   );
   const { handleSave, apiData, handleDelete } = useApiData();
+  const [isEditing, setIsEditing] = useState(false);
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field: string, value: string | string[]) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -63,6 +64,7 @@ const ProductManagement = () => {
         handleChange={handleChange}
         handleSave={handleSave}
         handleChangeSelect={handleChangeSelect}
+        isEditing={isEditing}
       />
       <CustomDivider />
       <Box sx={getGridStyle}>
@@ -79,6 +81,8 @@ const ProductManagement = () => {
               producttype={item.producttype}
               title={item.title}
               key={item.id}
+              setIsEditing={setIsEditing}
+              isEditing={isEditing}
             />
           ))
         ) : (

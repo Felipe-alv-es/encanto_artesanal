@@ -16,8 +16,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const savedToken = localStorage.getItem("authToken");
-    console.log(savedToken);
-
     if (savedToken) {
       axios
         .get("https://encanto-artesanal-back.onrender.com/api/validate-token", {

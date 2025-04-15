@@ -22,6 +22,8 @@ interface ExhibitionItemProps {
     imagesrc: string[];
     producttype: string;
   }) => void;
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
+  isEditing: boolean;
 }
 
 const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
@@ -36,9 +38,24 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
       producttype,
       handleDelete,
       onEditClick,
+      setIsEditing,
+      isEditing,
     },
     ref
   ) => {
+    const handleEdit = () => {
+      onEditClick({
+        id,
+        title,
+        description,
+        largeDescription,
+        imagealt,
+        imagesrc: imagesrc,
+        producttype,
+      });
+      setIsEditing(!isEditing);
+    };
+
     return (
       <>
         <Box>
@@ -54,19 +71,7 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
             <IconButton onClick={() => handleDelete(id)}>
               <IoMdCloseCircleOutline color="red" />
             </IconButton>
-            <IconButton
-              onClick={() =>
-                onEditClick({
-                  id,
-                  title,
-                  description,
-                  largeDescription,
-                  imagealt,
-                  imagesrc: imagesrc,
-                  producttype,
-                })
-              }
-            >
+            <IconButton onClick={() => handleEdit()}>
               <MdOutlineModeEdit color="blue" />
             </IconButton>
           </Box>

@@ -29,7 +29,10 @@ const fetchApiData = async (): Promise<ApiResponse> => {
 
   const processedData = data.data.map((item: any) => ({
     ...item,
-    imagesrc: JSON.parse(item.imagesrc),
+    imagesrc:
+      typeof item.imagesrc === "string"
+        ? JSON.parse(item.imagesrc)
+        : item.imagesrc,
   }));
 
   return { ...data, data: processedData.reverse() };

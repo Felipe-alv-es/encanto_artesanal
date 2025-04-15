@@ -12,7 +12,7 @@ import { UseMutateAsyncFunction } from "react-query";
 
 interface StyledLinkListComponentProps {
   formData: formDataPlaceholder;
-  handleChange: (field: string, value: string) => void;
+  handleChange: (field: string, value: string | string[]) => void;
   handleSave: UseMutateAsyncFunction<
     any,
     unknown,
@@ -26,35 +26,41 @@ interface StyledLinkListComponentProps {
     unknown
   >;
   handleChangeSelect: (event: SelectChangeEvent) => void;
+  isEditing: boolean;
 }
 
 const ProductInputComponent = React.forwardRef<
   HTMLLIElement,
   StyledLinkListComponentProps
->(({ formData, handleChange, handleSave, handleChangeSelect }, ref) => {
-  console.log(formData);
-  return (
-    <Box sx={containerStyle}>
-      <Box sx={textFieldAreaStyle}>
-        <InputFieldsComponent
-          formData={formData}
-          handleChange={handleChange}
-          handleSave={handleSave}
-          handleChangeSelect={handleChangeSelect}
-        />
-      </Box>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box sx={{ width: "100%", placeItems: "center" }}>
-          <ReleaseItem
-            imageSrc={formData.imageSrc[0]}
-            imageAlt={""}
-            title={formData.title}
-            price={formData.description}
+>(
+  (
+    { formData, isEditing, handleChange, handleSave, handleChangeSelect },
+    ref
+  ) => {
+    return (
+      <Box sx={containerStyle}>
+        <Box sx={textFieldAreaStyle}>
+          <InputFieldsComponent
+            formData={formData}
+            handleChange={handleChange}
+            handleSave={handleSave}
+            handleChangeSelect={handleChangeSelect}
+            isEditing={isEditing}
           />
         </Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{ width: "100%", placeItems: "center" }}>
+            <ReleaseItem
+              imageSrc={formData.imageSrc[0]}
+              imageAlt={""}
+              title={formData.title}
+              price={formData.description}
+            />
+          </Box>
+        </Box>
       </Box>
-    </Box>
-  );
-});
+    );
+  }
+);
 
 export default ProductInputComponent;
