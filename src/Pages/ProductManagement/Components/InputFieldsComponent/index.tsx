@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Chip, MenuItem, Select, TextField } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { formDataPlaceholder } from "../../ProductManagement.types";
@@ -29,6 +29,14 @@ const InputFieldsComponent = React.forwardRef<
   const [imageLinks, setImageLinks] = useState<string[]>([]);
   const [currentLink, setCurrentLink] = useState<string>("");
 
+  console.log(formData);
+
+  useEffect(() => {
+    if (formData.imageSrc && formData.imageSrc.length > 0) {
+      setImageLinks(formData.imageSrc);
+    }
+  }, [formData.imageSrc]);
+
   const handleAddImageLink = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && currentLink.trim() !== "") {
       event.preventDefault();
@@ -43,6 +51,11 @@ const InputFieldsComponent = React.forwardRef<
 
   return (
     <>
+      <TextField
+        label="Id"
+        value={formData.id}
+        onChange={(e) => handleChange("id", e.target.value)}
+      />
       <TextField
         label="Título"
         value={formData.title}

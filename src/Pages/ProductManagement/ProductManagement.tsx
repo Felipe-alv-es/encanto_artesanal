@@ -34,6 +34,26 @@ const ProductManagement = () => {
     }));
   };
 
+  const handleEditClick = (data: {
+    id: number;
+    title: string;
+    description: string;
+    largeDescription: string;
+    imagealt: string;
+    imagesrc: string[];
+    producttype: string;
+  }) => {
+    setFormData({
+      id: data.id,
+      title: data.title,
+      description: data.description,
+      largedescription: data.largeDescription,
+      imagealt: data.imagealt,
+      imageSrc: data.imagesrc,
+      producttype: data.producttype,
+    });
+  };
+
   return (
     <Box sx={productManagementContainerStyle}>
       <Typography>ProductManagement</Typography>
@@ -51,13 +71,12 @@ const ProductManagement = () => {
             <ExhibitionItem
               description={item.description}
               handleDelete={handleDelete}
+              onEditClick={handleEditClick}
               id={item.id}
               imagealt={item.imagealt}
-              imagesrc={
-                item.imagesrc && item.imagesrc.length > 0
-                  ? item.imagesrc[0]
-                  : ""
-              }
+              imagesrc={item.imagesrc}
+              largeDescription={item.largedescription}
+              producttype={item.producttype}
               title={item.title}
               key={item.id}
             />

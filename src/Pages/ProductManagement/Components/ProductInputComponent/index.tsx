@@ -32,6 +32,7 @@ const ProductInputComponent = React.forwardRef<
   HTMLLIElement,
   StyledLinkListComponentProps
 >(({ formData, handleChange, handleSave, handleChangeSelect }, ref) => {
+  console.log(formData);
   return (
     <Box sx={containerStyle}>
       <Box sx={textFieldAreaStyle}>
@@ -48,7 +49,7 @@ const ProductInputComponent = React.forwardRef<
             imageSrc={formData.imageSrc[0]}
             imageAlt={""}
             title={formData.title}
-            description={formData.description}
+            price={formData.description}
           />
         </Box>
       </Box>

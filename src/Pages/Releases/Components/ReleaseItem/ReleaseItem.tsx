@@ -14,7 +14,7 @@ interface ReleaseItemProps {
   imageSrc: string;
   imageAlt: string;
   title: string;
-  producttype: string;
+  producttype?: string;
   price?: string;
 }
 
