@@ -17,6 +17,16 @@ const ReleaseMobileCarousel = () => {
   const { apiData, isLoading } = useApiData();
   const [activeIndex, setActiveIndex] = React.useState(0);
 
+  const [itemWidth, setItemWidth] = React.useState(0);
+
+  const measureItem = (el: HTMLDivElement | null) => {
+    if (el && itemWidth === 0) {
+      const gap = 16;
+      const width = el.offsetWidth + gap;
+      setItemWidth(width);
+    }
+  };
+
   if (isLoading || !apiData || !apiData.data.length) {
     return <ReleasesSkeleton />;
   }
@@ -38,9 +48,9 @@ const ReleaseMobileCarousel = () => {
       </IconButton>
 
       <Box sx={getReleaseMobileCarouselContentStyle}>
-        <Box sx={getReleaseMobileCarouselSwiperStyle(activeIndex)}>
-          {releases.map((item) => (
-            <Box key={item.id}>
+        <Box sx={getReleaseMobileCarouselSwiperStyle(activeIndex, itemWidth)}>
+          {releases.map((item, index) => (
+            <Box key={item.id} ref={index === 0 ? measureItem : null}>
               <ReleaseItem
                 imageSrc={item.imagesrc[0]}
                 imageAlt={item.imagealt}

@@ -29,7 +29,10 @@ const fetchApiData = async (): Promise<ApiResponse> => {
 
   const processedData = data.data.map((item: any) => ({
     ...item,
-    imagesrc: JSON.parse(item.imagesrc),
+    imagesrc:
+      typeof item.imagesrc === "string"
+        ? JSON.parse(item.imagesrc)
+        : item.imagesrc,
   }));
 
   return { ...data, data: processedData.reverse() };
@@ -49,6 +52,7 @@ const useApiData = () => {
 
   const saveMutation = useMutation({
     mutationFn: async (formData: {
+      id?: number;
       title: string;
       description: string;
       largedescription: string;
@@ -56,9 +60,11 @@ const useApiData = () => {
       producttype: string;
     }) => {
       const token = localStorage.getItem("authToken");
+      const method = formData.id ? "PUT" : "POST";
+      const url = formData.id ? `${backendUrl}/${formData.id}` : backendUrl;
 
-      const response = await fetch(backendUrl, {
-        method: "POST",
+      const response = await fetch(url, {
+        method,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -81,18 +87,8 @@ const useApiData = () => {
 
       return response.json();
     },
-    onSuccess: (newItem) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["apiData"] });
-
-      queryClient.setQueryData<ApiResponse>(["apiData"], (oldData) => {
-        if (oldData) {
-          return {
-            ...oldData,
-            data: [newItem, ...oldData.data].reverse(),
-          };
-        }
-        return { data: [newItem] };
-      });
     },
   });
 

@@ -10,9 +10,12 @@ export const getReleaseMobileCarouselContentStyle = () => ({
   width: "85%",
 });
 
-export const getReleaseMobileCarouselSwiperStyle = (activeIndex: number) => ({
+export const getReleaseMobileCarouselSwiperStyle = (
+  activeIndex: number,
+  itemWidth: number
+) => ({
   display: "flex",
   transition: "transform 0.4s ease",
-  transform: `translateX(-${activeIndex * 90}%)`,
+  transform: `translateX(-${activeIndex * itemWidth}px)`,
   gap: "16px",
 });

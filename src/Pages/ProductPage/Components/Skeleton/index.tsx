@@ -6,57 +6,57 @@ const ProductPageSkeleton = () => {
     <>
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
       <Skeleton
         variant="rounded"
-        height={616}
-        width={335}
+        width={250}
+        height={400}
         sx={{ borderRadius: "32px" }}
         animation="wave"
       />
