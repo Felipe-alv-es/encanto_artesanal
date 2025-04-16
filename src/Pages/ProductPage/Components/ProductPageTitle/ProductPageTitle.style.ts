@@ -1,5 +1,4 @@
 export const getProductPageTitleContainerStyle = () => ({
-  paddingTop: "200px",
   display: "flex",
   justifyContent: "center",
   background: "#EAF1EA",
@@ -8,18 +7,40 @@ export const getProductPageTitleContainerStyle = () => ({
     maxWidth: "1344px",
     paddingRight: "25%",
   },
+  "@media(max-width: 2560px)": {
+    paddingTop: "200px",
+  },
+  "@media(max-width: 768px)": {
+    paddingTop: "120px",
+  },
 });
 
 export const getProductPageTitleStyle = () => ({
-  fontWeight: "500",
   color: "#383838",
-  fontSize: "48px",
-  fontFamily: "kanit",
+  "@media(max-width: 2560px)": {
+    fontWeight: "500",
+    fontSize: "48px",
+    fontFamily: "kanit",
+  },
+  "@media(max-width: 768px)": {
+    fontSize: "32px",
+    fontWeight: "500",
+    fontFamily: "kanit",
+    paddingX: "16px",
+  },
 });
 
 export const getProductPageSubtitleStyle = () => ({
-  fontWeight: "300",
   color: "#383838",
-  fontSize: "18px",
-  fontFamily: "kanit",
+  "@media(max-width: 2560px)": {
+    fontWeight: "300",
+    fontSize: "18px",
+    fontFamily: "kanit",
+  },
+  "@media(max-width: 768px)": {
+    fontWeight: "300",
+    fontSize: "14px",
+    fontFamily: "kanit",
+    paddingX: "16px",
+  },
 });
