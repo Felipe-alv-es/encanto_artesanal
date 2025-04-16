@@ -19,5 +19,10 @@ export const productPageGridStyle = () => ({
   justifyContent: "center",
   alignItems: "center",
   paddingY: "64px",
-  gridTemplateColumns: "repeat(4, auto)",
+  "@media(max-width: 2560px)": {
+    gridTemplateColumns: "repeat(4, auto)",
+  },
+  "@media(max-width: 768px)": {
+    gridTemplateColumns: "repeat(2, auto)",
+  },
 });

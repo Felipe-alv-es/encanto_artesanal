@@ -24,6 +24,10 @@ export const getProductItemContainerStyle = () => ({
     width: "200px",
     height: "350px",
   },
+  "@media(max-width: 768px)": {
+    width: "150px",
+    height: "300px",
+  },
 });
 
 export const getProductItemTitleStyle = () => ({
