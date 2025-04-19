@@ -8,7 +8,7 @@ import {
   getTitleStyle,
 } from "./Categories.styles.ts";
 import CategoryItem from "./Components/CategoryItem/CategoryItem.tsx";
-import StyledMobileStepper from "./Components/MobileStepper/MobileStepper.tsx";
+import CategoriesMobileCarousel from "./Components/CategoriesMobileCarousel/CategoriesMobileCarousel.tsx";
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Categories = () => {
           </Typography>
           <Box sx={getContentContainerStyle}>
             {isMobile ? (
-              <StyledMobileStepper />
+              <CategoriesMobileCarousel categoriesOptions={categoriesOptions} />
             ) : (
               <Box display="flex" flexWrap="wrap" gap={2}>
                 {categoriesOptions.map((item) => (
