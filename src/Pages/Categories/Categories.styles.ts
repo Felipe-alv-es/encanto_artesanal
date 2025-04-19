@@ -23,6 +23,7 @@ export const getTitleStyle = () => ({
     fontWeight: "300",
     fontFamily: "kanit",
     textAlign: "center",
+    paddingTop: "32px",
   },
 });
 
