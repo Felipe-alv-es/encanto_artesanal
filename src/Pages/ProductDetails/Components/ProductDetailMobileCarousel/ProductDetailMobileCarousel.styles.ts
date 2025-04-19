@@ -20,7 +20,6 @@ export const getProductDetailMobileCarouselSwiperStyle = (
   transform: `translateX(-${activeIndex * itemWidth}px)`,
   gap: "16px",
   width: "100%",
-  background: "lightBlue",
 });
 
 export const getProductDetailMobileCarouselImageStyle = () => ({
