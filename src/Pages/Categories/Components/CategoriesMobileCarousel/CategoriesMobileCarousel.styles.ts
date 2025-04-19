@@ -2,7 +2,7 @@ export const getProductDetailMobileCarouselContainerStyle = () => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  paddingBottom: "16px",
+  paddingBottom: "32px",
   width: "100vw",
 });
 

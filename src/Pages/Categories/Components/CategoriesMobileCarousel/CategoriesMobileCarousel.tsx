@@ -56,48 +56,38 @@ export const CategoriesMobileCarousel = React.forwardRef<
   };
 
   return (
-    <Box sx={{ display: "block" }}>
-      <Box sx={getProductDetailMobileCarouselContainerStyle}>
-        <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
-          <FaRegArrowAltCircleLeft color="#6bb4ad" />
-        </IconButton>
+    <Box sx={getProductDetailMobileCarouselContainerStyle}>
+      <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
+        <FaRegArrowAltCircleLeft color="#6bb4ad" />
+      </IconButton>
 
-        <Box sx={getProductDetailMobileCarouselContentStyle}>
-          <Box
-            ref={ref}
-            sx={getProductDetailMobileCarouselSwiperStyle(
-              activeIndex,
-              itemWidth
-            )}
-          >
-            {categoriesOptions.map((item, index) => (
-              <Box
-                key={item.title}
-                ref={index === 0 ? itemRef : null}
-                sx={getCategoryItemContainerStyle}
-              >
-                <CategoryItem
-                  title={item.title}
-                  imageSrc={item.imageSrc}
-                  imageAlt={item.imageAlt}
-                  onClick={() => navigate("/product-page")}
-                />
-              </Box>
-            ))}
-          </Box>
-        </Box>
-        <IconButton
-          onClick={handleNext}
-          disabled={activeIndex === categoriesOptions.length - 1}
+      <Box sx={getProductDetailMobileCarouselContentStyle}>
+        <Box
+          ref={ref}
+          sx={getProductDetailMobileCarouselSwiperStyle(activeIndex, itemWidth)}
         >
-          <FaRegArrowAltCircleRight color="#6bb4ad" />
-        </IconButton>
+          {categoriesOptions.map((item, index) => (
+            <Box
+              key={item.title}
+              ref={index === 0 ? itemRef : null}
+              sx={getCategoryItemContainerStyle}
+            >
+              <CategoryItem
+                title={item.title}
+                imageSrc={item.imageSrc}
+                imageAlt={item.imageAlt}
+                onClick={() => navigate("/product-page")}
+              />
+            </Box>
+          ))}
+        </Box>
       </Box>
-      <Typography
-        sx={{ textAlign: "center", fontSize: "12px", paddingBottom: "32px" }}
+      <IconButton
+        onClick={handleNext}
+        disabled={activeIndex === categoriesOptions.length - 1}
       >
-        {`${activeIndex + 1} | ${categoriesOptions.length}`}
-      </Typography>
+        <FaRegArrowAltCircleRight color="#6bb4ad" />
+      </IconButton>
     </Box>
   );
 });
