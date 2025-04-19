@@ -15,7 +15,7 @@ export const getContainerStyle = () => ({
 
 export const productPageGridStyle = () => ({
   display: "grid",
-  gap: "32px",
+  gap: "16px",
   justifyContent: "center",
   alignItems: "center",
   paddingY: "64px",

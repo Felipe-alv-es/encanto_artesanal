@@ -25,7 +25,7 @@ export const getProductItemContainerStyle = () => ({
     height: "350px",
   },
   "@media(max-width: 768px)": {
-    width: "150px",
+    width: "170px",
     height: "300px",
   },
 });
