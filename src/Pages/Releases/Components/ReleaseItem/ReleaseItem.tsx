@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import ReleaseItemImageComponent from "../ReleaseItemImageComponent/ReleaseItemImageComponent.tsx";
 import { useNavigate } from "react-router-dom";
-import { toUrlFormat } from "../../../../utils/toUrlFormat/index.tsx";
 import {
   getReleaseItemStyle,
   getReleaseItemTitleStyle,
