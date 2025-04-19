@@ -11,6 +11,7 @@ import {
 } from "./ReleaseItem.styles.ts";
 
 interface ReleaseItemProps {
+  id: number;
   imageSrc: string;
   imageAlt: string;
   title: string;
@@ -19,8 +20,12 @@ interface ReleaseItemProps {
 }
 
 export const ReleaseItem = React.forwardRef<HTMLDivElement, ReleaseItemProps>(
-  ({ title, imageSrc, imageAlt, price, producttype }, ref) => {
+  ({ id, title, imageSrc, imageAlt, price, producttype }, ref) => {
     const navigate = useNavigate();
+
+    const handleOnClickItem = (id: number) => {
+      navigate(`/produto/${id}`);
+    };
 
     return (
       <Paper
@@ -28,7 +33,7 @@ export const ReleaseItem = React.forwardRef<HTMLDivElement, ReleaseItemProps>(
         key={title}
         role="button"
         elevation={0}
-        onClick={() => navigate(`/product-page/${toUrlFormat(producttype)}`)}
+        onClick={() => handleOnClickItem(id)}
       >
         <ReleaseItemImageComponent imageAlt={imageAlt} imageSrc={imageSrc} />
         <Box sx={getTitlePriceContainer}>
