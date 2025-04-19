@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import SideImages from "./Components/SideImages/SideImages.tsx";
@@ -15,10 +15,12 @@ import {
   getTitleStyle,
 } from "./ProductDetails.styles.ts";
 import QuantityComponent from "./Components/QuantityComponent/QuantityComponent.tsx";
+import ReleaseMobileCarousel from "./Components/ProductDetailMobileCarousel/ProductDetailMobileCarousel.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { apiData, isLoading } = useApiData();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const product = id
     ? apiData?.data?.find((item) => item.id === Number(id))
@@ -37,10 +39,17 @@ const ProductDetail = () => {
       <Navbar />
       <Box sx={getProductDetailContainerStyles}>
         <Box>
-          <Box sx={getImagesContainerStyle}>
-            <SideImages product={product} setSelectedImage={setSelectedImage} />
-            <MainImage product={product} selectedImage={selectedImage} />
-          </Box>
+          {isMobile ? (
+            <ReleaseMobileCarousel product={product} />
+          ) : (
+            <Box sx={getImagesContainerStyle}>
+              <SideImages
+                product={product}
+                setSelectedImage={setSelectedImage}
+              />
+              <MainImage product={product} selectedImage={selectedImage} />
+            </Box>
+          )}
           <Box sx={getProductContentContainerStyle}>
             <Box>
               <Typography sx={getTitleStyle}>{product.title}</Typography>

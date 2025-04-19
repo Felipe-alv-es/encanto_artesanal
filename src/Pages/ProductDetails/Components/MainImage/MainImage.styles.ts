@@ -1,6 +1,4 @@
 export const getMainImageStyle = () => ({
-  width: 600,
-  height: 600,
   overflow: "hidden",
   display: "flex",
   "> img": {
@@ -8,5 +6,17 @@ export const getMainImageStyle = () => ({
     objectFit: "cover",
     borderRadius: "16px",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+  },
+  "@media(max-width: 2560px)": {
+    width: 600,
+    height: 600,
+  },
+  "@media(max-width: 1400px)": {
+    width: 400,
+    height: 400,
+  },
+  "@media(max-width: 768px)": {
+    width: 400,
+    height: 400,
   },
 });

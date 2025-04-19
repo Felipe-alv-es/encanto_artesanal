@@ -4,6 +4,7 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import {
   getQuantityComponentContainerStyle,
   getQuantityComponentInputStyle,
+  getQuantityTitleStyle,
 } from "./QuantityComponent.styles.ts";
 
 interface QuantityComponentProps {
@@ -25,7 +26,7 @@ const QuantityComponent = React.forwardRef<
 
   return (
     <Box ref={ref}>
-      <Typography>{"Quantidade:"}</Typography>
+      <Typography sx={getQuantityTitleStyle}>{"Quantidade:"}</Typography>
       <Box sx={getQuantityComponentContainerStyle}>
         <IconButton onClick={handleDecrement}>
           <FaMinus size={"18px"} />
