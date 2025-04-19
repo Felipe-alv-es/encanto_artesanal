@@ -1,10 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
-import {
-  getFirstTitleStyle,
-  getLogoContainerStyle,
-  getSecondTitleStyle,
-} from "./StyledLogo.styles.ts";
+import { getLogoContainerStyle } from "./StyledLogo.styles.ts";
+//@ts-ignore
+import Logo from "../../assets/images/Logo/Logo.png";
 
 interface StyledLogoProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -20,8 +18,22 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         onClick={onClick}
         {...props}
       >
-        <Typography sx={getFirstTitleStyle}>{"Encanto"}</Typography>
-        <Typography sx={getSecondTitleStyle}>{"Artesanal"}</Typography>
+        <Box
+          sx={{
+            "@media(max-width: 2560px)": {
+              width: "200px",
+            },
+            "@media(max-width: 1400px)": {
+              width: "190px",
+            },
+            "@media(max-width: 768px)": {
+              width: "140px",
+            },
+          }}
+          component="img"
+          src={Logo}
+          alt="Man avatar generic image"
+        />
       </Box>
     );
   }
