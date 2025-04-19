@@ -46,6 +46,7 @@ export const ReleaseMobileCarousel = React.forwardRef<
     return () => {
       window.removeEventListener("resize", measureItem);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePrev = () => {
