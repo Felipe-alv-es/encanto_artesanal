@@ -10,6 +10,7 @@ import {
   ProductPage,
   ProductManagement,
   Login,
+  ProductDetail,
 } from "./Pages/index.ts";
 import ProtectedRoute from "./utils/isAutenticated/index.tsx";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -60,6 +61,7 @@ function App() {
                   element={<ProductPage />}
                 />
               ))}
+              <Route path="/produto/:id" element={<ProductDetail />} />
             </Routes>
           </BrowserRouter>
         </div>

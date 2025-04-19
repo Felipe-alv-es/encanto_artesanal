@@ -5,7 +5,6 @@ import {
   getProductItemPriceStyle,
   getProductItemTitleStyle,
 } from "./ProductItem.styles.ts";
-import { useNavigate } from "react-router-dom";
 import ProductItemImage from "../ProductItemImage/ProductItemImage.tsx";
 
 interface ProductItemProps {
@@ -17,8 +16,6 @@ interface ProductItemProps {
 
 export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
   ({ title, price, imageSrc, onClick }, ref) => {
-    const navigate = useNavigate();
-
     return (
       <Box ref={ref}>
         <Paper
@@ -26,7 +23,7 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
           key={title}
           role="button"
           elevation={0}
-          onClick={() => navigate("/product-page")}
+          onClick={onClick}
         >
           <ProductItemImage imageAlt={title} imageSrc={imageSrc} />
           <Box sx={getProductItemTitleStyle}>

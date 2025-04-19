@@ -8,3 +8,4 @@ export { default as Footer } from "./Footer/Footer.tsx";
 export { default as ProductPage } from "./ProductPage/ProductPage.tsx";
 export { default as ProductManagement } from "./ProductManagement/ProductManagement.tsx";
 export { default as Login } from "./Login/Login.tsx";
+export { default as ProductDetail } from "./ProductDetails/ProductDetail.tsx";

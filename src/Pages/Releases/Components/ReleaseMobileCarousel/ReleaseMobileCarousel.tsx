@@ -48,19 +48,17 @@ const ReleaseMobileCarousel = () => {
       </IconButton>
 
       <Box sx={getReleaseMobileCarouselContentStyle}>
-        <Box sx={getReleaseMobileCarouselSwiperStyle(activeIndex, itemWidth)}>
-          {releases.map((item, index) => (
-            <Box key={item.id} ref={index === 0 ? measureItem : null}>
-              <ReleaseItem
-                imageSrc={item.imagesrc[0]}
-                imageAlt={item.imagealt}
-                title={item.title}
-                price={item.description}
-                producttype={item.producttype}
-              />
-            </Box>
-          ))}
-        </Box>
+        {releases.map((item, index) => (
+          <Box key={item.id} ref={index === 0 ? measureItem : null}>
+            <ReleaseItem
+              imageSrc={item.imagesrc[0]}
+              imageAlt={item.imagealt}
+              title={item.title}
+              price={item.description}
+              producttype={item.producttype}
+            />
+          </Box>
+        ))}
       </Box>
 
       <IconButton
