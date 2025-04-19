@@ -19,7 +19,7 @@ const MainImage = React.forwardRef<HTMLDivElement, MainImageProps>(
   ({ selectedImage, product }, ref) => {
     return (
       <Box sx={getMainImageStyle}>
-        <img src={selectedImage} alt={product.title} />
+        <img src={selectedImage || product.imagesrc[0]} alt={product.title} />
       </Box>
     );
   }
