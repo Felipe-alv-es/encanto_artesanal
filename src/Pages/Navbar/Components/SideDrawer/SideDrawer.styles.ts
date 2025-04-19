@@ -1,13 +1,18 @@
 export const getSideDrawerContainerStyle = () => ({
-  paddingY: "80px",
+  paddingTop: "80px",
+  display: "flex",
+  flexDirection: "column",
+  height: "100%",
+  justifyContent: "space-between",
 });
 
 export const getSideDrawerListStyle = () => ({
-  padding: "16px",
+  paddingY: "16px",
+  paddingX: "32px",
 });
 
 export const getSideDrawerItemListStyle = () => ({
-  fontSize: "20px",
+  fontSize: "16px",
   fontFamily: "kanit",
   fontWeight: "300",
   color: "#383838",

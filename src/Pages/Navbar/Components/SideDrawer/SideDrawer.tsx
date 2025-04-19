@@ -6,6 +6,7 @@ import {
   getSideDrawerItemListStyle,
   getSideDrawerListStyle,
 } from "./SideDrawer.styles.ts";
+import SideDrawerSocial from "../SideDrawerSocial/SideDrawerSocial.tsx";
 
 interface SideDrawerProps {
   drawerOpen: boolean;
@@ -39,6 +40,7 @@ export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
               </ListItem>
             ))}
           </List>
+          <SideDrawerSocial />
         </Box>
       </Drawer>
     );
