@@ -8,7 +8,7 @@ import {
 } from "./ProductPage.styles.ts";
 import ProductPageTitle from "./Components/ProductPageTitle/ProductPageTitle.tsx";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ProductPageSkeleton from "./Components/Skeleton/index.tsx";
 import ProductPagePagination from "./Components/ProductPagePagination/ProductPagePagination.tsx";
 import {
@@ -18,6 +18,7 @@ import {
 
 const ProductPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { apiData, isLoading } = useApiData();
   const currentPage = () => pageMap[location.pathname] ?? null;
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
@@ -48,6 +49,10 @@ const ProductPage = () => {
     ? pageDescriptions[current]?.description ?? ""
     : "Explore nossa coleção completa, onde cada peça é criada com atenção aos detalhes para transformar seus ambientes com charme, personalidade e um toque único de cuidado artesanal.";
 
+  const handleOnClickItem = (id: number) => {
+    navigate(`/produto/${id}`);
+  };
+
   return (
     <>
       <Navbar />
@@ -68,6 +73,7 @@ const ProductPage = () => {
                       title={item.title}
                       price={item.description}
                       imageSrc={item.imagesrc[0]}
+                      onClick={() => handleOnClickItem(item.id)}
                     />
                   </Box>
                 ))
