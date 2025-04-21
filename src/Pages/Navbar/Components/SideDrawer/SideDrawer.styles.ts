@@ -16,4 +16,5 @@ export const getSideDrawerItemListStyle = () => ({
   fontFamily: "kanit",
   fontWeight: "300",
   color: "#383838",
+  paddingLeft: "16px",
 });
