@@ -43,10 +43,12 @@ const ProductDetail = () => {
             <ReleaseMobileCarousel product={product} />
           ) : (
             <Box sx={getImagesContainerStyle}>
-              <SideImages
-                product={product}
-                setSelectedImage={setSelectedImage}
-              />
+              {product.imagesrc.length > 1 && (
+                <SideImages
+                  product={product}
+                  setSelectedImage={setSelectedImage}
+                />
+              )}
               <MainImage product={product} selectedImage={selectedImage} />
             </Box>
           )}

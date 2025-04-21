@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { getLogoContainerStyle } from "./StyledLogo.styles.ts";
 //@ts-ignore
-import Logo from "../../assets/images/Logo/Logo.png";
+import Logo from "../../assets/images/Logo/Logo2.png";
 
 interface StyledLogoProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
