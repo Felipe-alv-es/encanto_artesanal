@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
@@ -17,6 +17,7 @@ import {
 import QuantityComponent from "./Components/QuantityComponent/QuantityComponent.tsx";
 import ReleaseMobileCarousel from "./Components/ProductDetailMobileCarousel/ProductDetailMobileCarousel.tsx";
 import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
+import BackButton from "./Components/BackButton/BackButton.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -39,6 +40,7 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
+      {isMobile && <BackButton />}
       <Box sx={getProductDetailContainerStyles}>
         <Box>
           {isMobile ? (
