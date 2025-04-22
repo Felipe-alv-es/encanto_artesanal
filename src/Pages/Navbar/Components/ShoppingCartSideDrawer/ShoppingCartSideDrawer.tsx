@@ -30,9 +30,11 @@ export const ShoppingCartSideDrawer = React.forwardRef<
   return (
     <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
       <Box sx={getCartSideDrawerContainerStyle} ref={ref}>
-        <Typography sx={getCartSideDrawerTitleStyle}>
-          {"Seu carrinho"}
-        </Typography>
+        {cartItems.length !== 0 && (
+          <Typography sx={getCartSideDrawerTitleStyle}>
+            {"Seu carrinho"}
+          </Typography>
+        )}
         <Box sx={{ overflowY: "auto", flexGrow: 1 }}>
           {cartItems.length === 0 ? (
             <EmptyCardMessage />
