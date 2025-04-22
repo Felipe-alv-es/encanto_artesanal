@@ -21,13 +21,13 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         <Box
           sx={{
             "@media(max-width: 2560px)": {
-              width: "200px",
+              width: "170px",
             },
             "@media(max-width: 1400px)": {
-              width: "190px",
+              width: "160px",
             },
             "@media(max-width: 768px)": {
-              width: "140px",
+              width: "110px",
             },
           }}
           component="img"

@@ -15,7 +15,7 @@ export const ProductItemImage = React.forwardRef<
       component="img"
       src={imageSrc}
       alt={imageAlt}
-      style={{
+      sx={{
         width: "100%",
         height: "80%",
         objectFit: "cover",
@@ -23,6 +23,9 @@ export const ProductItemImage = React.forwardRef<
         borderTopRightRadius: "16px",
         transition: "transform 0.5s ease-out",
         display: "block",
+        "@media(max-width: 768px)": {
+          maxHeight: "212px",
+        },
       }}
     />
   );

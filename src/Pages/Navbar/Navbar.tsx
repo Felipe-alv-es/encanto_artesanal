@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { navBarItems } from "../../assets/Arrays/NavbarList.tsx";
 import { IoMenu } from "react-icons/io5";
 import SideDrawer from "./Components/SideDrawer/SideDrawer.tsx";
-import InvisiblePlaceHolder from "./Components/InvisiblePlaceHolder/InvisiblePlaceHolder.tsx";
+import ShopCartIcon from "./Components/ShopCartIcon/ShopCartIcon.tsx";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const Navbar = (props) => {
             ))}
           </Box>
         )}
-        {isMobile && <InvisiblePlaceHolder />}
+        <ShopCartIcon carItemsCount={2} />
       </Box>
     </Box>
   );
