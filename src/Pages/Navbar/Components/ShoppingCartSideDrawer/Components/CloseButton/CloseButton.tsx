@@ -25,7 +25,7 @@ export const CloseButton = React.forwardRef<HTMLDivElement, CloseButtonProps>(
             },
           },
           "@media(max-width: 768px)": {
-            width: "40px",
+            width: "60px",
             "> svg": {
               height: "24px",
               width: "24px",

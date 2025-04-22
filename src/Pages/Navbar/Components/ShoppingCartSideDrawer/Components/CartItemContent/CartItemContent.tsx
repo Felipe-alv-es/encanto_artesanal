@@ -12,7 +12,7 @@ export const CartItemContent = React.forwardRef<
   ShopCartItemContentProps
 >(({ name, price, quantity }, ref) => {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <Typography fontWeight="bold">{name}</Typography>
       <Typography variant="body2">{price}</Typography>
       <Typography variant="body2">{`Quantidade: ${quantity}`}</Typography>
