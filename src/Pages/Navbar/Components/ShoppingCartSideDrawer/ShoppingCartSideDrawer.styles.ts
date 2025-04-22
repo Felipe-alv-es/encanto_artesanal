@@ -20,4 +20,5 @@ export const getCartSideDrawerTitleStyle = () => ({
   fontWeight: "400",
   fontFamily: "kanit",
   paddingX: "4px",
+  color: "#383838",
 });

@@ -6,6 +6,7 @@ import {
 } from "./ShoppingCartSideDrawer.styles.ts";
 import ShoppingCartFooter from "./Components/ShoppingCartFooter/ShoppingCartFooter.tsx";
 import ShoppingCartItem from "./Components/ShoppingCartItem/ShoppingCartItem.tsx";
+import EmptyCardMessage from "./Components/EmptyCardMessage/EmptyCardMessage.tsx";
 
 interface CartItem {
   id: number;
@@ -34,7 +35,7 @@ export const ShoppingCartSideDrawer = React.forwardRef<
         </Typography>
         <Box sx={{ overflowY: "auto", flexGrow: 1 }}>
           {cartItems.length === 0 ? (
-            <Typography>Nenhum item no carrinho.</Typography>
+            <EmptyCardMessage />
           ) : (
             cartItems.map((item) => (
               <ShoppingCartItem
