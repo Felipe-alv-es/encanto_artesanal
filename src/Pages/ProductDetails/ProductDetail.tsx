@@ -16,11 +16,14 @@ import {
 } from "./ProductDetails.styles.ts";
 import QuantityComponent from "./Components/QuantityComponent/QuantityComponent.tsx";
 import ReleaseMobileCarousel from "./Components/ProductDetailMobileCarousel/ProductDetailMobileCarousel.tsx";
+import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { apiData, isLoading } = useApiData();
+  const { addToCart } = useCart();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const [quantity, setQuantity] = useState(1);
 
   const product = id
     ? apiData?.data?.find((item) => item.id === Number(id))
@@ -29,7 +32,6 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(
     product?.imagesrc?.[0] || ""
   );
-  const [quantity, setQuantity] = useState(1);
 
   if (isLoading) return <Typography>Carregando...</Typography>;
   if (!product) return <Typography>Produto não encontrado.</Typography>;
@@ -58,7 +60,18 @@ const ProductDetail = () => {
               <Typography sx={getPriceStyle}>{product.description}</Typography>
             </Box>
             <QuantityComponent quantity={quantity} setQuantity={setQuantity} />
-            <ProductDetailButton />
+            <ProductDetailButton
+              addToCart={() =>
+                addToCart({
+                  id: product.id,
+                  name: product.title,
+                  price: product.description,
+                  imgSrc: product.imagesrc,
+                  imgAlt: product.imagealt,
+                  quantity: quantity,
+                })
+              }
+            />
             <Typography sx={getDescriptionStyle}>
               {product.largedescription}
             </Typography>
