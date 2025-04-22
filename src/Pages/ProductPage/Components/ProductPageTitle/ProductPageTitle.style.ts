@@ -6,6 +6,9 @@ export const getProductPageTitleContainerStyle = () => ({
   "> div": {
     maxWidth: "1344px",
     paddingRight: "25%",
+    "@media(max-width: 1400px)": {
+      maxWidth: "900px",
+    },
   },
   "@media(max-width: 2560px)": {
     paddingTop: "200px",

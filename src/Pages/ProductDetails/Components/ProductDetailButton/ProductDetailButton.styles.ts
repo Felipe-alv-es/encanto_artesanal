@@ -32,6 +32,7 @@ export const getSecondProductDetailButtonStyle = () => ({
   textTransform: "none",
   fontWeight: "400",
   fontFamily: "kanit",
+  gap: "8px",
   "&:hover": {
     backgroundColor: "#505050",
   },

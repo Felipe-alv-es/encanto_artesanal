@@ -12,13 +12,17 @@ import { useNavigate } from "react-router-dom";
 import { navBarItems } from "../../assets/Arrays/NavbarList.tsx";
 import { IoMenu } from "react-icons/io5";
 import SideDrawer from "./Components/SideDrawer/SideDrawer.tsx";
-import InvisiblePlaceHolder from "./Components/InvisiblePlaceHolder/InvisiblePlaceHolder.tsx";
+import ShopCartIcon from "./Components/ShopCartIcon/ShopCartIcon.tsx";
+import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
+import ShoppingCartSideDrawer from "./Components/ShoppingCartSideDrawer/ShoppingCartSideDrawer.tsx";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
+  const { cart } = useCart();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
@@ -34,6 +38,10 @@ const Navbar = (props) => {
 
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
+  };
+
+  const toggleCart = (open: boolean) => () => {
+    setCartDrawerOpen(open);
   };
 
   return (
@@ -62,7 +70,15 @@ const Navbar = (props) => {
             ))}
           </Box>
         )}
-        {isMobile && <InvisiblePlaceHolder />}
+        <ShopCartIcon
+          carItemsCount={cart.length}
+          onClick={toggleCart(!cartDrawerOpen)}
+        />
+        <ShoppingCartSideDrawer
+          cartItems={cart}
+          drawerOpen={cartDrawerOpen}
+          toggleDrawer={toggleCart}
+        />
       </Box>
     </Box>
   );

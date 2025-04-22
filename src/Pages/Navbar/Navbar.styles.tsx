@@ -50,6 +50,7 @@ export const getListItemStyle = () => ({
     fontWeight: "300",
     textTransform: "none",
     borderRadius: "8px",
+    whiteSpace: "noWrap",
     ":hover": {
       background: "transparent",
     },

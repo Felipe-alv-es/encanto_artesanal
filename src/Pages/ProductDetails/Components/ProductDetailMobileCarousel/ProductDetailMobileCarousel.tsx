@@ -60,10 +60,11 @@ export const ReleaseMobileCarousel = React.forwardRef<
   return (
     <>
       <Box sx={getProductDetailMobileCarouselContainerStyle}>
-        <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
-          <FaRegArrowAltCircleLeft color="#6bb4ad" />
-        </IconButton>
-
+        {product.imagesrc.length > 1 && (
+          <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
+            <FaRegArrowAltCircleLeft color="#6bb4ad" />
+          </IconButton>
+        )}
         <Box sx={getProductDetailMobileCarouselContentStyle}>
           <Box
             ref={ref}
@@ -88,18 +89,22 @@ export const ReleaseMobileCarousel = React.forwardRef<
             ))}
           </Box>
         </Box>
-        <IconButton
-          onClick={handleNext}
-          disabled={activeIndex === product.imagesrc.length - 1}
-        >
-          <FaRegArrowAltCircleRight color="#6bb4ad" />
-        </IconButton>
+        {product.imagesrc.length > 1 && (
+          <IconButton
+            onClick={handleNext}
+            disabled={activeIndex === product.imagesrc.length - 1}
+          >
+            <FaRegArrowAltCircleRight color="#6bb4ad" />
+          </IconButton>
+        )}
       </Box>
-      <Typography
-        sx={{ textAlign: "center", fontSize: "12px", paddingBottom: "32px" }}
-      >
-        {`${activeIndex + 1} | ${product.imagesrc.length}`}
-      </Typography>
+      {product.imagesrc.length > 1 && (
+        <Typography
+          sx={{ textAlign: "center", fontSize: "12px", paddingBottom: "32px" }}
+        >
+          {`${activeIndex + 1} | ${product.imagesrc.length}`}
+        </Typography>
+      )}
     </>
   );
 });

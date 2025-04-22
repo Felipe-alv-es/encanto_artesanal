@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { getLogoContainerStyle } from "./StyledLogo.styles.ts";
 //@ts-ignore
-import Logo from "../../assets/images/Logo/Logo.png";
+import Logo from "../../assets/images/Logo/Logo2.png";
 
 interface StyledLogoProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -21,13 +21,13 @@ export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
         <Box
           sx={{
             "@media(max-width: 2560px)": {
-              width: "200px",
+              width: "170px",
             },
             "@media(max-width: 1400px)": {
-              width: "190px",
+              width: "160px",
             },
             "@media(max-width: 768px)": {
-              width: "140px",
+              width: "110px",
             },
           }}
           component="img"

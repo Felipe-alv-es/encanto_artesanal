@@ -73,5 +73,8 @@ export const getProductItemPriceStyle = () => ({
       fontWeight: "300",
       fontFamily: "kanit",
     },
+    "@media(max-width: 768px)": {
+      textAlign: "center",
+    },
   },
 });

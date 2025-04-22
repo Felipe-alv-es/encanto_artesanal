@@ -52,6 +52,7 @@ const ReleaseMobileCarousel = () => {
           {releases.map((item, index) => (
             <Box key={item.id} ref={index === 0 ? measureItem : null}>
               <ReleaseItem
+                id={item.id}
                 imageSrc={item.imagesrc[0]}
                 imageAlt={item.imagealt}
                 title={item.title}

@@ -6,10 +6,21 @@ import {
   getSecondProductDetailButtonStyle,
 } from "./ProductDetailButton.styles.ts";
 
-const ProductDetailButton = () => {
+interface ProductDetailButtonProps {
+  addToCart?: () => void;
+}
+
+const ProductDetailButton = React.forwardRef<
+  HTMLDivElement,
+  ProductDetailButtonProps
+>(({ addToCart }, ref) => {
   return (
     <Box sx={getProductDetailButtonContainerStyle}>
-      <Button variant="outlined" sx={getFirstProductDetailButtonStyle}>
+      <Button
+        variant="outlined"
+        sx={getFirstProductDetailButtonStyle}
+        onClick={addToCart}
+      >
         {"Adicionar ao carrinho"}
       </Button>
       <Button variant="outlined" sx={getSecondProductDetailButtonStyle}>
@@ -17,6 +28,6 @@ const ProductDetailButton = () => {
       </Button>
     </Box>
   );
-};
+});
 
 export default ProductDetailButton;
