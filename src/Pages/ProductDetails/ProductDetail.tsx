@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
