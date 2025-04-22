@@ -4,12 +4,13 @@ import { FiShoppingCart } from "react-icons/fi";
 
 interface ShopCartIconProps {
   carItemsCount: number;
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export const ShopCartIcon = React.forwardRef<HTMLDivElement, ShopCartIconProps>(
-  ({ carItemsCount }, ref) => {
+  ({ carItemsCount, onClick }, ref) => {
     return (
-      <IconButton>
+      <IconButton onClick={onClick}>
         <Box
           sx={{
             width: "30px",
