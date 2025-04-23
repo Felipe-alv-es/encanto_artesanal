@@ -24,7 +24,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const { apiData, isLoading } = useApiData();
   const { addToCart } = useCart();
-  const { sendProducts } = useSendWhatsapp("5511957701889");
+  const { sendProducts } = useSendWhatsapp("551191229-7241");
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [quantity, setQuantity] = useState(1);
 
