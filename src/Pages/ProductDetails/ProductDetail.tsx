@@ -18,11 +18,13 @@ import QuantityComponent from "./Components/QuantityComponent/QuantityComponent.
 import ReleaseMobileCarousel from "./Components/ProductDetailMobileCarousel/ProductDetailMobileCarousel.tsx";
 import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 import BackButton from "./Components/BackButton/BackButton.tsx";
+import { useSendWhatsapp } from "../../Hooks/UseSendToWhatsapp/index.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { apiData, isLoading } = useApiData();
   const { addToCart } = useCart();
+  const { sendProducts } = useSendWhatsapp("5511957701889");
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [quantity, setQuantity] = useState(1);
 
@@ -72,6 +74,18 @@ const ProductDetail = () => {
                   imgAlt: product.imagealt,
                   quantity: quantity,
                 })
+              }
+              sendProducts={() =>
+                sendProducts([
+                  {
+                    id: product.id,
+                    name: product.title,
+                    price: product.description,
+                    imgSrc: product.imagesrc,
+                    imgAlt: product.imagealt,
+                    quantity,
+                  },
+                ])
               }
             />
             <Typography sx={getDescriptionStyle}>
