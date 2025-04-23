@@ -23,7 +23,6 @@ export function useSendWhatsapp(phoneNumber: string) {
         ...products.map(
           (product, index) =>
             `- ${index + 1}. ${product.name}\n` +
-            `${product.price}\n` +
             `Quantidade: ${product.quantity}\n\n`
         ),
         thankYou,

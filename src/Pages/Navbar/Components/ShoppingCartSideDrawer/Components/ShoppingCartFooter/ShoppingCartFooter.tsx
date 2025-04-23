@@ -20,7 +20,7 @@ export const ShoppingCartFooter = React.forwardRef<
   HTMLDivElement,
   ShoppingCartFooterProps
 >(({ cartItems }, ref) => {
-  const { sendProducts } = useSendWhatsapp("551191229-7241");
+  const { sendProducts } = useSendWhatsapp("5511912297241");
 
   return (
     <Box sx={{ padding: "16px", borderTop: "1px solid #eee" }}>
