@@ -73,6 +73,7 @@ const Navbar = (props) => {
         <ShopCartIcon
           carItemsCount={cart.length}
           onClick={toggleCart(!cartDrawerOpen)}
+          setShowHeader={setShowHeader}
         />
         <ShoppingCartSideDrawer
           cartItems={cart}
