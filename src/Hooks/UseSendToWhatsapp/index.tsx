@@ -15,7 +15,7 @@ export function useSendWhatsapp(phoneNumber: string) {
       if (!products || products.length === 0) return;
 
       const greeting =
-        "Olá! Tudo bem?\nSegue a listinha dos itens que quero:\n\n";
+        "Olá! Encanto Artesanal Tudo bem?\nSegue a listinha dos itens que quero:\n\n";
       const thankYou =
         "Desde já, muito obrigado(a)! Fico no aguardo do seu retorno.";
 
