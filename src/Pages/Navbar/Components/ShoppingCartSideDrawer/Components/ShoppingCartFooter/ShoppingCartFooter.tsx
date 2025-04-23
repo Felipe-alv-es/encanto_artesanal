@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { getShoppingCartFooterButtonStyle } from "./ShoppingCartFooter.styles.ts";
+import { useSendWhatsapp } from "../../../../../../Hooks/UseSendToWhatsapp/index.tsx";
 
 interface CartItem {
   id: number;
@@ -19,6 +20,8 @@ export const ShoppingCartFooter = React.forwardRef<
   HTMLDivElement,
   ShoppingCartFooterProps
 >(({ cartItems }, ref) => {
+  const { sendProducts } = useSendWhatsapp("5511957701889");
+
   return (
     <Box sx={{ padding: "16px", borderTop: "1px solid #eee" }}>
       <Typography variant="body2" color="textSecondary">
@@ -29,6 +32,7 @@ export const ShoppingCartFooter = React.forwardRef<
         variant="outlined"
         fullWidth
         sx={getShoppingCartFooterButtonStyle}
+        onClick={() => sendProducts(cartItems)}
       >
         {"Enviar pedido"}
       </Button>

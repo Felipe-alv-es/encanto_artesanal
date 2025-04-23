@@ -8,12 +8,13 @@ import {
 
 interface ProductDetailButtonProps {
   addToCart?: () => void;
+  sendProducts?: () => void;
 }
 
 const ProductDetailButton = React.forwardRef<
   HTMLDivElement,
   ProductDetailButtonProps
->(({ addToCart }, ref) => {
+>(({ addToCart, sendProducts }, ref) => {
   return (
     <Box sx={getProductDetailButtonContainerStyle}>
       <Button
@@ -23,7 +24,11 @@ const ProductDetailButton = React.forwardRef<
       >
         {"Adicionar ao carrinho"}
       </Button>
-      <Button variant="outlined" sx={getSecondProductDetailButtonStyle}>
+      <Button
+        variant="outlined"
+        sx={getSecondProductDetailButtonStyle}
+        onClick={sendProducts}
+      >
         {"Enviar pedido"}
       </Button>
     </Box>
