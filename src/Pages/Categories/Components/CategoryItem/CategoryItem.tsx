@@ -12,10 +12,11 @@ interface CategoryItemProps {
   imageSrc: string;
   imageAlt: string;
   onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
+  withoutArrow?: boolean;
 }
 
 const CategoryItem = React.forwardRef<HTMLDivElement, CategoryItemProps>(
-  ({ title, imageSrc, imageAlt, onClick }, ref) => {
+  ({ title, imageSrc, imageAlt, onClick, withoutArrow }, ref) => {
     return (
       <Paper
         sx={getItemContainer}
@@ -27,7 +28,7 @@ const CategoryItem = React.forwardRef<HTMLDivElement, CategoryItemProps>(
         <CategoriesImageComponent imageAlt={imageAlt} imageSrc={imageSrc} />
         <Box sx={CategoriesTitleStyle}>
           <Typography>{title}</Typography>
-          <GoArrowRight size={20} />
+          {!withoutArrow && <GoArrowRight size={20} />}
         </Box>
       </Paper>
     );
