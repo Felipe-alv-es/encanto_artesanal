@@ -21,11 +21,6 @@ export const pageDescriptions: Record<
     description:
       "Velas moldadas artesanalmente, criadas com atenção a cada detalhe para transformar ambientes com charme, personalidade e aquele toque especial de afeto.",
   },
-  velas_de_massagem: {
-    title: "Velas de Massagem",
-    description:
-      "Com aromas envolventes e textura suave, nossas velas de massagem se derretem em puro cuidado, convidando ao relaxamento, ao toque e ao bem-estar do corpo e da alma.",
-  },
   velas_container: {
     title: "Velas em Container",
     description:
@@ -47,8 +42,8 @@ export const pageDescriptions: Record<
       "Nossos sabonetes de massagem combinam propriedades relaxantes com fragrâncias suaves, proporcionando uma experiência revigorante e cheia de cuidado.",
   },
   joias_de_resina: {
-    title: "Joia de Resina",
+    title: "Produtos de Resina",
     description:
-      "Joias de resina feitas à mão, com composições únicas e encantadoras — perfeitas para eternizar momentos, contar histórias e carregar beleza em cada detalhe.",
+      "Produtos de resina feitas à mão, com composições únicas e encantadoras — perfeitas para eternizar momentos, contar histórias e carregar beleza em cada detalhe.",
   },
 };

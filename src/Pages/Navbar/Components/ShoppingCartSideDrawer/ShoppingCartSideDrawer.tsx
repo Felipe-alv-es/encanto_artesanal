@@ -51,7 +51,7 @@ export const ShoppingCartSideDrawer = React.forwardRef<
             ))
           )}
         </Box>
-        <ShoppingCartFooter cartItems={cartItems} />
+        <ShoppingCartFooter cartItems={cartItems} toggleDrawer={toggleDrawer} />
       </Box>
     </Drawer>
   );

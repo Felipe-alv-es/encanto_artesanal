@@ -4,10 +4,6 @@ export const navBarItems = [
     path: "/product-page/velas-moldadas",
   },
   {
-    label: "Velas de Massagem",
-    path: "/product-page/velas-de-massagem",
-  },
-  {
     label: "Velas Container",
     path: "/product-page/velas-container",
   },
@@ -20,7 +16,7 @@ export const navBarItems = [
     path: "/product-page/geleias-de-banho",
   },
   {
-    label: "Joias de Resina",
+    label: "Produtos de Resina",
     path: "/product-page/joias-de-resina",
   },
 ];
