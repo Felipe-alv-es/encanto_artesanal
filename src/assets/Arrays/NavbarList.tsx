@@ -1,5 +1,9 @@
 export const navBarItems = [
   {
+    label: "Kits Presenteáveis",
+    path: "/product-page/kits-presenteaveis",
+  },
+  {
     label: "Velas Moldadas",
     path: "/product-page/velas-moldadas",
   },

@@ -21,6 +21,8 @@ const ProductManagement = () => {
   const { handleSave, apiData, handleDelete } = useApiData();
   const [isEditing, setIsEditing] = useState(false);
 
+  console.log(apiData);
+
   const handleChange = (field: string, value: string | string[]) => {
     setFormData((prev) => ({
       ...prev,

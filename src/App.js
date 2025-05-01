@@ -20,6 +20,7 @@ import { CartProvider } from "./Context/ShoppingCartContext/CartContext.tsx";
 const queryClient = new QueryClient();
 
 const productRoutes = [
+  "kits-presenteaveis",
   "velas-moldadas",
   "velas-container",
   "sabonetes-decorativos",

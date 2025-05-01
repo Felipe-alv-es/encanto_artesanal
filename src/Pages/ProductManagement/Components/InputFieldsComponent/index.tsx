@@ -107,6 +107,7 @@ const InputFieldsComponent = React.forwardRef<
             onChange={handleChangeSelect}
             value={formData.producttype}
           >
+            <MenuItem value={"kits_presenteaveis"}>Kits Presenteaveis</MenuItem>
             <MenuItem value={"velas_moldadas"}>Velas moldadas</MenuItem>
             <MenuItem value={"velas_container"}>Velas Container</MenuItem>
             <MenuItem value={"sabonetes_decorativos"}>

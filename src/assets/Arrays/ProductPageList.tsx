@@ -1,5 +1,6 @@
 export const pageMap: Record<string, string | null> = {
   "/product-page": null,
+  "/product-page/kits-presenteaveis": "kits_presenteaveis",
   "/product-page/velas-moldadas": "velas_moldadas",
   "/product-page/velas-container": "velas_container",
   "/product-page/sabonetes-decorativos": "sabonetes_decorativos",
@@ -15,6 +16,11 @@ export const pageDescriptions: Record<
     description: string;
   }
 > = {
+  kits_presenteaveis: {
+    title: "Kits Presenteáveis",
+    description:
+      "Presentes que encantam: nossos kits combinam itens artesanais cuidadosamente selecionados — como velas, sabonetes e outros mimos — para surpreender com beleza, carinho e significado.",
+  },
   velas_moldadas: {
     title: "Velas Moldadas",
     description:
