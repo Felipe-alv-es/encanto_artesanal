@@ -51,6 +51,7 @@ const ProductPage = () => {
 
   const handleOnClickItem = (id: number) => {
     navigate(`/produto/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

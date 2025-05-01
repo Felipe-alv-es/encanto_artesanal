@@ -19,13 +19,18 @@ export const GaleryItem = React.forwardRef<HTMLDivElement, GaleryItemProps>(
     const navigate = useNavigate();
     const isMobile = useMediaQuery("(max-width: 768px)");
 
+    const handleOnClick = (producttype: string) => {
+      navigate(`/product-page/${toUrlFormat(producttype)}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
       <Paper
         sx={getItemContainer()}
         key={title}
         role="button"
         elevation={0}
-        onClick={() => navigate(`/product-page/${toUrlFormat(producttype)}`)}
+        onClick={() => handleOnClick(producttype)}
       >
         <GaleryImageComponent imageAlt={imageAlt} imageSrc={imageSrc} />
         <Box sx={GaleryTitleStyle(isPrincipal)}>
