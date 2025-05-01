@@ -1,9 +1,6 @@
 import React from "react";
-import { Box, Skeleton, useMediaQuery } from "@mui/material";
-import {
-  getContainerStyle,
-  productPageGridStyle,
-} from "../../ProductPage.styles.ts";
+import { Skeleton, useMediaQuery } from "@mui/material";
+import {} from "../../ProductPage.styles.ts";
 
 const ProductPageSkeleton = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
