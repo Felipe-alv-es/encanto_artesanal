@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/ProductItem.tsx";
@@ -28,6 +28,10 @@ const ProductPage = () => {
     setCurrentPageNumber(value);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    setCurrentPageNumber(1);
+  }, [current]);
 
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
