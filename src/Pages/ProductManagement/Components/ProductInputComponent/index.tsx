@@ -51,6 +51,7 @@ const ProductInputComponent = React.forwardRef<
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ width: "100%", placeItems: "center" }}>
             <ReleaseItem
+              id={formData.id ? formData.id : 0}
               imageSrc={formData.imageSrc[0]}
               imageAlt={""}
               title={formData.title}

@@ -1,4 +1,14 @@
-export const getShoppingCartFooterButtonStyle = () => ({
+export const getFirstShoppingCartFooterButtonStyle = () => ({
+  borderRadius: "16px",
+  borderColor: "#383838",
+  color: "#383838",
+  textTransform: "none",
+  fontWeight: "400",
+  fontFamily: "kanit",
+  marginTop: "8px",
+});
+
+export const getSecondShoppingCartFooterButtonStyle = () => ({
   borderRadius: "16px",
   borderColor: "#383838",
   color: "#EAF1EA",
@@ -7,7 +17,6 @@ export const getShoppingCartFooterButtonStyle = () => ({
   fontWeight: "400",
   fontFamily: "kanit",
   marginTop: "16px",
-  paddingY: "8px",
   "&:hover": {
     backgroundColor: "#505050",
   },

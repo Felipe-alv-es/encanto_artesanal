@@ -9,20 +9,20 @@ export const GaleryList = [
     title: "Transforme seu momento de autocuidado",
     imagealt: "Imagem do produto principal",
     imagesrc: Galeria01,
-    producttype: "velas_de_massagem",
+    producttype: "geleias_de_banho",
   },
   {
     id: 2,
     title: "Toque de alma no ambiente",
     imagealt: "Imagem do produto lateral 1",
     imagesrc: Galeria02,
-    producttype: "sabonetes_decorativos",
+    producttype: "velas_container",
   },
   {
     id: 3,
     title: "Presenteie quem você ama",
     imagealt: "Imagem do produto lateral 2",
     imagesrc: Galeria03,
-    producttype: "velas_moldadas",
+    producttype: "joias_de_resina",
   },
 ];

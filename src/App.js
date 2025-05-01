@@ -21,11 +21,11 @@ const queryClient = new QueryClient();
 
 const productRoutes = [
   "velas-moldadas",
-  "velas-de-massagem",
   "velas-container",
   "sabonetes-decorativos",
   "geleias-de-banho",
   "joias-de-resina",
+  "velas",
 ];
 
 function App() {

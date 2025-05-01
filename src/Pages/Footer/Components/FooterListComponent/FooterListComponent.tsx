@@ -38,7 +38,7 @@ export const FooterListComponent = React.forwardRef<HTMLLIElement>(() => {
         )}
         <Box sx={getFooterMenuStyle}>
           <Box>
-            <Typography sx={getlistTitleStyle}>{"Meus Links"}</Typography>
+            <Typography sx={getlistTitleStyle}>{"Nossos Links"}</Typography>
             <Box sx={getListStyle}>
               <ul>
                 <LinkListComponent

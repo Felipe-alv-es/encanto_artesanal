@@ -9,20 +9,24 @@ export const categoriesOptions = [
     title: "Velas artesanais",
     imageSrc: Image1,
     imageAlt: "Imagem de um conjunto de velas",
-  },
-  {
-    title: "Sabonetes naturais",
-    imageSrc: Image2,
-    imageAlt: "Imagem de sabonetes artesanais",
+    path: "/product-page/velas",
   },
   {
     title: "Sabonetes decorativos",
     imageSrc: Image3,
     imageAlt: "Imagem de velas e sabonetes decorativos",
+    path: "/product-page/sabonetes-decorativos",
+  },
+  {
+    title: "Geleias de Banho",
+    imageSrc: Image2,
+    imageAlt: "Imagem de velas e sabonetes decorativos",
+    path: "/product-page/geleias-de-banho",
   },
   {
     title: "Produtos de Resina",
     imageSrc: Image4,
     imageAlt: "Imagem de joias e acessórios de resina",
+    path: "/product-page/joias-de-resina",
   },
 ];

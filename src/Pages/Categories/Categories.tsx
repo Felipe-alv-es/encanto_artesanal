@@ -14,6 +14,11 @@ const Categories = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Box sx={getContainerStyle}>
       <Box>
@@ -32,7 +37,7 @@ const Categories = () => {
                     title={item.title}
                     imageSrc={item.imageSrc}
                     imageAlt={item.imageAlt}
-                    onClick={() => navigate("/product-page")}
+                    onClick={() => handleNavigate(item.path)}
                   />
                 ))}
               </Box>

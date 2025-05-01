@@ -108,7 +108,6 @@ const InputFieldsComponent = React.forwardRef<
             value={formData.producttype}
           >
             <MenuItem value={"velas_moldadas"}>Velas moldadas</MenuItem>
-            <MenuItem value={"velas_de_massagem"}>Velas de massagem</MenuItem>
             <MenuItem value={"velas_container"}>Velas Container</MenuItem>
             <MenuItem value={"sabonetes_decorativos"}>
               Sabonetes decorativos

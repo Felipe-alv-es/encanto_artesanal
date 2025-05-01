@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/ProductItem.tsx";
@@ -21,16 +21,26 @@ const ProductPage = () => {
   const navigate = useNavigate();
   const { apiData, isLoading } = useApiData();
   const currentPage = () => pageMap[location.pathname] ?? null;
+  const current = currentPage();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
+
   const handlePageChange = (value: React.SetStateAction<number>) => {
     setCurrentPageNumber(value);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    setCurrentPageNumber(1);
+  }, [current]);
+
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
-      ? apiData?.data?.filter((item) => item.producttype === currentPage()) ??
-        []
+      ? currentPage() === "velas"
+        ? apiData?.data?.filter((item) =>
+            ["velas_moldadas", "velas_container"].includes(item.producttype)
+          ) ?? []
+        : apiData?.data?.filter((item) => item.producttype === currentPage()) ??
+          []
       : apiData?.data ?? [];
 
   const productsPerPage = 8;
@@ -41,7 +51,6 @@ const ProductPage = () => {
     currentPageNumber * productsPerPage
   );
 
-  const current = currentPage();
   const productPageTitle = current
     ? pageDescriptions[current]?.title ?? ""
     : "Todos os Produtos";
@@ -51,6 +60,7 @@ const ProductPage = () => {
 
   const handleOnClickItem = (id: number) => {
     navigate(`/produto/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
