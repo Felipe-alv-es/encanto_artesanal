@@ -19,6 +19,7 @@ import ReleaseMobileCarousel from "./Components/ProductDetailMobileCarousel/Prod
 import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 import BackButton from "./Components/BackButton/BackButton.tsx";
 import { useSendWhatsapp } from "../../Hooks/UseSendToWhatsapp/index.tsx";
+import RelatableItems from "./Components/RelatableItems/RelatableItems.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -38,6 +39,10 @@ const ProductDetail = () => {
 
   if (isLoading) return <Typography>Carregando...</Typography>;
   if (!product) return <Typography>Produto não encontrado.</Typography>;
+
+  const handleOnClickRelatableItem = (id: number) => {
+    window.location.href = `/produto/${id}`;
+  };
 
   return (
     <>
@@ -94,6 +99,11 @@ const ProductDetail = () => {
           </Box>
         </Box>
       </Box>
+      <RelatableItems
+        apiData={apiData}
+        handleOnClickRelatableItem={handleOnClickRelatableItem}
+        product={product}
+      />
       <Footer />
     </>
   );
