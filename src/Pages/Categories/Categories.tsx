@@ -37,7 +37,7 @@ const Categories = () => {
                     title={item.title}
                     imageSrc={item.imageSrc}
                     imageAlt={item.imageAlt}
-                    onClick={() => handleNavigate("/product-page")}
+                    onClick={() => handleNavigate(item.path)}
                   />
                 ))}
               </Box>
