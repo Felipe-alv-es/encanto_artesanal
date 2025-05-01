@@ -24,8 +24,6 @@ const ProductPage = () => {
   const current = currentPage();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  // console.log(apiData);
-
   const handlePageChange = (value: React.SetStateAction<number>) => {
     setCurrentPageNumber(value);
     window.scrollTo({ top: 0, behavior: "smooth" });
