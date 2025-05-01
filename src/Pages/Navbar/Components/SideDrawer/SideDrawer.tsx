@@ -46,6 +46,10 @@ export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
       }
     };
 
+    const handleScrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box
@@ -60,6 +64,7 @@ export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
                 to={item.path}
                 key={item.label}
                 sx={getSideDrawerListStyle}
+                onClick={handleScrollToTop}
               >
                 <Box>{handleGetIcon(index)}</Box>
                 <Typography sx={getSideDrawerItemListStyle}>

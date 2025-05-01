@@ -44,6 +44,11 @@ const Navbar = (props) => {
     setCartDrawerOpen(open);
   };
 
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Box sx={getContainerStyle(showHeader)} {...props}>
       <Box sx={getContentContainerStyle()}>
@@ -52,7 +57,7 @@ const Navbar = (props) => {
             <IoMenu size={32} />
           </IconButton>
         )}
-        <StyledLogo onClick={() => navigate("/")} />
+        <StyledLogo onClick={() => handleNavigate("/")} />
         {isMobile ? (
           <SideDrawer
             drawerOpen={drawerOpen}
@@ -63,7 +68,7 @@ const Navbar = (props) => {
           <Box sx={getListStyle} role="list">
             {navBarItems.map((item) => (
               <Box sx={getListItemStyle} role="listitem" key={item.label}>
-                <Button onClick={() => navigate(item.path)}>
+                <Button onClick={() => handleNavigate(item.path)}>
                   {item.label}
                 </Button>
               </Box>
