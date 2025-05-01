@@ -42,7 +42,7 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
-      {isMobile && <BackButton />}
+      <BackButton />
       <Box sx={getProductDetailContainerStyles}>
         <Box>
           {isMobile ? (

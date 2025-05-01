@@ -11,9 +11,21 @@ const BackButton = () => {
       component={"button"}
       sx={{
         position: "absolute",
-        top: "90px",
-        left: "16px",
         borderStyle: "none",
+        padding: "8px",
+        borderRadius: "80px",
+        background: "transparent",
+        "@media(max-width: 2560px)": {
+          top: "170px",
+          left: "30px",
+          ":hover": {
+            background: "#DCEADB",
+          },
+        },
+        "@media(max-width: 768px)": {
+          top: "90px",
+          left: "16px",
+        },
       }}
       onClick={() => navigate(-1)}
     >
