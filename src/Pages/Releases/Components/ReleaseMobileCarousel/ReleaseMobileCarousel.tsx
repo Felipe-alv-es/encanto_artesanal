@@ -43,7 +43,11 @@ const ReleaseMobileCarousel = () => {
 
   return (
     <Box sx={getReleaseMobileCarouselContainerStyle}>
-      <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
+      <IconButton
+        onClick={handlePrev}
+        disabled={activeIndex === 0}
+        sx={{ opacity: activeIndex === 0 ? 0 : "100%" }}
+      >
         <FaRegArrowAltCircleLeft color="#6bb4ad" />
       </IconButton>
 
@@ -67,6 +71,7 @@ const ReleaseMobileCarousel = () => {
       <IconButton
         onClick={handleNext}
         disabled={activeIndex === releases.length - 1}
+        sx={{ opacity: activeIndex === releases.length - 1 ? 0 : "100%" }}
       >
         <FaRegArrowAltCircleRight color="#6bb4ad" />
       </IconButton>

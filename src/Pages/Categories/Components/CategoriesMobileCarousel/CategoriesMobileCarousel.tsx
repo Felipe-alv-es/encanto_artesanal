@@ -57,7 +57,11 @@ export const CategoriesMobileCarousel = React.forwardRef<
 
   return (
     <Box sx={getProductDetailMobileCarouselContainerStyle}>
-      <IconButton onClick={handlePrev} disabled={activeIndex === 0}>
+      <IconButton
+        onClick={handlePrev}
+        disabled={activeIndex === 0}
+        sx={{ opacity: activeIndex === 0 ? 0 : "100%" }}
+      >
         <FaRegArrowAltCircleLeft color="#6bb4ad" />
       </IconButton>
 
@@ -85,6 +89,9 @@ export const CategoriesMobileCarousel = React.forwardRef<
       <IconButton
         onClick={handleNext}
         disabled={activeIndex === categoriesOptions.length - 1}
+        sx={{
+          opacity: activeIndex === categoriesOptions.length - 1 ? 0 : "100%",
+        }}
       >
         <FaRegArrowAltCircleRight color="#6bb4ad" />
       </IconButton>
