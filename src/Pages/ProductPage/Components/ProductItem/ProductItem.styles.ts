@@ -18,7 +18,7 @@ export const getProductItemContainerStyle = () => ({
 
   "@media(max-width: 2560px)": {
     width: "250px",
-    height: "400px",
+    height: "450px",
   },
   "@media(max-width: 1400px)": {
     width: "200px",
@@ -30,11 +30,19 @@ export const getProductItemContainerStyle = () => ({
   },
 });
 
+export const getDescriptionBoxStyle = () => ({
+  height: "115px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+});
+
 export const getProductItemTitleStyle = () => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   padding: "8px",
+  textAlign: "center",
   "> p": {
     "::after": {
       content: '""',

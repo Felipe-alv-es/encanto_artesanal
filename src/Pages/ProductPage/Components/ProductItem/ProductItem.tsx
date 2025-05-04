@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import {
+  getDescriptionBoxStyle,
   getProductItemContainerStyle,
   getProductItemPriceStyle,
   getProductItemTitleStyle,
@@ -26,14 +27,16 @@ export const ProductItem = React.forwardRef<HTMLLIElement, ProductItemProps>(
           onClick={onClick}
         >
           <ProductItemImage imageAlt={title} imageSrc={imageSrc} />
-          <Box sx={getProductItemTitleStyle}>
-            <Typography>{title}</Typography>
-          </Box>
-          {price && (
-            <Box sx={getProductItemPriceStyle}>
-              <Typography>{price}</Typography>
+          <Box sx={getDescriptionBoxStyle}>
+            <Box sx={getProductItemTitleStyle}>
+              <Typography>{title}</Typography>
             </Box>
-          )}
+            {price && (
+              <Box sx={getProductItemPriceStyle}>
+                <Typography>{price}</Typography>
+              </Box>
+            )}
+          </Box>
         </Paper>
       </Box>
     );
