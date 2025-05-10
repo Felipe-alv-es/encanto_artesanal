@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Pagination } from "@mui/material";
+import { Box, Pagination, useMediaQuery } from "@mui/material";
 import { getPaginationContainerStyle } from "./ProductPagePagination.styles.ts";
 
 interface ProductPagePaginationProps {
@@ -12,6 +12,8 @@ export const ProductPagePagination = React.forwardRef<
   HTMLLIElement,
   ProductPagePaginationProps
 >(({ totalPages, currentPageNumber, setCurrentPageNumber }, ref) => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <Box sx={getPaginationContainerStyle}>
       <Pagination
@@ -20,6 +22,7 @@ export const ProductPagePagination = React.forwardRef<
         onChange={(event, value) => setCurrentPageNumber(value)}
         color="primary"
         size="large"
+        siblingCount={isMobile ? 0 : 1}
       />
     </Box>
   );
