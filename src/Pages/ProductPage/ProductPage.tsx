@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Navbar, Footer } from "../index.ts";
 import ProductItem from "./Components/ProductItem/ProductItem.tsx";
@@ -15,23 +14,20 @@ import {
   pageDescriptions,
   pageMap,
 } from "../../assets/Arrays/ProductPageList.tsx";
+import { useNavigation } from "../../Context/NavigationContext/NavigationContext.tsx";
 
 const ProductPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { apiData, isLoading } = useApiData();
+  const { currentPageNumber, setCurrentPageNumber } = useNavigation();
   const currentPage = () => pageMap[location.pathname] ?? null;
   const current = currentPage();
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  const handlePageChange = (value: React.SetStateAction<number>) => {
+  const handlePageChange = (value: number) => {
     setCurrentPageNumber(value);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    setCurrentPageNumber(1);
-  }, [current]);
 
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
@@ -59,6 +55,7 @@ const ProductPage = () => {
     : "Explore nossa coleção completa, onde cada peça é criada com atenção aos detalhes para transformar seus ambientes com charme, personalidade e um toque único de cuidado artesanal.";
 
   const handleOnClickItem = (id: number) => {
+    localStorage.setItem("lastVisitedPage", currentPageNumber.toString());
     navigate(`/produto/${id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

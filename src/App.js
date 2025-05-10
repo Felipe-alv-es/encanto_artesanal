@@ -16,6 +16,7 @@ import ProtectedRoute from "./utils/isAutenticated/index.tsx";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext/AuthContext.tsx";
 import { CartProvider } from "./Context/ShoppingCartContext/CartContext.tsx";
+import { NavigationProvider } from "./Context/NavigationContext/NavigationContext.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,40 +35,42 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <CartProvider>
-          <div className="App">
-            <BrowserRouter>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <>
-                      <Navbar />
-                      <Home />
-                      <Categories />
-                      <Galery />
-                      <Releases />
-                      <SocialMedia />
-                      <Footer />
-                    </>
-                  }
-                />
-                <Route
-                  path="/product-management"
-                  element={<ProtectedRoute element={<ProductManagement />} />}
-                />
-                <Route path="/product-page" element={<ProductPage />} />
-                <Route path="/login" element={<Login />} />
-                {productRoutes.map((product) => (
+          <NavigationProvider>
+            <div className="App">
+              <BrowserRouter>
+                <Routes>
                   <Route
-                    key={product}
-                    path={`/product-page/${product}`}
-                    element={<ProductPage />}
+                    path="/"
+                    element={
+                      <>
+                        <Navbar />
+                        <Home />
+                        <Categories />
+                        <Galery />
+                        <Releases />
+                        <SocialMedia />
+                        <Footer />
+                      </>
+                    }
                   />
-                ))}
-                <Route path="/produto/:id" element={<ProductDetail />} />
-              </Routes>
-            </BrowserRouter>
-          </div>
+                  <Route
+                    path="/product-management"
+                    element={<ProtectedRoute element={<ProductManagement />} />}
+                  />
+                  <Route path="/product-page" element={<ProductPage />} />
+                  <Route path="/login" element={<Login />} />
+                  {productRoutes.map((product) => (
+                    <Route
+                      key={product}
+                      path={`/product-page/${product}`}
+                      element={<ProductPage />}
+                    />
+                  ))}
+                  <Route path="/produto/:id" element={<ProductDetail />} />
+                </Routes>
+              </BrowserRouter>
+            </div>
+          </NavigationProvider>
         </CartProvider>
       </AuthProvider>
     </QueryClientProvider>

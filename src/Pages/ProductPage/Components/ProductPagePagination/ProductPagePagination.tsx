@@ -5,7 +5,7 @@ import { getPaginationContainerStyle } from "./ProductPagePagination.styles.ts";
 interface ProductPagePaginationProps {
   totalPages: number;
   currentPageNumber: number;
-  setCurrentPageNumber: (value: React.SetStateAction<number>) => void;
+  setCurrentPageNumber: (value: number) => void;
 }
 
 export const ProductPagePagination = React.forwardRef<

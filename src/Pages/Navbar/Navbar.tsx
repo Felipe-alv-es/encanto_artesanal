@@ -15,9 +15,11 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer.tsx";
 import ShopCartIcon from "./Components/ShopCartIcon/ShopCartIcon.tsx";
 import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 import ShoppingCartSideDrawer from "./Components/ShoppingCartSideDrawer/ShoppingCartSideDrawer.tsx";
+import { useNavigation } from "../../Context/NavigationContext/NavigationContext.tsx";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
+  const { setCurrentPageNumber } = useNavigation();
   const { cart } = useCart();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -46,6 +48,7 @@ const Navbar = (props) => {
 
   const handleNavigate = (path: string) => {
     navigate(path);
+    setCurrentPageNumber(1);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
