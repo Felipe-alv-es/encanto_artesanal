@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 interface CategoriesMobileCarouselProps {
   categoriesOptions: {
+    id?: number;
     title: string;
     imageSrc: any;
     imageAlt: string;
@@ -55,6 +56,16 @@ export const CategoriesMobileCarousel = React.forwardRef<
     setActiveIndex((prev) => Math.min(prev + 1, categoriesOptions.length - 1));
   };
 
+  const handleNavigateItem = (item: {
+    id?: number;
+    title: string;
+    imageSrc: any;
+    imageAlt: string;
+  }) => {
+    navigate(item.id ? `/produto/${item.id}` : "/product-page");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Box sx={getProductDetailMobileCarouselContainerStyle}>
       <IconButton
@@ -80,7 +91,7 @@ export const CategoriesMobileCarousel = React.forwardRef<
                 title={item.title}
                 imageSrc={item.imageSrc}
                 imageAlt={item.imageAlt}
-                onClick={() => navigate("/product-page")}
+                onClick={() => handleNavigateItem(item)}
               />
             </Box>
           ))}

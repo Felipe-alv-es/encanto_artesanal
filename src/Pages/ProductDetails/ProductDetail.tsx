@@ -20,6 +20,7 @@ import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 import BackButton from "./Components/BackButton/BackButton.tsx";
 import { useSendWhatsapp } from "../../Hooks/UseSendToWhatsapp/index.tsx";
 import RelatableItems from "./Components/RelatableItems/RelatableItems.tsx";
+import CategoriesMobileCarousel from "../Categories/Components/CategoriesMobileCarousel/CategoriesMobileCarousel.tsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -36,6 +37,13 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(
     product?.imagesrc?.[0] || ""
   );
+
+  const firstFourCategories = (apiData?.data.slice(0, 4) ?? []).map((item) => ({
+    id: item.id,
+    title: item.title,
+    imageSrc: item.imagesrc[0],
+    imageAlt: item.imagealt,
+  }));
 
   if (isLoading) return <Typography>Carregando...</Typography>;
   if (!product) return <Typography>Produto não encontrado.</Typography>;
@@ -99,11 +107,18 @@ const ProductDetail = () => {
           </Box>
         </Box>
       </Box>
-      <RelatableItems
-        apiData={apiData}
-        handleOnClickRelatableItem={handleOnClickRelatableItem}
-        product={product}
-      />
+
+      {isMobile ? (
+        <Box paddingY={4}>
+          <CategoriesMobileCarousel categoriesOptions={firstFourCategories} />
+        </Box>
+      ) : (
+        <RelatableItems
+          apiData={apiData}
+          handleOnClickRelatableItem={handleOnClickRelatableItem}
+          product={product}
+        />
+      )}
       <Footer />
     </>
   );
