@@ -4,9 +4,8 @@ import { getLogoContainerStyle } from "./StyledLogo.styles.ts";
 //@ts-ignore
 import Logo from "../../assets/images/Logo/Logo2.png";
 
-interface StyledLogoProps {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
+interface StyledLogoProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const StyledLogo = React.forwardRef<HTMLDivElement, StyledLogoProps>(
   ({ onClick, ...props }, ref) => {

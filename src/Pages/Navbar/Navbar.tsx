@@ -60,7 +60,14 @@ const Navbar = (props) => {
             <IoMenu size={32} />
           </IconButton>
         )}
-        <StyledLogo onClick={() => handleNavigate("/")} />
+        <StyledLogo
+          onClick={() => handleNavigate("/")}
+          onMouseUp={(e) => {
+            if (e.button === 1) {
+              window.open("https://encantoartesanal.com.br", "_blank");
+            }
+          }}
+        />
         {isMobile ? (
           <SideDrawer
             drawerOpen={drawerOpen}
