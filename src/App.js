@@ -24,10 +24,8 @@ const productRoutes = [
   "kits-presenteaveis",
   "velas-moldadas",
   "velas-container",
-  "sabonetes-decorativos",
-  "geleias-de-banho",
-  "joias-de-resina",
-  "velas",
+  "cuidados-de-banho",
+  "produtos-de-resina",
 ];
 
 function App() {

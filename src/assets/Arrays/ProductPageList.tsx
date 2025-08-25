@@ -3,10 +3,8 @@ export const pageMap: Record<string, string | null> = {
   "/product-page/kits-presenteaveis": "kits_presenteaveis",
   "/product-page/velas-moldadas": "velas_moldadas",
   "/product-page/velas-container": "velas_container",
-  "/product-page/sabonetes-decorativos": "sabonetes_decorativos",
-  "/product-page/geleias-de-banho": "geleias_de_banho",
-  "/product-page/joias-de-resina": "joias_de_resina",
-  "/product-page/velas": "velas",
+  "/product-page/cuidados-de-banho": "sabonetes_decorativos",
+  "/product-page/produtos-de-resina": "joias_de_resina",
 };
 
 export const pageDescriptions: Record<
@@ -32,23 +30,13 @@ export const pageDescriptions: Record<
       "Delicadamente preparadas, nossas velas em container são perfeitas para criar momentos de aconchego, luz suave e perfume acolhedor em qualquer cantinho da sua casa.",
   },
   sabonetes_decorativos: {
-    title: "Sabonetes Decorativos",
+    title: "Cuidados de Banho",
     description:
-      "Mais do que higiene, nossos sabonetes decorativos encantam com formas e aromas únicos — feitos para perfumar e enfeitar seu espaço com carinho e delicadeza.",
-  },
-  geleias_de_banho: {
-    title: "Geleias de Banho",
-    description:
-      "Com textura macia e aromas deliciosos, as geleias de banho transformam o banho em um ritual sensorial envolvente, que cuida da pele e acalma a mente.",
+      "Transforme seus momentos de cuidado em experiências especiais: sabonetes artesanais e geleias de banho com aromas e texturas únicas, feitos para perfumar, hidratar e trazer delicadeza ao seu dia.",
   },
   joias_de_resina: {
     title: "Produtos de Resina",
     description:
       "Produtos de resina feitas à mão, com composições únicas e encantadoras — perfeitas para eternizar momentos, contar histórias e carregar beleza em cada detalhe.",
-  },
-  velas: {
-    title: "Velas Artesanais",
-    description:
-      "Descubra nossa seleção de velas artesanais, incluindo velas moldadas e em container, criadas com cuidado para proporcionar charme, aconchego e um toque especial em cada ambiente.",
   },
 };
