@@ -3,7 +3,7 @@ import { Alert, Snackbar } from "@mui/material";
 
 interface WarningSnackbarProps {
   open: boolean;
-  setOpen: (boolean) => void;
+  setOpen: (arg0: boolean) => void;
 }
 
 export const WarningSnackbar = React.forwardRef<

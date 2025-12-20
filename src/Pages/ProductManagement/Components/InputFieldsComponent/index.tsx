@@ -113,7 +113,7 @@ const InputFieldsComponent = React.forwardRef<
             <MenuItem value={"sabonetes_decorativos"}>
               Cuidados de Banho
             </MenuItem>
-            <MenuItem value={"joias_de_resina"}>Joias de resina</MenuItem>
+            <MenuItem value={"bordados"}>Bordados</MenuItem>
           </Select>
         </Box>
         <Box sx={{ padding: "16px" }}>

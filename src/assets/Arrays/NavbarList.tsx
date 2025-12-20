@@ -16,7 +16,7 @@ export const navBarItems = [
     path: "/product-page/cuidados-de-banho",
   },
   {
-    label: "Produtos de Resina",
-    path: "/product-page/produtos-de-resina",
+    label: "Bordados",
+    path: "/product-page/bordados",
   },
 ];

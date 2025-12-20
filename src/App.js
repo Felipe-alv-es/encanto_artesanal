@@ -25,7 +25,7 @@ const productRoutes = [
   "velas-moldadas",
   "velas-container",
   "cuidados-de-banho",
-  "produtos-de-resina",
+  "bordados",
 ];
 
 function App() {

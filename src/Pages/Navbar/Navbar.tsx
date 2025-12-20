@@ -17,7 +17,7 @@ import { useCart } from "../../Context/ShoppingCartContext/CartContext.tsx";
 import ShoppingCartSideDrawer from "./Components/ShoppingCartSideDrawer/ShoppingCartSideDrawer.tsx";
 import { useNavigation } from "../../Context/NavigationContext/NavigationContext.tsx";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const navigate = useNavigate();
   const { setCurrentPageNumber } = useNavigation();
   const { cart } = useCart();
@@ -53,7 +53,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <Box sx={getContainerStyle(showHeader)} {...props}>
+    <Box sx={getContainerStyle(showHeader)}>
       <Box sx={getContentContainerStyle()}>
         {isMobile && (
           <IconButton onClick={toggleDrawer(true)}>
