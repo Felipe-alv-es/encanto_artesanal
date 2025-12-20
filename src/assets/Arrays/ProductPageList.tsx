@@ -34,9 +34,9 @@ export const pageDescriptions: Record<
     description:
       "Transforme seus momentos de cuidado em experiências especiais: sabonetes artesanais e geleias de banho com aromas e texturas únicas, feitos para perfumar, hidratar e trazer delicadeza ao seu dia.",
   },
-  joias_de_resina: {
-    title: "Produtos de Resina",
+  bordados: {
+    title: "Bordados",
     description:
-      "Produtos de resina feitas à mão, com composições únicas e encantadoras — perfeitas para eternizar momentos, contar histórias e carregar beleza em cada detalhe.",
+      "Transforme pequenos momentos em experiências especiais: toalhas bordadas personalizadas, com nomes e desenhos à sua escolha, criadas para unir cuidado, beleza e exclusividade.",
   },
 };
