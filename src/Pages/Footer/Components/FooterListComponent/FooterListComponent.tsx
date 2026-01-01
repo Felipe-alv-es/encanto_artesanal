@@ -47,7 +47,7 @@ export const FooterListComponent = React.forwardRef<HTMLLIElement>(() => {
                 />
                 <LinkListComponent
                   imgSrc={WhatsLogo}
-                  hrefUrl="https://api.whatsapp.com/send/?phone=5511981669996&text=teste+de+texto&type=phone_number&app_absent=0"
+                  hrefUrl="https://api.whatsapp.com/send/?phone=5511912297241&text=Ol%C3%A1+Encanto+Artesanal%2C+gostaria+de+saber+mais+sobre+seus+produtos.&type=phone_number&app_absent=0"
                 />
               </ul>
             </Box>
