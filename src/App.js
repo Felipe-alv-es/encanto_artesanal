@@ -11,6 +11,7 @@ import {
   ProductManagement,
   Login,
   ProductDetail,
+  BadRequest,
 } from "./Pages/index.ts";
 import ProtectedRoute from "./utils/isAutenticated/index.tsx";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -66,6 +67,7 @@ function App() {
                     />
                   ))}
                   <Route path="/produto/:id" element={<ProductDetail />} />
+                  <Route path="*" element={<BadRequest />} />
                 </Routes>
               </BrowserRouter>
             </div>
