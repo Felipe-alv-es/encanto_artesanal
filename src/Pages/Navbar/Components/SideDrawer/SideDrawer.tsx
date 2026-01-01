@@ -27,7 +27,6 @@ interface SideDrawerProps {
 export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
   ({ drawerOpen, toggleDrawer, navBarItems }, ref) => {
     const handleGetIcon = (index: number) => {
-      console.log(navBarItems[index].path);
       switch (navBarItems[index].path) {
         case "/product-page/velas-moldadas":
           return <GiCandleSkull size={40} color="#383838" />;
