@@ -21,7 +21,7 @@ export const categoriesOptions = [
     title: "Sabonetes decorativos",
     imageSrc: Image3,
     imageAlt: "Imagem de velas e sabonetes decorativos",
-    path: "/product-page/sabonetes-decorativos",
+    path: "/product-page/cuidados-de-banho",
   },
   {
     title: "Bordados",
