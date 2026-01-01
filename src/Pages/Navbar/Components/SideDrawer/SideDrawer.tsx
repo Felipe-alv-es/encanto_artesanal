@@ -7,12 +7,8 @@ import {
   getSideDrawerListStyle,
 } from "./SideDrawer.styles.ts";
 import SideDrawerSocial from "../SideDrawerSocial/SideDrawerSocial.tsx";
-import {
-  GiDoorRingHandle,
-  GiSewingMachine,
-  GiCandleSkull,
-  GiCandleHolder,
-} from "react-icons/gi";
+import { GiSewingMachine, GiCandleSkull, GiCandleHolder } from "react-icons/gi";
+import { RiGift2Fill } from "react-icons/ri";
 import { PiHandSoap } from "react-icons/pi";
 
 interface SideDrawerProps {
@@ -35,7 +31,7 @@ export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
         case "/product-page/cuidados-de-banho":
           return <PiHandSoap size={40} color="#383838" />;
         case "/product-page/kits-presenteaveis":
-          return <GiDoorRingHandle size={40} color="#383838" />;
+          return <RiGift2Fill size={40} color="#383838" />;
         case "/product-page/bordados":
           return <GiSewingMachine size={40} color="#383838" />;
 
