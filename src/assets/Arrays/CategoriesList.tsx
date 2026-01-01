@@ -27,6 +27,6 @@ export const categoriesOptions = [
     title: "Bordados",
     imageSrc: Image4,
     imageAlt: "Imagem de joias e acessórios de resina",
-    path: "/product-page/produtos-de-resina",
+    path: "/product-page/bordados",
   },
 ];
