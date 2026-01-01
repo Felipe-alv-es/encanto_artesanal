@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { RiEmotionSadLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 export const getPageTitleStyle = () => ({
   textAlign: "center",
@@ -31,6 +32,8 @@ export const getDescriptionStyle = () => ({
 });
 
 const BadRequest = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -45,8 +48,11 @@ const BadRequest = () => {
       >
         <Typography sx={getPageTitleStyle}>Pagina não encontrada </Typography>
         <Typography sx={getDescriptionStyle}>
-          A pagina acessada não existe ou está quebrada. Clique aqui para ser
-          redirecionado{" "}
+          A pagina acessada não existe ou está quebrada. Clique{" "}
+          <Link sx={{ cursor: "pointer" }} onClick={() => navigate("/")}>
+            aqui
+          </Link>{" "}
+          para ser redirecionado{" "}
         </Typography>
         <RiEmotionSadLine size={100} color="#fafafa" />
       </Box>
