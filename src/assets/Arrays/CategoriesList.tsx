@@ -1,15 +1,21 @@
 // @ts-nocheck
-import Image1 from "../images/Categories/Velas.jpg";
-import Image2 from "../images/Categories/Sabonetes.jpg";
+import Image1 from "../images/Categories/Kits.jpg";
+import Image2 from "../images/Categories/Velas.jpg";
 import Image3 from "../images/Categories/Decorativas.jpg";
-import Image4 from "../images/Categories/Resina.jpg";
+import Image4 from "../images/Categories/Bordados.jpg";
 
 export const categoriesOptions = [
   {
-    title: "Velas artesanais",
+    title: "Kits Presenteaveis",
     imageSrc: Image1,
+    imageAlt: "Imagem de kits presenteaveis",
+    path: "/product-page/kits-presenteaveis",
+  },
+  {
+    title: "Velas artesanais",
+    imageSrc: Image2,
     imageAlt: "Imagem de um conjunto de velas",
-    path: "/product-page/velas",
+    path: "/product-page/velas-artesanais",
   },
   {
     title: "Sabonetes decorativos",
@@ -18,13 +24,7 @@ export const categoriesOptions = [
     path: "/product-page/sabonetes-decorativos",
   },
   {
-    title: "Geleias de Banho",
-    imageSrc: Image2,
-    imageAlt: "Imagem de velas e sabonetes decorativos",
-    path: "/product-page/geleias-de-banho",
-  },
-  {
-    title: "Produtos de Resina",
+    title: "Bordados",
     imageSrc: Image4,
     imageAlt: "Imagem de joias e acessórios de resina",
     path: "/product-page/produtos-de-resina",

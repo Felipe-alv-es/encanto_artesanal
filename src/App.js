@@ -25,7 +25,7 @@ const productRoutes = [
   "kits-presenteaveis",
   "velas-moldadas",
   "velas-container",
-  "velas",
+  "velas-artesanais",
   "cuidados-de-banho",
   "bordados",
 ];

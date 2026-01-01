@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { categoriesOptions } from "../../assets/Arrays/CategoriesList.tsx";

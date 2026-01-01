@@ -23,6 +23,7 @@ const ProductPage = () => {
   const { currentPageNumber, setCurrentPageNumber } = useNavigation();
   const currentPage = () => pageMap[location.pathname] ?? null;
   const current = currentPage();
+  console.log(current);
 
   const handlePageChange = (value: number) => {
     setCurrentPageNumber(value);
@@ -31,7 +32,7 @@ const ProductPage = () => {
 
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
-      ? currentPage() === "velas"
+      ? currentPage() === "velas_artesanais"
         ? apiData?.data?.filter((item) =>
             ["velas_moldadas", "velas_container"].includes(item.producttype)
           ) ?? []

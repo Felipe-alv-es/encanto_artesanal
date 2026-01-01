@@ -3,7 +3,7 @@ export const pageMap: Record<string, string | null> = {
   "/product-page/kits-presenteaveis": "kits_presenteaveis",
   "/product-page/velas-moldadas": "velas_moldadas",
   "/product-page/velas-container": "velas_container",
-  "/product-page/velas": "velas",
+  "/product-page/velas-artesanais": "velas_artesanais",
   "/product-page/cuidados-de-banho": "sabonetes_decorativos",
   "/product-page/bordados": "bordados",
 };
@@ -30,7 +30,7 @@ export const pageDescriptions: Record<
     description:
       "Delicadamente preparadas, nossas velas em container são perfeitas para criar momentos de aconchego, luz suave e perfume acolhedor em qualquer cantinho da sua casa.",
   },
-  velas: {
+  velas_artesanais: {
     title: "Velas Artesanais",
     description:
       "Velas artesanais moldadas e em container, criadas com atenção a cada detalhe para transformar ambientes com charme, personalidade e afeto, proporcionando luz suave, perfume acolhedor e momentos de puro aconchego em qualquer cantinho da sua casa.",

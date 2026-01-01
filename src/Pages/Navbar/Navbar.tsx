@@ -78,7 +78,17 @@ const Navbar = () => {
           <Box sx={getListStyle} role="list">
             {navBarItems.map((item) => (
               <Box sx={getListItemStyle} role="listitem" key={item.label}>
-                <Button onClick={() => handleNavigate(item.path)}>
+                <Button
+                  onClick={() => handleNavigate(item.path)}
+                  onMouseUp={(e) => {
+                    if (e.button === 1) {
+                      window.open(
+                        `https://encantoartesanal.com.br${item.path}`,
+                        "_blank"
+                      );
+                    }
+                  }}
+                >
                   {item.label}
                 </Button>
               </Box>
