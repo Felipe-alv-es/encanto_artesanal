@@ -8,13 +8,8 @@ import {
 } from "./SideDrawer.styles.ts";
 import SideDrawerSocial from "../SideDrawerSocial/SideDrawerSocial.tsx";
 import { RiCandleLine } from "react-icons/ri";
-import { TbMassage } from "react-icons/tb";
-import { GiDoorRingHandle } from "react-icons/gi";
-import {
-  PiPottedPlant,
-  PiFlowerLotusDuotone,
-  PiHandSoap,
-} from "react-icons/pi";
+import { GiDoorRingHandle, GiSewingMachine } from "react-icons/gi";
+import { PiHandSoap } from "react-icons/pi";
 
 interface SideDrawerProps {
   drawerOpen: boolean;
@@ -29,18 +24,15 @@ export const SideDrawer = React.forwardRef<HTMLDivElement, SideDrawerProps>(
   ({ drawerOpen, toggleDrawer, navBarItems }, ref) => {
     const handleGetIcon = (index: number) => {
       switch (navBarItems[index].path) {
-        case "/product-page/velas-moldadas":
-          return <PiPottedPlant size={32} color="#383838" />;
-        case "/product-page/velas-de-massagem":
-          return <TbMassage size={32} color="#383838" />;
-        case "/product-page/velas-container":
+        case "/product-page/velas":
           return <RiCandleLine size={32} color="#383838" />;
-        case "/product-page/sabonetes-decorativos":
-          return <PiFlowerLotusDuotone size={32} color="#383838" />;
-        case "/product-page/geleias-de-banho":
+        case "/product-page/cuidados-de-banho":
           return <PiHandSoap size={32} color="#383838" />;
-        case "/product-page/joias-de-resina":
+        case "/product-page/kits-presenteaveis":
           return <GiDoorRingHandle size={32} color="#383838" />;
+        case "/product-page/bordados":
+          return <GiSewingMachine size={32} color="#383838" />;
+
         default:
           return <RiCandleLine size={32} color="#383838" />;
       }

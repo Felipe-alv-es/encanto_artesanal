@@ -4,12 +4,8 @@ export const navBarItems = [
     path: "/product-page/kits-presenteaveis",
   },
   {
-    label: "Velas Moldadas",
-    path: "/product-page/velas-moldadas",
-  },
-  {
-    label: "Velas Container",
-    path: "/product-page/velas-container",
+    label: "Velas",
+    path: "/product-page/velas",
   },
   {
     label: "Cuidados de Banho",
