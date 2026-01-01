@@ -23,7 +23,6 @@ const ProductPage = () => {
   const { currentPageNumber, setCurrentPageNumber } = useNavigation();
   const currentPage = () => pageMap[location.pathname] ?? null;
   const current = currentPage();
-  console.log(current);
 
   const handlePageChange = (value: number) => {
     setCurrentPageNumber(value);
