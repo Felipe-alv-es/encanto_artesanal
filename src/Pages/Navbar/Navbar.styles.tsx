@@ -30,7 +30,6 @@ export const getContentContainerStyle = () => ({
 export const getListStyle = () => ({
   display: "flex",
   gap: "16px",
-  paddingLeft: "32px",
 });
 
 export const getListItemStyle = () => ({

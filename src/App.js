@@ -22,7 +22,8 @@ const queryClient = new QueryClient();
 
 const productRoutes = [
   "kits-presenteaveis",
-  "velas",
+  "velas-moldadas",
+  "velas-container",
   "cuidados-de-banho",
   "bordados",
 ];
