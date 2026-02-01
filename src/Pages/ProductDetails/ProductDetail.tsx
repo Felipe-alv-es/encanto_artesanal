@@ -38,7 +38,11 @@ const ProductDetail = () => {
     product?.imagesrc?.[0] || "",
   );
 
-  const firstFourCategories = (apiData?.data.slice(0, 4) ?? []).map((item) => ({
+  const firstFourCategories = (
+    apiData?.data
+      ?.filter((item) => item.producttype === product?.producttype)
+      .slice(1, 5) ?? []
+  ).map((item) => ({
     id: item.id,
     title: item.title,
     imageSrc: item.imagesrc[0],
@@ -125,9 +129,8 @@ const ProductDetail = () => {
         </Box>
       ) : (
         <RelatableItems
-          apiData={apiData}
           handleOnClickRelatableItem={handleOnClickRelatableItem}
-          product={product}
+          firstFourCategories={firstFourCategories}
         />
       )}
       <Footer />

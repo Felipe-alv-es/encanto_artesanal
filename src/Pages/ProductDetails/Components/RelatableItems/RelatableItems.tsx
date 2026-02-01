@@ -2,36 +2,20 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import CategoryItem from "../../../Categories/Components/CategoryItem/CategoryItem.tsx";
 
-type ApiResponse = {
-  data: {
-    id: number;
-    title: string;
-    description: string;
-    largedescription: string;
-    imagesrc: string[];
-    imagealt: string;
-    producttype: string;
-  }[];
-};
-
 interface RelatableItemsProps {
-  apiData: ApiResponse | undefined;
   handleOnClickRelatableItem: (id: number) => void;
-  product: {
+  firstFourCategories: {
     id: number;
     title: string;
-    description: string;
-    largedescription: string;
-    imagesrc: string[];
-    imagealt: string;
-    producttype: string;
-  };
+    imageSrc: string;
+    imageAlt: string;
+  }[];
 }
 
 export const RelatableItems = React.forwardRef<
   HTMLDivElement,
   RelatableItemsProps
->(({ apiData, handleOnClickRelatableItem, product }, ref) => {
+>(({ handleOnClickRelatableItem, firstFourCategories }, ref) => {
   return (
     <Box
       sx={{
@@ -58,19 +42,16 @@ export const RelatableItems = React.forwardRef<
           gap: "32px",
         }}
       >
-        {apiData?.data
-          ?.filter((item) => item.producttype === product.producttype)
-          .slice(0, 4)
-          .map((item) => (
-            <CategoryItem
-              key={item.title}
-              title={item.title}
-              imageSrc={item.imagesrc[0]}
-              imageAlt={item.imagealt}
-              onClick={() => handleOnClickRelatableItem(item.id)}
-              withoutArrow
-            />
-          ))}
+        {firstFourCategories.map((item) => (
+          <CategoryItem
+            key={item.title}
+            title={item.title}
+            imageSrc={item.imageSrc}
+            imageAlt={item.imageAlt}
+            onClick={() => handleOnClickRelatableItem(item.id)}
+            withoutArrow
+          />
+        ))}
       </Box>
     </Box>
   );
