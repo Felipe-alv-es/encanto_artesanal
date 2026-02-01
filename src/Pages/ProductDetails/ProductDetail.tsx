@@ -40,8 +40,14 @@ const ProductDetail = () => {
 
   const firstFourCategories = (
     apiData?.data
-      ?.filter((item) => item.producttype === product?.producttype)
-      .slice(1, 5) ?? []
+      ?.filter(
+        (item) =>
+          item.producttype === product?.producttype &&
+          item.isActive !== false &&
+          item.id !== product.id,
+      )
+      .sort((a, b) => b.id - a.id)
+      .slice(0, 4) ?? []
   ).map((item) => ({
     id: item.id,
     title: item.title,
