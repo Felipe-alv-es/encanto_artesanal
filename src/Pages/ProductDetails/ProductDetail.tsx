@@ -35,7 +35,7 @@ const ProductDetail = () => {
     : undefined;
 
   const [selectedImage, setSelectedImage] = useState(
-    product?.imagesrc?.[0] || ""
+    product?.imagesrc?.[0] || "",
   );
 
   const firstFourCategories = (apiData?.data.slice(0, 4) ?? []).map((item) => ({
@@ -110,6 +110,17 @@ const ProductDetail = () => {
 
       {isMobile ? (
         <Box paddingY={4}>
+          <Typography
+            align="center"
+            sx={{
+              fontSize: "22px",
+              fontWeight: "300",
+              fontFamily: "kanit",
+              paddingBottom: "16px",
+            }}
+          >
+            {"Veja também"}
+          </Typography>
           <CategoriesMobileCarousel categoriesOptions={firstFourCategories} />
         </Box>
       ) : (

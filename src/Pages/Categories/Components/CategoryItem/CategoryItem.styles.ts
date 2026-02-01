@@ -51,5 +51,10 @@ export const CategoriesTitleStyle = () => ({
       fontWeight: "300",
       fontFamily: "kanit",
     },
+    "@media(max-width: 768px)": {
+      fontWeight: "300",
+      fontFamily: "kanit",
+      fontSize: "16px",
+    },
   },
 });
