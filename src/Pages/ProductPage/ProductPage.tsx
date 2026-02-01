@@ -29,29 +29,34 @@ const ProductPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const activeProducts = apiData?.data
+    ? [...apiData.data]
+        .filter((item) => item.isActive !== false)
+        .sort((a, b) => b.id - a.id)
+    : [];
+
   const filteredProducts =
     currentPage() && currentPage() !== "Todos"
       ? currentPage() === "velas_artesanais"
-        ? apiData?.data?.filter((item) =>
-            ["velas_moldadas", "velas_container"].includes(item.producttype)
-          ) ?? []
-        : apiData?.data?.filter((item) => item.producttype === currentPage()) ??
-          []
-      : apiData?.data ?? [];
+        ? activeProducts.filter((item) =>
+            ["velas_moldadas", "velas_container"].includes(item.producttype),
+          )
+        : activeProducts.filter((item) => item.producttype === currentPage())
+      : activeProducts;
 
   const productsPerPage = 8;
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const currentProducts = filteredProducts.slice(
     (currentPageNumber - 1) * productsPerPage,
-    currentPageNumber * productsPerPage
+    currentPageNumber * productsPerPage,
   );
 
   const productPageTitle = current
-    ? pageDescriptions[current]?.title ?? ""
+    ? (pageDescriptions[current]?.title ?? "")
     : "Todos os Produtos";
   const productPageDescription = current
-    ? pageDescriptions[current]?.description ?? ""
+    ? (pageDescriptions[current]?.description ?? "")
     : "Explore nossa coleção completa, onde cada peça é criada com atenção aos detalhes para transformar seus ambientes com charme, personalidade e um toque único de cuidado artesanal.";
 
   const handleOnClickItem = (id: number) => {

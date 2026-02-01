@@ -1,6 +1,6 @@
-import { Box, Typography } from "@mui/material";
-import { SelectChangeEvent } from "@mui/material/Select";
-import React, { useState } from "react";
+import { Box, MenuItem, Typography } from "@mui/material";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { useState } from "react";
 import { getGridStyle } from "../Releases/Releases.styles.ts";
 import useApiData from "../../Hooks/FetchApiHooks/index.tsx";
 import {
@@ -21,6 +21,7 @@ const ProductManagement = () => {
   const { handleSave, apiData, handleDelete, handleToggleActive } =
     useApiData();
   const [isEditing, setIsEditing] = useState(false);
+  const [filterType, setFilterType] = useState<string>("Todos");
 
   const handleChange = (field: string, value: string | string[]) => {
     setFormData((prev) => ({
@@ -66,6 +67,20 @@ const ProductManagement = () => {
       console.error("Erro ao alterar isActive:", error);
     }
   };
+
+  const filteredItems =
+    apiData?.data
+      ?.filter((item) => {
+        if (filterType === "Todos") return true;
+
+        if (filterType === "desativados") {
+          return item.isActive === false;
+        }
+
+        return item.producttype === filterType;
+      })
+      .sort((a, b) => b.id - a.id) ?? [];
+
   return (
     <Box sx={productManagementContainerStyle}>
       <Typography>ProductManagement</Typography>
@@ -78,9 +93,24 @@ const ProductManagement = () => {
         isEditing={isEditing}
       />
       <CustomDivider />
+      <Box>
+        <Select
+          value={filterType}
+          onChange={(event) => setFilterType(event.target.value)}
+          displayEmpty
+        >
+          <MenuItem value="Todos">Todos</MenuItem>
+          <MenuItem value="kits_presenteaveis">Kits Presenteáveis</MenuItem>
+          <MenuItem value="velas_moldadas">Velas moldadas</MenuItem>
+          <MenuItem value="velas_container">Velas Container</MenuItem>
+          <MenuItem value="sabonetes_decorativos">Cuidados de Banho</MenuItem>
+          <MenuItem value="bordados">Bordados</MenuItem>
+          <MenuItem value="desativados">Desativados</MenuItem>
+        </Select>
+      </Box>
       <Box sx={getGridStyle}>
-        {apiData && apiData.data ? (
-          apiData.data.map((item) => (
+        {filteredItems && filteredItems ? (
+          filteredItems.map((item) => (
             <ExhibitionItem
               description={item.description}
               handleDelete={handleDelete}

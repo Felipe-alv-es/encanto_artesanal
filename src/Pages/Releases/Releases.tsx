@@ -17,6 +17,11 @@ const Releases = () => {
     return <ReleasesSkeleton />;
   }
 
+  const activeProducts =
+    apiData?.data
+      ?.filter((item) => item.isActive !== false)
+      .sort((a, b) => b.id - a.id) ?? [];
+
   return (
     <Box sx={getContainerStyle}>
       <Box>
@@ -27,8 +32,8 @@ const Releases = () => {
           <ReleaseMobileStepper />
         ) : (
           <Box sx={getGridStyle}>
-            {apiData &&
-              apiData.data
+            {activeProducts &&
+              activeProducts
                 .slice(0, 6)
                 .map((item) => (
                   <ReleaseItem
