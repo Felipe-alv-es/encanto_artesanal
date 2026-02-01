@@ -56,17 +56,16 @@ const ProductManagement = () => {
     });
   };
 
-  const handleHideItems = async (id: number, isActive: boolean) => {
+  const handleHideItems = async (id: number, currentIsActive: boolean) => {
     try {
       await handleToggleActive({
         id,
-        isActive,
+        isActive: !currentIsActive,
       });
     } catch (error) {
       console.error("Erro ao alterar isActive:", error);
     }
   };
-
   return (
     <Box sx={productManagementContainerStyle}>
       <Typography>ProductManagement</Typography>

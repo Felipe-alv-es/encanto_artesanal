@@ -83,7 +83,7 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
               {isActive ? (
                 <BiShow color="#008f00" />
               ) : (
-                <BiHide color="#86861d" />
+                <BiHide color="#9D00FF" />
               )}
             </IconButton>
           </Box>

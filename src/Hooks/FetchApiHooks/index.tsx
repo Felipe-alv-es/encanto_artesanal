@@ -118,7 +118,7 @@ const useApiData = () => {
       const token = localStorage.getItem("authToken");
 
       const response = await fetch(`${backendUrl}/${id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -127,6 +127,8 @@ const useApiData = () => {
       });
 
       if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        console.error("Erro backend:", errorData);
         throw new Error("Falha ao atualizar isActive");
       }
 
