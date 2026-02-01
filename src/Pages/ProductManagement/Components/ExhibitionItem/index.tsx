@@ -61,6 +61,16 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
       setIsEditing(!isEditing);
     };
 
+    const handleDeleteVerification = () => {
+      const isConfirmed = window.confirm(
+        "Você tem certeza que deseja excluir esse produto?",
+      );
+
+      if (isConfirmed) {
+        handleDelete(id);
+      }
+    };
+
     return (
       <>
         <Box>
@@ -73,7 +83,7 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
             }}
           >
             <Typography variant="h6">{"Excluir o item: "}</Typography>
-            <IconButton onClick={() => handleDelete(id)}>
+            <IconButton onClick={() => handleDeleteVerification()}>
               <IoMdCloseCircleOutline color="red" />
             </IconButton>
             <IconButton onClick={() => handleEdit()}>
