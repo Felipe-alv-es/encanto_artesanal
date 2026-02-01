@@ -8,7 +8,7 @@ export const getPageContainerStyle = (scrollValue: number) => ({
   justifyContent: "center",
   "@media(max-width: 2560px)": {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
-    backgroundSize: "150%",
+    backgroundSize: "100%",
     backgroundPosition: `right 100% bottom ${40 + (scrollValue / 8) * 0.2}%`,
   },
   "@media(max-width: 768px)": {

@@ -3,6 +3,7 @@ import React from "react";
 import ReleaseItem from "../../../Releases/Components/ReleaseItem/ReleaseItem.tsx";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { MdOutlineModeEdit } from "react-icons/md";
+import { BiHide, BiShow } from "react-icons/bi";
 
 interface ExhibitionItemProps {
   id: number;
@@ -11,8 +12,10 @@ interface ExhibitionItemProps {
   largeDescription: string;
   imagesrc: string[];
   imagealt: string;
-  producttype;
+  producttype: string;
+  isActive?: boolean;
   handleDelete: (id: number) => Promise<void>;
+  handleHideItems: (id: number, isActive: boolean) => Promise<void>;
   onEditClick: (data: {
     id: number;
     title: string;
@@ -36,12 +39,14 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
       imagealt,
       imagesrc,
       producttype,
+      isActive,
       handleDelete,
+      handleHideItems,
       onEditClick,
       setIsEditing,
       isEditing,
     },
-    ref
+    ref,
   ) => {
     const handleEdit = () => {
       onEditClick({
@@ -74,8 +79,16 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
             <IconButton onClick={() => handleEdit()}>
               <MdOutlineModeEdit color="blue" />
             </IconButton>
+            <IconButton onClick={() => handleHideItems(id, isActive ?? true)}>
+              {isActive ? (
+                <BiShow color="#008f00" />
+              ) : (
+                <BiHide color="#86861d" />
+              )}
+            </IconButton>
           </Box>
           <ReleaseItem
+            id={id}
             key={id}
             imageAlt={imagealt}
             title={title}
@@ -85,7 +98,7 @@ const ExhibitionItem = React.forwardRef<HTMLLIElement, ExhibitionItemProps>(
         </Box>
       </>
     );
-  }
+  },
 );
 
 export default ExhibitionItem;

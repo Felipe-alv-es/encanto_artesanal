@@ -9,6 +9,7 @@ type ApiResponse = {
     imagesrc: string[];
     imagealt: string;
     producttype: string;
+    isActive?: boolean;
   }[];
 };
 
@@ -112,12 +113,37 @@ const useApiData = () => {
     },
   });
 
+  const toggleActiveMutation = useMutation({
+    mutationFn: async ({ id, isActive }: { id: number; isActive: boolean }) => {
+      const token = localStorage.getItem("authToken");
+
+      const response = await fetch(`${backendUrl}/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ isActive }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Falha ao atualizar isActive");
+      }
+
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["apiData"] });
+    },
+  });
+
   return {
     apiData,
     isLoading,
     error,
     handleSave: saveMutation.mutateAsync,
     handleDelete: deleteMutation.mutateAsync,
+    handleToggleActive: toggleActiveMutation.mutateAsync,
   };
 };
 

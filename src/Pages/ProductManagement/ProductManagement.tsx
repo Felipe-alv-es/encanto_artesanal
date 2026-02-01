@@ -16,9 +16,10 @@ import {
 
 const ProductManagement = () => {
   const [formData, setFormData] = useState<formDataPlaceholder>(
-    formatDataInitialValues()
+    formatDataInitialValues(),
   );
-  const { handleSave, apiData, handleDelete } = useApiData();
+  const { handleSave, apiData, handleDelete, handleToggleActive } =
+    useApiData();
   const [isEditing, setIsEditing] = useState(false);
 
   const handleChange = (field: string, value: string | string[]) => {
@@ -55,6 +56,17 @@ const ProductManagement = () => {
     });
   };
 
+  const handleHideItems = async (id: number, isActive: boolean) => {
+    try {
+      await handleToggleActive({
+        id,
+        isActive,
+      });
+    } catch (error) {
+      console.error("Erro ao alterar isActive:", error);
+    }
+  };
+
   return (
     <Box sx={productManagementContainerStyle}>
       <Typography>ProductManagement</Typography>
@@ -73,12 +85,14 @@ const ProductManagement = () => {
             <ExhibitionItem
               description={item.description}
               handleDelete={handleDelete}
+              handleHideItems={handleHideItems}
               onEditClick={handleEditClick}
               id={item.id}
               imagealt={item.imagealt}
               imagesrc={item.imagesrc}
               largeDescription={item.largedescription}
               producttype={item.producttype}
+              isActive={item.isActive}
               title={item.title}
               key={item.id}
               setIsEditing={setIsEditing}

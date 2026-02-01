@@ -1,5 +1,5 @@
 //@ts-ignore
-import image from "../../assets/images/Home/Home.jpg";
+import image from "../../assets/images/Galery/GaleryBG.jpg";
 
 export const getContainerStyle = () => ({
   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
